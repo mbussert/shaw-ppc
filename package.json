@@ -1,7 +1,7 @@
 {
-  "name": "mern",
+  "name": "wallpro",
   "version": "1.0.0",
-  "description": "Mern Demo",
+  "description": "Wall-Pro - Wall Covering Calculator and Material Procurement Portal",
   "main": "server.js",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -13,7 +13,7 @@
     "heroku-postbuild": "npm run build"
   },
   "author": "",
-  "license": "ISC",
+  "license": "AGPLv3",
   "devDependencies": {
     "concurrently": "^6.2.0",
     "nodemon": "^2.0.7"
