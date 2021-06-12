@@ -1,24 +1,14 @@
 const express = require("express");
-const path = require("path");
+const routes = require('./controllers');
 const PORT = process.env.PORT || 3001;
+
 const app = express();
 
-// Define middleware here
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// Serve up static assets (usually on heroku)
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+app.use(express.urlencoded({ extended: true }));
 
-// Define API routes here
+app.use(routes);
 
-// Send every other request to the React app
-// Define any API routes before this runs
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
-app.listen(PORT, () => {
-  console.log(`🌎 ==> Express/Node.js API server now on http://localhost:${PORT}`);
+sequelize.sync({ force: false }).then(() => {
+  app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
 });
