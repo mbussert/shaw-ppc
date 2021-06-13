@@ -1,17 +1,34 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
 import "./App.scss";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import Header from './components/Header';
+import Navbar from './components/navbar';
+import Wrapper from "./components/Wrapper";
+
+import Home from './pages/Home/Home';
+import How from './pages/How/How';
+import Calculator from './pages/Calculator/Calculator';
+import Account from './pages/Account/Account';
+import Login from './pages/Login/Login';
+
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to React</h2>
-      </div>
-      <p className="App-intro">
-        To get started, edit <code>src/App.js</code> and save to reload.
-      </p>
+      <Header/>
+      <Router>
+      <Navbar/>
+      <Wrapper>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/How" component={How} />
+          <Route exact path="/Calculator" component={Calculator} />
+          <Route exact path="/Account" component={Account} />
+          <Route exact path="/Login" component={Login} />  
+      </Wrapper>
+      </Router>
+    <Footer/>
     </div>
   );
 }
