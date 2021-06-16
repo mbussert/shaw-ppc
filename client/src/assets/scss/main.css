@@ -1,0 +1,86 @@
+.container,
+.container-sm,
+.container-xs {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.container {
+  max-width: 1128px;
+}
+
+.container-sm {
+  max-width: 944px;
+}
+
+.container-xs {
+  max-width: 668px;
+}
+
+[class*="container"] [class*="container"] {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+[class*="container"] .container-sm {
+  max-width: 896px;
+}
+
+[class*="container"] .container-xs {
+  max-width: 620px;
+}
+
+.test-thing {
+  width: 100%;
+}
+
+.calculator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+button {
+  font-size: 1rem;
+}
+
+.home-background {
+  border: none;
+  width: 100%;
+  /* background-image: inherit; */
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../img/home-background.png");
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+.ppc-logo-bg {
+  background-color: rgba(196, 196, 196, 0.2);
+}
+
+.ppc-text-logo {
+  color: white;
+}
+
+.home-text {
+  color: wheat;
+}
+
+.create-account-btn {
+  background-color: orangered;
+}
+/*# sourceMappingURL=main.css.map */
