@@ -1,13 +1,10 @@
 import React from "react";
-import './style.scss'
 
 function Account() {
   return (
     <div>
-        <h1>Account</h1>
-
+      <h1>Account</h1>
     </div>
-  
   );
 }
 

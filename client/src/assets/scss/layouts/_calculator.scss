@@ -1,0 +1,12 @@
+.calculator {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  display: flex;
+}
+
+button {
+  font-size: $font-size;
+}
