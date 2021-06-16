@@ -4,8 +4,8 @@ import './style.scss'
 
 function Navbar() {
   return (
+  
     <nav>
-        
         <ul className="links">
             
             <li><Link to="./">Home</Link></li>

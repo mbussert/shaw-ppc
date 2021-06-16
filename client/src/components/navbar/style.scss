@@ -1,1 +1,35 @@
 /* navbar */
+#container {
+    width: 100%;
+    display: inline-block;
+  }
+  
+  nav {
+    overflow: hidden;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    ul {
+      text-align: center;
+      list-style-type: none;
+      list-style-type: none;
+      margin: 0;
+      padding: 15px;
+      li {
+        display: inline;
+        font-family: sans-serif;
+        font-size: 17px;
+        a {
+          color: #EAD67F;
+          text-decoration: none;
+          padding: 14px;
+          &:hover {
+            background-color: #6C6C6C;
+          }
+        }
+      }
+    }
+  }
+
+//   #EAD67F #DA9F63 #A3BECF #6C6C6C
