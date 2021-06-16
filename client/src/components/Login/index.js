@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import "./index.css";
 
 class LoginPage extends Component {
   render() {
@@ -23,6 +22,5 @@ class LoginPage extends Component {
     );
   }
 }
-
 
 export default LoginPage;
