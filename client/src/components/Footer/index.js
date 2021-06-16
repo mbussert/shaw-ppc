@@ -1,16 +1,16 @@
 import React from "react";
-import './style.scss'
+import "./style.scss";
 
 function Footer() {
   return (
     <div>
-        <br/><br/><br/>
-    <footer id="footer-relative">
+      <br />
+      <br />
+      <br />
+      <footer id="footer-relative">
         <h1>Footer</h1>
-      
-    </footer>
+      </footer>
     </div>
-  
   );
 }
 
