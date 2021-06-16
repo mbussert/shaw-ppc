@@ -1,11 +1,12 @@
 import React from "react";
-import './style.scss'
+import './style.scss';
+import LoginPage from '../../components/Login';
 
 function Login() {
   return (
     <div>
         <h1>Login</h1>
-
+        <LoginPage />
     </div>
   
   );
