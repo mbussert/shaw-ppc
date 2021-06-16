@@ -27,6 +27,8 @@ function App() {
           <Route exact path="/Account" component={Account} />
           <Route exact path="/Login" component={Login} />  
       </Router>
+      <CreateUser />
+      <LoginPage />
       </Wrapper>
       <Footer/>
     </div>
