@@ -28,7 +28,7 @@ function App() {
           <Route exact path="/Login" component={Login} />  
       </Router>
       </Wrapper>
-      </Footer>
+      <Footer />
     </div>
   );
 }
