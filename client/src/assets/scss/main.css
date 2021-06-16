@@ -36,6 +36,43 @@
   width: 100%;
 }
 
+/* navbar */
+#container {
+  width: 100%;
+  display: inline-block;
+}
+
+nav {
+  overflow: hidden;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+nav ul {
+  text-align: center;
+  list-style-type: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 15px;
+}
+
+nav ul li {
+  display: inline;
+  font-family: sans-serif;
+  font-size: 17px;
+}
+
+nav ul li a {
+  color: #ead67f;
+  text-decoration: none;
+  padding: 14px;
+}
+
+nav ul li a:hover {
+  background-color: #6c6c6c;
+}
 .calculator {
   display: -webkit-box;
   display: -ms-flexbox;
