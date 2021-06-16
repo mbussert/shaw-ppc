@@ -9,11 +9,14 @@
 
 @import "components/footer";
 @import "components/header";
+@import "components/login";
 @import "components/nav";
 @import "components/createuser";
 
 @import "layouts/account";
+@import "layouts/admin";
 @import "layouts/calculator";
 @import "layouts/home";
 @import "layouts/how";
 @import "layouts/login";
+@import "layouts/create";
