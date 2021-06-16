@@ -3,12 +3,6 @@ import "./index.css";
 
 class CreateUser extends Component {
 
-    // createAccount(e) {
-    //     e.preventDefault();
-
-    //     // const 
-    // }
-
   render() {
     return (
       <form>
