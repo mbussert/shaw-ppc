@@ -17,20 +17,18 @@ import Footer from './components/Footer';
 function App() {
   return (
     <div className="App">
-      <LoginPage />
-      <CreateUser />
-      <Header/>
+      <Wrapper>
       <Router>
       <Navbar/>
-      <Wrapper>
+      <Header/>
           <Route exact path="/" component={Home} />
           <Route exact path="/How" component={How} />
           <Route exact path="/Calculator" component={Calculator} />
           <Route exact path="/Account" component={Account} />
           <Route exact path="/Login" component={Login} />  
-      </Wrapper>
       </Router>
-    <Footer/>
+      </Wrapper>
+      </Footer>
     </div>
   );
 }
