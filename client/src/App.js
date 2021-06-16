@@ -28,7 +28,7 @@ function App() {
           <Route exact path='/Create' component={Create} />
       </Router>
       </Wrapper>
-      <Footer/>
+      <Footer />
     </div>
   );
 }
