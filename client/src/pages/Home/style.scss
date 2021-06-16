@@ -1,0 +1,29 @@
+.home-background {
+    border: none;
+    width: 100%;
+    height: 100%;
+    /* background-image: inherit; */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-image: url("../../assets/img/home-background.png");
+    background-color: blue;
+}
+
+.ppc-logo-bg {
+    background-color: rgba(#c4c4c4,0.20);
+}
+
+.ppc-text-logo {
+    color: white;
+    
+}
+
+.home-text{
+    color: wheat;
+}
+
+.create-account-btn {
+    background-color: orangered;
+}
