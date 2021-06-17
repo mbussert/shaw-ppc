@@ -6,4 +6,4 @@ Wall.belongsTo(User, {
     onDelete: 'CASCADE'
 });
 
-module.exports = { User };
+module.exports = { User, Wall };
