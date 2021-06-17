@@ -18,6 +18,7 @@ The application will assist clients in calculating square footage measurements f
 - [Heather Storseth](https://github.com/hstor3)
 - [Valerie Russell](https://github.com/vruss14)
 - [Jon Yeatman](https://github.com/Yeatman51)
+- [Brandon Merritt](https://github.com/CrispyCoder817)
 
 #
 
