@@ -5,3 +5,5 @@ const withAuth = require('../utils/auth');
 router.get('/', function(req, res) {
     res.send('Helloooooo')
 });
+
+module.exports = router;

@@ -10,7 +10,8 @@
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "seed": "node seeds/seed.js"
   },
   "author": "",
   "license": "AGPLv3",
@@ -19,11 +20,14 @@
     "nodemon": "^2.0.7"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
     "mysql": "^2.18.1",
+    "mysql2": "^2.2.5",
     "node-sass": "^6.0.0",
     "nodemailer": "^6.6.1",
     "react-router-dom": "^5.2.0",
