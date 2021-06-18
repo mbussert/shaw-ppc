@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import API from "../../utils/API";
-import { Container, Button, TextField } from "@material-ui/core";
+import {
+  Container,
+  Button,
+  TextField,
+  Select,
+  MenuItem,
+  Divider,
+  FormControl,
+  FormHelperText,
+  Tooltip,
+  Grid,
+  Card,
+} from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import InfoIcon from "@material-ui/icons/Info";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,61 +59,137 @@ function Calculator() {
   return (
     <Container maxWidth="sm">
       <h1>Calculator</h1>
-      <div className="calculator">
-        <form autoComplete="off">
-          <TextField
-            id="title"
-            label="Title"
-            variant="outlined"
-            name="title"
-            onChange={handleInputChange}
-            helperText="Please enter a title for your project."
-            style={{ margin: 8 }}
-            margin="normal"
-            fullWidth
-          />
-          <TextField
-            id="body"
-            label="Body"
-            variant="outlined"
-            name="body"
-            onChange={handleInputChange}
-            style={{ margin: 8 }}
-            margin="normal"
-          />
-          <TextField
-            id="number"
-            label="Number"
-            variant="outlined"
-            name="number"
-            onChange={handleInputChange}
-            type="number"
-            style={{ margin: 8 }}
-            margin="normal"
-          />
+      <Card style={{ padding: 20 }} margin="normal" raised={true}>
+        <div className="calculator">
+          <form autoComplete="off">
+            <Grid container justify="flex-end">
+              <Grid item>
+                <Tooltip
+                  title="You may use a unique project name or feel free to simply use your store name/number."
+                  placement="right"
+                >
+                  <InfoIcon color="primary" />
+                </Tooltip>
+              </Grid>
+            </Grid>
+            <Grid container justify="center">
+              <TextField
+                id="title"
+                label="Title"
+                variant="outlined"
+                name="title"
+                onChange={handleInputChange}
+                helperText="Please enter a title for your project."
+                style={{ margin: 8 }}
+                margin="normal"
+                fullWidth
+                required
+              />
 
-          <Button
-            variant="contained"
-            size="medium"
-            disableElevation
-            onClick={handleFormSubmit}
-            style={{ margin: 8 }}
-            margin="normal"
-          >
-            Calculate
-          </Button>
-          <Button
-            variant="contained"
-            size="medium"
-            disableElevation
-            onClick={clearForm}
-            style={{ margin: 8 }}
-            margin="normal"
-          >
-            Clear
-          </Button>
-        </form>
-      </div>
+              <TextField
+                id="firstname"
+                label="First Name"
+                variant="outlined"
+                name="firstname"
+                onChange={handleInputChange}
+                helperText="Please enter your first name."
+                style={{ margin: 8 }}
+                margin="normal"
+                required
+              />
+              <TextField
+                id="lastname"
+                label="Last Name"
+                variant="outlined"
+                name="lastname"
+                onChange={handleInputChange}
+                helperText="Please enter your last name."
+                style={{ margin: 8 }}
+                margin="normal"
+                required
+              />
+              <TextField
+                id="email"
+                label="Email Address"
+                variant="outlined"
+                name="email"
+                onChange={handleInputChange}
+                helperText="Please enter your email address."
+                style={{ margin: 8 }}
+                margin="normal"
+                required
+              />
+              <TextField
+                id="phone"
+                label="Phone Number"
+                variant="outlined"
+                name="phone"
+                type="text"
+                onChange={handleInputChange}
+                helperText="e.g. (555)555-5555"
+                style={{ margin: 8 }}
+                margin="normal"
+                required
+              />
+
+              <FormControl fullWidth style={{ margin: 8 }} margin="normal">
+                <Select disabled defaultValue={1} variant="outlined">
+                  <MenuItem value={1}>Material WC-J3</MenuItem>
+                </Select>
+                <FormHelperText style={{ margin: 8 }} margin="normal">
+                  Required
+                </FormHelperText>
+              </FormControl>
+            </Grid>
+            <Divider style={{ margin: 20 }} margin="normal" variant="middle" />
+            <Grid container justify="center">
+              <TextField
+                id="width"
+                label="Width"
+                variant="outlined"
+                name="width"
+                type="number"
+                onChange={handleInputChange}
+                style={{ margin: 8 }}
+                margin="normal"
+                helperText="Inches"
+              />
+              <TextField
+                id="height"
+                label="Height"
+                variant="outlined"
+                name="height"
+                onChange={handleInputChange}
+                type="number"
+                style={{ margin: 8 }}
+                margin="normal"
+                helperText="Inches"
+              />
+
+              <Button
+                variant="contained"
+                size="medium"
+                disableElevation
+                onClick={handleFormSubmit}
+                style={{ margin: 8 }}
+                margin="normal"
+              >
+                Calculate
+              </Button>
+              <Button
+                variant="contained"
+                size="medium"
+                disableElevation
+                onClick={clearForm}
+                style={{ margin: 8 }}
+                margin="normal"
+              >
+                Clear
+              </Button>
+            </Grid>
+          </form>
+        </div>
+      </Card>
     </Container>
   );
 }
