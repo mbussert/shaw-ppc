@@ -1,3 +1,21 @@
 .test-thing {
   width: 100%;
 }
+
+.footer-background {
+  background-color: #1D2837;
+}
+
+.footer-line {
+  border-top: 5px solid white;
+  margin-top: 10px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-card {
+  background-color:  #47484950;
+}
