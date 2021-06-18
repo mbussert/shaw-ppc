@@ -1,0 +1,26 @@
+$font-stack:    Helvetica, sans-serif;
+$color01: #EAD67F;
+$color02: #DA9F63;
+$color03: #A3BECF;
+$color04: #6C6C6C;
+
+
+.fourohfour {
+font: 100% $font-stack;
+  color: $color01;
+  background-color: $color03;
+  text-align: center;
+  text-justify: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem;
+}
+
+// body {
+//     margin: 0;
+//     padding: 0;
+//     font-family: $font-stack;
+//     background-color: $color04;
+//   }
+
+// #EAD67F #DA9F63 #A3BECF #6C6C6C

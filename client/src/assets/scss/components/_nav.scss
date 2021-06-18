@@ -1,6 +1,6 @@
 /* navbar */
 #container {
-  width: 100%;
+  width: 100;
   display: inline-block;
 }
 
@@ -10,29 +10,25 @@ nav {
   position: fixed;
   top: 0;
   width: 100%;
-}
-
-nav ul {
-  text-align: center;
-  list-style-type: none;
-  list-style-type: none;
-  margin: 0;
-  padding: 15px;
-}
-
-nav ul li {
-  display: inline;
-  font-family: sans-serif;
-  font-size: 17px;
-}
-
-nav ul li a {
-  color: #ead67f;
-  text-decoration: none;
-  padding: 14px;
-}
-
-nav ul li a:hover {
-  background-color: #6c6c6c;
+  ul {
+    text-align: center;
+    list-style-type: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 15px;
+  }
+  li {
+    display: inline;
+    font-family: sans-serif;
+    font-size: 17px;
+  }
+  a {
+    color: #ead67f;
+    text-decoration: none;
+    padding: 14px;
+  }
+  a:hover {
+    background-color: #6c6c6c;
+  }
 }
 /*# sourceMappingURL=style.css.map */
