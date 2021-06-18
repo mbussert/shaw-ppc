@@ -36,8 +36,6 @@ function Calculator() {
   function handleInputChange(event) {
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
-
-    console.log(formObject);
   }
 
   function handleFormSubmit(event) {
