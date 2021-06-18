@@ -36,13 +36,18 @@ function Footer() {
           
           <div className="footer-card">
            <img src="" alt="Wall Pro Logo"/>
-           <h3>NEW PROJECT</h3>
+           <Link className="footer-link-btn" to="./Calculator">
+            <h5 className="foot-project">NEW PROJECT</h5>
+           </Link>
           </div>
 
           <div className="footer-card">
-            <p>Sign up now for your free account so you can track all of your projects in one convenient place
+            <p>Sign up now for your free account so you can track all of your
+               projects in one convenient place
             </p>
-            <h3>SIGN UP</h3>
+            <Link className="footer-link-btn" to="./Login">
+              <h5 className="foot-signup">SIGN UP</h5>
+            </Link>
           </div>
 
           <div className="footer-card">

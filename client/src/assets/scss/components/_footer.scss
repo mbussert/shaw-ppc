@@ -14,13 +14,47 @@
 .footer-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .footer-card {
   background-color:  #47484950;
-  margin: 5px;
+  color: white;
+  border-radius: 20px;
+  margin: 15px 5px 15px 5px;
+  padding: 5px 5px 5px 5px;
 }
 
 .footer-links {
   color: white;
+  text-decoration: none;
+  text-align: start;
+  padding-inline-start: 10px;
+
+  ul {
+    text-decoration: none;
+  }
+  li {
+    text-decoration: none;
+    list-style-type: none;
+  }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.footer-link-btn {
+  color: white;
+  text-decoration: none;
+  // background-color: $orange;
+}
+
+.foot-project {
+  color: white;
+}
+
+.foot-signup {
+  color: white;
+  
 }
