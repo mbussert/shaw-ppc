@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import wallPro from "../../assets/img/wall-pro-logo.png"
+import shawppc from "../../assets/img/shaw-ppc-logo.png"
 
 function Footer() {
   return (
@@ -52,11 +53,14 @@ function Footer() {
           </div>
 
           <div className="footer-card">
-             <img src="" alt="shaw ppc logo"/>
+             <img src={shawppc} className="shawppc-logo" alt="shaw ppc logo"/>
           </div>
 
           <div className="footer-card">
              <h3>icons</h3>
+             <img src="" className="footer-icons" alt="Facebook Icon"/>
+             <img src="" className="footer-icons" alt="Instagram Icon"/>
+             <img src="" className="footer-icons" alt="Twitter Icon"/>
           </div>
         </div>
 
