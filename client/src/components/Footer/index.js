@@ -58,7 +58,7 @@ function Footer() {
              </a>
           </div>
 
-          <div className="footer-card">
+          <div className="icons-container">
             <a href="http://www.shawandslavsky.com/" target="_blank" rel="noreferrer">
              <img src="" className="footer-icons" alt="Facebook Icon"/>
             </a>
