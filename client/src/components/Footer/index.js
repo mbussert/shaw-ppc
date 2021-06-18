@@ -53,14 +53,23 @@ function Footer() {
           </div>
 
           <div className="footer-card">
+            <a href="http://www.shawandslavsky.com/" target="_blank" rel="noreferrer" >
              <img src={shawppc} className="shawppc-logo" alt="shaw ppc logo"/>
+             </a>
           </div>
 
           <div className="footer-card">
-             <h3>icons</h3>
+            <a href="http://www.shawandslavsky.com/" target="_blank" rel="noreferrer">
              <img src="" className="footer-icons" alt="Facebook Icon"/>
+            </a>
+
+            <a href="http://www.shawandslavsky.com/" target="_blank" rel="noreferrer">
              <img src="" className="footer-icons" alt="Instagram Icon"/>
+            </a>
+            
+            <a href="http://www.shawandslavsky.com/" target="_blank" rel="noreferrer">
              <img src="" className="footer-icons" alt="Twitter Icon"/>
+            </a>
           </div>
         </div>
 
