@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import wallPro from "../../assets/img/wall-pro-logo.png"
 
 function Footer() {
   return (
@@ -35,9 +36,9 @@ function Footer() {
           </div>
           
           <div className="footer-card">
-           <img src="" alt="Wall Pro Logo"/>
+           <img src={wallPro} className="wall-pro-logo" alt="Wall Pro Logo"/>
            <Link className="footer-link-btn" to="./Calculator">
-            <h5 className="foot-project">NEW PROJECT</h5>
+            <p className="foot-project">NEW PROJECT</p>
            </Link>
           </div>
 
