@@ -1,9 +1,10 @@
-.test-thing {
+#footer-position {
   width: 100%;
+  
 }
 
 .footer-background {
-  background-color: #1D2837;
+  background-color: $blueDark;
 }
 
 .footer-line {
@@ -18,7 +19,7 @@
 }
 
 .footer-card {
-  background-color:  #47484950;
+  background-color:  $grayDark;
   color: white;
   border-radius: 20px;
   margin: 15px 5px 15px 5px;

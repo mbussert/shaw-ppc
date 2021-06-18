@@ -6,7 +6,7 @@ import shawppc from "../../assets/img/shaw-ppc-logo.png"
 function Footer() {
   return (
     
-      <footer id="footer-relative" className="footer-background">
+      <footer id="footer-position" className="footer-background">
         
         <div className="footer-line"></div>
 
@@ -66,7 +66,7 @@ function Footer() {
             <a href="http://www.shawandslavsky.com/" target="_blank" rel="noreferrer">
              <img src="" className="footer-icons" alt="Instagram Icon"/>
             </a>
-            
+
             <a href="http://www.shawandslavsky.com/" target="_blank" rel="noreferrer">
              <img src="" className="footer-icons" alt="Twitter Icon"/>
             </a>
