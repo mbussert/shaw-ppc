@@ -1,14 +1,14 @@
 $font-stack:    Helvetica, sans-serif;
-$color01: #EAD67F;
-$color02: #DA9F63;
-$color03: #A3BECF;
-$color04: #6C6C6C;
+$yellow: #ead67f;
+$orange: #da9f63;
+$blue: #a3becf;
+$brown: #6c6c6c;
 
 
 .fourohfour {
 font: 100% $font-stack;
-  color: $color01;
-  background-color: $color04;
+  color: $yellow;
+  background-color: $brown;
   text-align: center;
   text-justify: center;
   height: 100vh;
