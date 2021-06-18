@@ -17,5 +17,9 @@ export default {
             'Content-Type': 'application/json' 
         }
     });
-  }
+  },
+  // Saves a user when an account is created
+  saveUser: function(userData) {
+    return axios.post('/api/users', userData);
+}
 };
