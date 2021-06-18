@@ -16,13 +16,15 @@
         "components/_login.scss",
         "components/_nav.scss",
         "components/_createuser.scss",
+        "components/_notfound.scss",
         "layouts/_account.scss",
         "layouts/_admin.scss",
         "layouts/_calculator.scss",
         "layouts/_home.scss",
         "layouts/_how.scss",
         "layouts/_login.scss",
-        "layouts/_create.scss"
+        "layouts/_create.scss",
+        "layouts/_notfound.scss"
     ],
     "names": [],
     "file": "main.css"
