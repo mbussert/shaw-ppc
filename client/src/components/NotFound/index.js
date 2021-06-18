@@ -6,7 +6,7 @@ class NotFound extends Component {
     <main className="fourohfour">
       <body>
         <div>
-          <h1 className="jumbotron">404 Error</h1>
+          <h1 className="header-text">404 Error</h1>
         </div>
       </body>
       </main>
