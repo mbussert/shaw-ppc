@@ -1,4 +1,4 @@
-import React, { Component, useRef, useState } from "react";
+import React, { useState } from "react";
 import API from "../../utils/API";
 import "./index.css";
 
