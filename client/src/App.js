@@ -29,9 +29,9 @@ function App() {
           <Route exact path="/Create" component={Create} />
           <Route component={NotFound}/>
           </Switch>
+          <Footer />
         </Router>
       </Wrapper>
-      <Footer />
     </div>
   );
 }
