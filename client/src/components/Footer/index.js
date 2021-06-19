@@ -39,7 +39,7 @@ function Footer() {
           <div className="footer-card">
            <img src={wallPro} className="wall-pro-logo" alt="Wall Pro Logo"/>
            <Link className="footer-link-btn" to="./Calculator">
-            <p className="foot-project">NEW PROJECT</p>
+            <h5 className="foot-project">NEW PROJECT</h5>
            </Link>
           </div>
 
