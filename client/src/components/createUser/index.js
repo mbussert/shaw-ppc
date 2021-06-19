@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import API from "../../utils/API";
+import axios from "axios";
 
 function CreateUser() {
   const [userObject, setUser] = useState({});
@@ -21,6 +22,17 @@ function CreateUser() {
         pass2: userObject.pass2,
         password: userObject.pass1,
       });
+      const response = axios("/api/users/login", {
+        method: "POST",
+        body: ({ email: userObject.email, password: userObject.password }),
+        headers: { "Content-Type": "application/json" }
+      })
+      if (response.ok) {
+        console.log('Hurray!')
+        document.location.replace('/Home')
+      // } else {
+        // alert(response.statusText)
+      }
     } else {
       console.log("Nooo!");
     }

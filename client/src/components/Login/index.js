@@ -6,10 +6,6 @@ function LoginPage() {
 
   const [userObject, getUser] = useState({});
 
-
-  // let userEmail = API.getUser(email);
-  // let userPass = API.getUser(password);
-
   function handleInputChange(e) {
     const { name, value } = e.target;
     getUser({...userObject, [name]: value})
@@ -20,12 +16,17 @@ function LoginPage() {
 
     if (userObject.email && userObject.password) {
       console.log('They match!')
-      // console.log(userObject)
       const response = axios("/api/users/login", {
         method: "POST",
         body: ({ email: userObject.email, password: userObject.password }),
         headers: { "Content-Type": "application/json" }
       })
+      if (response.ok) {
+        console.log('Hurray!')
+        document.location.replace('/Home')
+      // } else {
+        // alert(response.statusText)
+      }
     } else {
       console.log('Oops! Try again')
     }
