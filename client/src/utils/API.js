@@ -1,6 +1,14 @@
 import axios from "axios";
 
 export default {
+  // get all users
+  getUser: function() {
+    return axios.get('/api/users')
+    .then((response) => {
+      const allUsers = response.data;
+      this.getAllUser(allUsers);
+    })
+  },
   // Get all orders
   getOrders: function() {
     return axios.get("/api/orders");

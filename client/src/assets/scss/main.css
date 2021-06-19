@@ -32,8 +32,147 @@
   max-width: 620px;
 }
 
-.test-thing {
+body {
+  font-family: "Source Sans Pro", Helvetica, Verdana, sans-serif;
+}
+
+#footer-position {
+  position: relative;
+  left: 0;
+  bottom: 0;
   width: 100%;
+  margin-top: 50px;
+}
+
+.footer-background {
+  background-color: #1D2837;
+}
+
+.footer-line {
+  border-top: 5px solid white;
+}
+
+.footer-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.footer-card {
+  background-color: #47484950;
+  color: white;
+  border-radius: 20px;
+  margin: 15px 10px 15px 10px;
+  padding: 5px 5px 5px 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 20%;
+}
+
+.footer-links {
+  color: white;
+  text-decoration: none;
+  text-align: start;
+  padding: 0 20px 0 20px;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
+.footer-links ul {
+  text-decoration: none;
+}
+
+.footer-links li {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  line-height: 1.2em;
+}
+
+.footer-link-btn {
+  color: white;
+  text-decoration: none;
+  text-align: center;
+}
+
+.wall-pro-logo {
+  max-width: 100%;
+  margin: 0px;
+}
+
+.foot-project {
+  color: white;
+  max-width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.footer-signup-text {
+  margin: 0 .5em 0 .5em;
+}
+
+.foot-signup {
+  color: white;
+  max-width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.shawppc-logo {
+  max-width: 100%;
+}
+
+.icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.footer-icons {
+  max-width: 74%;
+  margin: 0 0.6em 0 .6em;
 }
 
 /* navbar */
@@ -58,19 +197,19 @@ nav ul {
   padding: 15px;
 }
 
-nav ul li {
+nav li {
   display: inline;
   font-family: sans-serif;
   font-size: 17px;
 }
 
-nav ul li a {
+nav a {
   color: #ead67f;
   text-decoration: none;
   padding: 14px;
 }
 
-nav ul li a:hover {
+nav a:hover {
   background-color: #6c6c6c;
 }
 .calculator {
@@ -93,7 +232,7 @@ button {
   font-size: 1rem;
 }
 
-.home-background {
+html {
   border: none;
   width: 100%;
   /* background-image: inherit; */
@@ -101,7 +240,7 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../../img/home-background.png");
+  background-image: url("../../img/primary-background.png");
   background-color: rgba(0, 0, 255, 0.2);
 }
 
@@ -119,5 +258,54 @@ button {
 
 .create-account-btn {
   background-color: orangered;
+}
+
+.fourohfour {
+  color: #1D2837;
+  background-color: #6c6c6c;
+  text-align: center;
+  text-justify: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../img/primary-background.png");
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+.container-card {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1rem;
+  background-color: #a3becf;
+  padding: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-color: #ead67f;
+}
+
+.btn {
+  background-color: #1D2837;
+  margin: 1rem;
+  width: 50%;
+  padding: 10px;
+  border-radius: 1rem;
+  color: #a3becf;
+}
+
+.btn:hover {
+  color: #ead67f;
+  background-color: #6c6c6c;
+}
+
+a {
+  color: #a3becf;
 }
 /*# sourceMappingURL=main.css.map */
