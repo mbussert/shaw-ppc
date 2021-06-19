@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 function Modal() {
     return (
         <div className="modal-1">
+            
             <div className="modal-title">
                 <h1> it looks like you are not 
                     Currently logged in</h1>

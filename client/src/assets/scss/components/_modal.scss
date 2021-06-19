@@ -1,0 +1,39 @@
+.modal-1 {
+    // background-image: linear-gradient(#1D2837, #162A45, #254666);
+    background-color: $blueDark;
+    max-width: 75%;
+    border-radius: 1em;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 1.5em;
+}
+
+.modal-title{
+    color: white;
+    // text-transform: uppercase;
+    text-transform: capitalize;
+    font: 1em sans-serif;
+
+}
+
+.modal-body{
+    color: white;
+    font: 1.5em sans-serif;
+}
+
+.modal-buttons {
+    margin: 2em;
+}
+
+.modal-btn-continue {
+    color: white;
+    background-color: $orange;
+}
+
+.modal-btn-signup{
+    color: white;
+    background-color: $orange;
+}
