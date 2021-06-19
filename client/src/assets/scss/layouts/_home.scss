@@ -1,4 +1,4 @@
-.home-background {
+html {
   border: none;
   width: 100%;
   /* background-image: inherit; */
@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../../img/home-background.png");
+  background-image: url("../../img/primary-background.png");
   background-color: rgba($color: blue, $alpha: 0.2);
 }
 
