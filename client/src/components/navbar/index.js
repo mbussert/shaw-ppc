@@ -23,6 +23,10 @@ function Navbar() {
         <li>
           <Link to="./Create">Create</Link>
         </li>
+        <li>
+          <Link to="./About">About</Link>
+        </li>
+
       </ul>
 
       {/* <label className="icon-burger">
