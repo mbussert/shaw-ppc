@@ -39,8 +39,8 @@ function Footer() {
           </div>
           
           <div className="footer-card">
-           <img src={wallPro} className="wall-pro-logo" alt="Wall Pro Logo"/>
            <Link className="footer-link-btn" to="./Calculator">
+           <img src={wallPro} className="wall-pro-logo" alt="Wall Pro Logo"/>
             <h5 className="foot-project">NEW PROJECT</h5>
            </Link>
           </div>
@@ -61,11 +61,11 @@ function Footer() {
           </div>
 
           <div className="icons-container">
-            <a href="http://www.shawandslavsky.com/" target="_blank" rel="noreferrer">
+            <a href="https://www.facebook.com/ShawPPC-Design-Group-185602394803971/" target="_blank" rel="noreferrer">
              <img src={fbicon} className="footer-icons" alt="Facebook Icon"/>
             </a>
 
-            <a href="http://www.shawandslavsky.com/" target="_blank" rel="noreferrer">
+            <a href="https://www.linkedin.com/company/shaw-ppc-design/" target="_blank" rel="noreferrer">
              <img src={inicon} className="footer-icons" alt="Linkedin Icon"/>
             </a>
 
