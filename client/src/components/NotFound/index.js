@@ -3,13 +3,18 @@ import React, { Component } from "react";
 class NotFound extends Component {
   render() {
     return (
+    <html>
     <main className="fourohfour">
       <body>
         <div>
-          <h1 className="header-text">404 Error</h1>
+          <container className="container-card">
+          <h1 className="header-text">404 Error: Page Not Found</h1>
+          <button className="btn">ClickHere</button>
+          </container>
         </div>
       </body>
       </main>
+      </html>
     );
   }
 }
