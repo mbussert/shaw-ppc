@@ -30,9 +30,10 @@
   margin: 15px 10px 15px 10px;
   padding: 5px 5px 5px 5px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  max-width: 20%;
 }
 
 .footer-links {
@@ -65,7 +66,7 @@
 }
 
 .wall-pro-logo {
-  max-width: 80%;
+  max-width: 100%;
   margin: 0px;
 }
 
@@ -75,6 +76,11 @@
   max-width: 100%;
   text-align: center;
   font-size: 1.5em;
+}
+
+// Sign up card paragraph
+.footer-signup-text {
+  margin: 0 .5em 0 .5em ;
 }
 
 // Sign up button/link text
@@ -100,6 +106,7 @@
 }
 
 .footer-icons {
-  max-width: 50%;
+  max-width: 74%;
+  margin: 0 0.6em 0 .6em;
 }
 
