@@ -12,6 +12,7 @@ import Login from "./pages/Login/Login";
 import Create from "./pages/Create/Create";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
+import About from "./pages/About";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/Account" component={Account} />
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Create" component={Create} />
+          <Route exact path="/About" component={About} />
           <Route component={NotFound}/>
           </Switch>
           <Footer />
