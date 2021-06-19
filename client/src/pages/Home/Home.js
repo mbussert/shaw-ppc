@@ -1,5 +1,5 @@
 import React from "react";
-
+// import Modal from "../../components/modal"
 function Home() {
   return (
     <div className="home-background">
@@ -21,6 +21,7 @@ function Home() {
       </p>
 
       <button className="create-account-btn">Create AN ACCOUNT</button>
+      {/* <Modal /> */}
     </div>
   );
 }

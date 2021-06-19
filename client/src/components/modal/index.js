@@ -6,7 +6,7 @@ function Modal() {
         <div className="modal-1">
             
             <div className="modal-title">
-                <h1> it looks like you are not 
+                <h1> It looks like you are not 
                     Currently logged in</h1>
             </div>
 
@@ -19,7 +19,10 @@ function Modal() {
 
             <div className="modal-buttons">
                 <button className="modal-btn-continue">CONTINUE</button>
+
+                <Link to="./Login">
                 <button className="modal-btn-signup">SIGN UP</button>
+                </Link>
             </div>
             
         </div>
