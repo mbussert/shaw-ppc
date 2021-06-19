@@ -12,6 +12,8 @@ import {
   Tooltip,
   Grid,
   Card,
+  Checkbox,
+  FormControlLabel,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import InfoIcon from "@material-ui/icons/Info";
@@ -140,50 +142,69 @@ function Calculator() {
               </FormControl>
             </Grid>
             <Divider style={{ margin: 20 }} margin="normal" variant="middle" />
-            <Grid container justify="center">
-              <TextField
-                id="width"
-                label="Width"
-                variant="outlined"
-                name="width"
-                type="number"
-                onChange={handleInputChange}
-                style={{ margin: 8 }}
-                margin="normal"
-                helperText="Inches"
-              />
-              <TextField
-                id="height"
-                label="Height"
-                variant="outlined"
-                name="height"
-                onChange={handleInputChange}
-                type="number"
-                style={{ margin: 8 }}
-                margin="normal"
-                helperText="Inches"
-              />
-
-              <Button
-                variant="contained"
-                size="medium"
-                disableElevation
-                onClick={handleFormSubmit}
-                style={{ margin: 8 }}
-                margin="normal"
-              >
-                Calculate
-              </Button>
-              <Button
-                variant="contained"
-                size="medium"
-                disableElevation
-                onClick={clearForm}
-                style={{ margin: 8 }}
-                margin="normal"
-              >
-                Clear
-              </Button>
+            <Grid container spacing={3} justify="center">
+              <Grid item xs={12}>
+                <TextField
+                  id="width"
+                  label="Width"
+                  variant="outlined"
+                  name="width"
+                  type="number"
+                  onChange={handleInputChange}
+                  style={{ margin: 8 }}
+                  margin="normal"
+                  helperText="Inches"
+                />
+                <TextField
+                  id="height"
+                  label="Height"
+                  variant="outlined"
+                  name="height"
+                  onChange={handleInputChange}
+                  type="number"
+                  style={{ margin: 8 }}
+                  margin="normal"
+                  helperText="Inches"
+                />
+              </Grid>
+              <Grid item>
+                <FormControlLabel
+                  control={
+                    <Checkbox
+                      // checked={state.checkedB}
+                      // onChange={handleChange}
+                      name="checkedB"
+                      color="primary"
+                      defaultChecked
+                    />
+                  }
+                  label="Add 6 inch border (recommended)"
+                />
+              </Grid>
+              <Grid container justify="center">
+                <Grid item style={{ paddingBottom: 25 }}>
+                  <Button
+                    variant="contained"
+                    size="medium"
+                    disableElevation
+                    onClick={handleFormSubmit}
+                    style={{ margin: 8 }}
+                    margin="normal"
+                  >
+                    Calculate
+                  </Button>
+                  <Button
+                    variant="contained"
+                    size="medium"
+                    disableElevation
+                    onClick={clearForm}
+                    style={{ margin: 8 }}
+                    margin="normal"
+                  >
+                    Clear
+                  </Button>
+                </Grid>
+              </Grid>
             </Grid>
           </form>
         </div>
