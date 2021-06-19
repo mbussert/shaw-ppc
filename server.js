@@ -7,6 +7,8 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.post('/login', passport.authenticate('local', { successRedirect: '/',
+  failureRedirect: '/login' }));
 
 app.use(routes);
 
