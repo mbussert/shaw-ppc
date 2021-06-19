@@ -1,0 +1,48 @@
+.fourohfour {
+  color: $blueDark;
+  background-color: $brown;
+  text-align: center;
+  text-justify: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 1rem;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../img/primary-background.png");
+  background-color: rgba($color: blue, $alpha: 0.2);
+}
+
+.container-card {
+  display: block;
+  box-sizing: border-box;
+  border-radius: 1rem;
+  background-color: $blue;
+  padding: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-color: $yellow;
+}
+
+.btn {
+  background-color: $blueDark;
+  margin: 1rem;
+  width: 50%;
+  padding: 10px;
+  border-radius: 1rem;
+  color: $blue;
+}
+
+// #EAD67F #DA9F63 #A3BECF #6C6C6C
+
+.btn:hover {
+  color: $yellow;
+  background-color: $brown;
+}
+
+a {
+  color: $blue;
+}
