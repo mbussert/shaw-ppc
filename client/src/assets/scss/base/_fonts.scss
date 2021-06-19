@@ -1,1 +1,6 @@
 $font-size: 1rem;
+$sans-serif: "Source Sans Pro", Helvetica, Verdana, sans-serif;
+
+body {
+    font-family: $sans-serif;
+}
