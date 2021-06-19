@@ -32,6 +32,10 @@
   max-width: 620px;
 }
 
+body {
+  font-family: "Source Sans Pro", Helvetica, Verdana, sans-serif;
+}
+
 #footer-position {
   position: relative;
   left: 0;
@@ -77,9 +81,8 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -87,6 +90,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  max-width: 20%;
 }
 
 .footer-links {
@@ -120,7 +124,7 @@
 }
 
 .wall-pro-logo {
-  max-width: 80%;
+  max-width: 100%;
   margin: 0px;
 }
 
@@ -129,6 +133,10 @@
   max-width: 100%;
   text-align: center;
   font-size: 1.5em;
+}
+
+.footer-signup-text {
+  margin: 0 .5em 0 .5em;
 }
 
 .foot-signup {
@@ -163,7 +171,8 @@
 }
 
 .footer-icons {
-  max-width: 50%;
+  max-width: 74%;
+  margin: 0 0.6em 0 .6em;
 }
 
 /* navbar */
@@ -252,12 +261,51 @@ html {
 }
 
 .fourohfour {
-  color: #ead67f;
+  color: #1D2837;
   background-color: #6c6c6c;
   text-align: center;
   text-justify: center;
   height: 100vh;
   width: 100vw;
   padding: 1rem;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("../../img/primary-background.png");
+  background-color: rgba(0, 0, 255, 0.2);
+}
+
+.container-card {
+  display: block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 1rem;
+  background-color: #a3becf;
+  padding: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  border-color: #ead67f;
+}
+
+.btn {
+  background-color: #1D2837;
+  margin: 1rem;
+  width: 50%;
+  padding: 10px;
+  border-radius: 1rem;
+  color: #a3becf;
+}
+
+.btn:hover {
+  color: #ead67f;
+  background-color: #6c6c6c;
+}
+
+a {
+  color: #a3becf;
 }
 /*# sourceMappingURL=main.css.map */
