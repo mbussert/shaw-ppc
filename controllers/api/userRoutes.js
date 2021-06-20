@@ -13,28 +13,40 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    console.log(req.body)
+    
     console.log('login post route')
-        const userData = await User.findOne({ where: { email: req.body.email}});
-        if(!userData) {
-            console.log('no login user post')
-            res.status(400).json({ message: 'Incorrect email or password, please try again.'});
-            return;
+
+        try {
+            const userData = await User.findOne({ where: { email: req.body.email}});
+
+            console.log(userData);
+        
+            if(!userData) {
+                console.log('no login user post')
+                res.status(400).json({ message: 'Incorrect email or password, please try again.'});
+                return;
+            }
+            console.log(userData)
+            const correctPass = userData.checkPassword(req.body.password);
+    
+            if (!correctPass) {
+                res.status(400).json({ message: 'Incorrect email of password, please try again.' });
+                return;
+            }
+    
+            req.session.save(() => {
+                req.session.userId = userData.id;
+                req.session.loggedIn = true;
+    
+                res.json({ user: userData, message: 'You have successfully logged in!' });
+                console.log("You have successfully logged in!")
+            })
+
+        } catch (err) {
+            res.status(500).json(err);
+            console.log(err);
         }
-console.log(userData)
-        const correctPass = userData.checkPassword(req.body.password);
 
-        if (!correctPass) {
-            res.status(400).json({ message: 'Incorrect email of password, please try again.' });
-            return;
-        }
-
-        req.session.save(() => {
-            req.session.userId = userData.id;
-            req.session.loggedIn = true;
-
-            res.json({ user: userData, message: 'You have successfully logged in!' });
-        })
 });
 
 router.post('/logout', (req, res) => {
