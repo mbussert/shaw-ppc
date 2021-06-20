@@ -14,17 +14,47 @@ Wall.init(
       autoIncrement: true,
       allowNull: false
     },
-    title: {
+    projectTitle: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    body: {
-      type: DataTypes.INTEGER,
+    firstName: {
+      type: DataTypes.STRING,
       allowNull: false,
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        isEmail: true,
+      },
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    material: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      default: "Material WC-J3"
+    },
+    width: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    height: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    linearFeet: {
+      type: DataTypes.INTEGER,
     },
     // userId: {
     //   type: DataTypes.INTEGER,
-    //   allowNull: false,
     //   references: {
     //     model: "User",
     //     key: "id",
@@ -32,6 +62,17 @@ Wall.init(
     // },
   },
   {
+    hooks: {
+      // Use the beforeCreate hook to work with data before a new instance is created
+      beforeCreate: async (data) => {
+        const numOfPanels = data.width / 50;
+        const panelsRounded = Math.ceil(numOfPanels);
+        const adjustedHeight = parseFloat(data.height) + 6;
+        const heightCalculation = adjustedHeight * panelsRounded;
+        const dividedHeight = heightCalculation / 12
+        data.linearFeet = Math.ceil(dividedHeight);
+      }
+  },
     sequelize,
     modelName: "Wall",
   }

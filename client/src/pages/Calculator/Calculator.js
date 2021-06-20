@@ -17,6 +17,7 @@ import {
 } from "@material-ui/core";
 // import { makeStyles } from "@material-ui/core/styles";
 import InfoIcon from "@material-ui/icons/Info";
+import Arithmetic from "./arithmetic.js";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -33,36 +34,71 @@ import InfoIcon from "@material-ui/icons/Info";
 function Calculator() {
   // const classes = useStyles();
 
-  const initialState = {
-    title: "",
-    firstname: "",
-    lastname: "",
-    email: "",
-    phone: "",
+  const [formObject, setFormObject] = useState({
     material: "Material WC-J3",
-    width: null,
-    height: null,
-    border: true,
-  };
-
-  const [formObject, setFormObject] = useState(initialState);
+  });
 
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject((prevState) => ({ ...prevState, [name]: value }));
-
-    console.log(formObject);
+    setFormObject({ ...formObject, [name]: value });
   }
 
-  function handleFormSubmit(event) {
+  function validateFormSubmission (event) {
+
     event.preventDefault();
-    if (formObject.title && formObject.body) {
-      console.log("POST is OK");
-      API.saveOrder({
-        title: formObject.title,
-        firstname: formObject.firstname,
-      }).catch((err) => console.log(err));
+
+    // Validation steps -- could refactor into a switch statement if desired
+
+    if(!formObject.projectTitle) {
+      alert("Please enter a project title.");
+      return;
     }
+    if(!formObject.firstName) {
+      alert("Please enter a first name for the order.");
+      return;
+    }
+    if(!formObject.lastName) {
+      alert("Please enter a last name for the order.");
+      return;
+    }
+    if(!formObject.email) {
+      alert("Please enter an email for the order.");
+      return;
+    }
+    if(!formObject.phone) {
+      alert("Please enter a phone number for the order.");
+      return;
+    }
+    if(!formObject.width) {
+      alert("Please enter a valid width for the order.");
+      return;
+    }
+    if(!formObject.height) {
+      alert("Please enter a valid height for the order.");
+      return;
+    }
+
+    postResponse();
+
+  }
+
+  function postResponse() {
+
+    // If the calculation is true, then the order is posted to the database
+    console.log(`Thanks for posting your project! Based on the measurements you entered, your project requires a total of ${Arithmetic.calculate(formObject.width, formObject.height)} linear feet of material.`);
+    console.log("View the order locally at localhost:3001/api/orders");
+
+      API.saveOrder({
+        projectTitle: formObject.projectTitle,
+        firstName: formObject.firstName,
+        lastName: formObject.lastName,
+        email: formObject.email,
+        phone: formObject.phone,
+        material: formObject.material,
+        width: formObject.width,
+        height: formObject.height,
+      }).catch((err) => console.log(err));
+
   }
 
   function clearForm() {
@@ -84,7 +120,7 @@ function Calculator() {
   return (
     <Container maxWidth="sm">
       <h1>Calculator</h1>
-      <Card style={{ padding: 20 }} margin="normal" raised={true}>
+      <Card style={{ padding: 20 }} margin="dense" raised={true}>
         <div className="calculator">
           <form autoComplete="off">
             <Grid container justify="flex-end">
@@ -102,11 +138,11 @@ function Calculator() {
                 id="title"
                 label="Title"
                 variant="outlined"
-                name="title"
+                name="projectTitle"
                 onChange={handleInputChange}
                 helperText="Please enter a title for your project."
                 style={{ margin: 8 }}
-                margin="normal"
+                margin="dense"
                 fullWidth
                 required
               />
@@ -115,22 +151,22 @@ function Calculator() {
                 id="firstname"
                 label="First Name"
                 variant="outlined"
-                name="firstname"
+                name="firstName"
                 onChange={handleInputChange}
                 helperText="Please enter your first name."
                 style={{ margin: 8 }}
-                margin="normal"
+                margin="dense"
                 required
               />
               <TextField
                 id="lastname"
                 label="Last Name"
                 variant="outlined"
-                name="lastname"
+                name="lastName"
                 onChange={handleInputChange}
                 helperText="Please enter your last name."
                 style={{ margin: 8 }}
-                margin="normal"
+                margin="dense"
                 required
               />
               <TextField
@@ -141,7 +177,7 @@ function Calculator() {
                 onChange={handleInputChange}
                 helperText="Please enter your email address."
                 style={{ margin: 8 }}
-                margin="normal"
+                margin="dense"
                 required
               />
               <TextField
@@ -153,11 +189,11 @@ function Calculator() {
                 onChange={handleInputChange}
                 helperText="e.g. (555)555-5555"
                 style={{ margin: 8 }}
-                margin="normal"
+                margin="dense"
                 required
               />
 
-              <FormControl fullWidth style={{ margin: 8 }} margin="normal">
+              <FormControl fullWidth style={{ margin: 8 }} margin="dense">
                 <Select disabled defaultValue={1} variant="outlined">
                   <MenuItem value={1}>Material WC-J3</MenuItem>
                 </Select>
@@ -211,7 +247,7 @@ function Calculator() {
                     variant="contained"
                     size="medium"
                     disableElevation
-                    onClick={handleFormSubmit}
+                    onClick={validateFormSubmission}
                     style={{ margin: 8 }}
                     margin="normal"
                   >
