@@ -29,6 +29,7 @@ html {
 
 .home-text {
   color: white;
+  margin: .5em;
 }
 
 .create-account-btn {
@@ -37,4 +38,9 @@ html {
   border-radius: .5em;
   margin: 1em;
   padding: 1em;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }

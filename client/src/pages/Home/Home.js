@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -21,7 +22,9 @@ function Home() {
         ipsum.
       </p>
 
-      <button className="create-account-btn">Create AN ACCOUNT</button>
+      <button className="create-account-btn">
+        <Link to="./Login">CREATE AN ACCOUNT</Link>
+      </button>
     </div>
   );
 }

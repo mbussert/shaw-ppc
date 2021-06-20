@@ -1,13 +1,15 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import ReactDOM from "react-dom";
 import Header from "../Header";
 
 function Navbar() {
+  
   return (
     <nav>
       <ul className="links">
         <li>
-          <Link to="./">Home</Link>
+          <Link onClick={()=>setShow(!show)} to="./">Home</Link>
         </li>
         <li>
           <Link to="./How">How it Works</Link>
