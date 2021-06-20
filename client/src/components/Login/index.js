@@ -15,27 +15,23 @@ function LoginPage() {
     e.preventDefault();
 
     if (userObject.email && userObject.password) {
-      console.log('They match!')
-      const response = axios("/api/users/login", {
-        method: "POST",
-        body: ({ email: userObject.email, password: userObject.password }),
-        headers: { "Content-Type": "application/json" }
+
+      axios.post("/api/users/login", userObject, { headers: { "Content-Type": "application/json" } })
+      .then(response => {
+        if (response.status === 200) {
+          alert("You have successfully logged in!");
+          console.log("You have successfully logged in!");
+        } else {
+          alert("Failed to log in. Please try again.");
+        }
       })
-      if (response.ok) {
-        console.log('Hurray!')
-        document.location.replace('/Home')
-      // } else {
-        // alert(response.statusText)
-      }
-    } else {
-      console.log('Oops! Try again')
     }
   }
     return (
       <form onSubmit={handleFormSubmit}>
         <h2>Login</h2>
         <div className="user-div">
-          <label for="user-login">Email:</label>
+          <label htmlFor="user-login">Email:</label>
           <input 
           className="user-email" 
           type="text"
@@ -45,7 +41,7 @@ function LoginPage() {
         </div>
 
         <div className="pass-div">
-          <label for="pass-login">Password:</label>
+          <label htmlFor="pass-login">Password:</label>
           <input 
           className="pass" 
           type="password"

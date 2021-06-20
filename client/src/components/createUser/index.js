@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import API from "../../utils/API";
-import axios from "axios";
 
 function CreateUser() {
   const [userObject, setUser] = useState({});
@@ -12,27 +11,21 @@ function CreateUser() {
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    if (userObject) {
-      console.log("Yay!");
+
+    if(userObject.pass1 !== userObject.pass2) {
+      alert("Your passwords do not match. Please try again.")
+    }
+
+    if (userObject.first && userObject.last && userObject.email) {
+      console.log("Account has been created.");
+
       API.saveUser({
         first: userObject.first,
         last: userObject.last,
         email: userObject.email,
-        pass1: userObject.pass1,
-        pass2: userObject.pass2,
-        password: userObject.pass1,
-      });
-      const response = axios("/api/users/login", {
-        method: "POST",
-        body: ({ email: userObject.email, password: userObject.password }),
-        headers: { "Content-Type": "application/json" }
-      })
-      if (response.ok) {
-        console.log('Hurray!')
-        document.location.replace('/Home')
-      // } else {
-        // alert(response.statusText)
-      }
+        password: userObject.pass1
+      }).catch((err) => console.log(err));
+
     } else {
       console.log("Nooo!");
     }
@@ -42,7 +35,7 @@ function CreateUser() {
     <form onSubmit={handleFormSubmit}>
       <h2>Create an account</h2>
       <div className="userFirst-div">
-        <label for="create-first">First Name:</label>
+        <label>First Name:</label>
         <input
           className="add-first"
           type="text"
@@ -52,7 +45,7 @@ function CreateUser() {
       </div>
 
       <div className="userLast-div">
-        <label for="create-last">Last Name:</label>
+        <label>Last Name:</label>
         <input
           className="add-last"
           name="last"
@@ -62,7 +55,7 @@ function CreateUser() {
       </div>
 
       <div className="userEmail-div">
-        <label for="create-email">Email:</label>
+        <label>Email:</label>
         <input
           className="add-email"
           name="email"
@@ -72,7 +65,7 @@ function CreateUser() {
       </div>
 
       <div className="userPass-div">
-        <label for="create-pass">Password:</label>
+        <label>Password:</label>
         <input
           className="add-pass"
           name="pass1"
@@ -82,7 +75,7 @@ function CreateUser() {
       </div>
 
       <div className="userPass-div-div">
-        <label for="pass-create-pass">Password:</label>
+        <label>Password:</label>
         <input
           className="pass-add-pass"
           name="pass2"
