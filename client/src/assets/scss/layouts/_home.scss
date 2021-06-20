@@ -10,8 +10,17 @@ html {
   background-color: rgba($color: blue, $alpha: 0.2);
 }
 
+.home-container {
+  max-width: 45%;
+  margin: 1em;
+}
+
 .ppc-logo-bg {
   background-color: rgba(#c4c4c4, 0.2);
+  border-radius: .5em;
+  display: inline-block;
+  margin: .5em;
+  padding: .5em;
 }
 
 .ppc-text-logo {
@@ -19,9 +28,13 @@ html {
 }
 
 .home-text {
-  color: wheat;
+  color: white;
 }
 
 .create-account-btn {
-  background-color: orangered;
+  background-color: $orange;
+  color: white;
+  border-radius: .5em;
+  margin: 1em;
+  padding: 1em;
 }

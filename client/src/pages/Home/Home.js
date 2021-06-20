@@ -2,7 +2,8 @@ import React from "react";
 
 function Home() {
   return (
-    <div className="home-background">
+    <div className="home-container">
+      
       <div className="ppc-logo-bg">
         <h1 className="ppc-text-logo">
           SHAW PPC <br />
