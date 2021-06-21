@@ -9,8 +9,8 @@ function VideoSection () {
                 <ReactPlayer
                 className='react-player'
                 url='https://www.youtube.com/watch?v=aFYsJYPye94'
-                width='100%'
-                height='100%'
+                width='50%'
+                height='50%'
                 controls={true}
                 />
             </div>
