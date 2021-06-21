@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Header from "../../components/Header";
 import API from "../../utils/API";
 import {
   Container,
@@ -118,6 +119,8 @@ function Calculator() {
   }
 
   return (
+    <>
+    <Header />
     <Container maxWidth="sm">
       <h1>Calculator</h1>
       <Card style={{ padding: 20 }} margin="dense" raised={true}>
@@ -270,6 +273,7 @@ function Calculator() {
         </div>
       </Card>
     </Container>
+    </>
   );
 }
 

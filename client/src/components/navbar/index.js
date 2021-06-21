@@ -1,7 +1,5 @@
-import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
-import Header from "../Header";
 
 function Navbar() {
   
@@ -9,7 +7,7 @@ function Navbar() {
     <nav>
       <ul className="links">
         <li>
-          <Link onClick={()=>setShow(!show)} to="./">Home</Link>
+          <Link to="./">Home</Link>
         </li>
         <li>
           <Link to="./How">How it Works</Link>
