@@ -11,7 +11,8 @@ html {
 }
 
 .home-container {
-  max-width: 45%;
+  min-height: 80vh;
+  max-width: 50%;
   margin: 1em;
 }
 
@@ -21,26 +22,39 @@ html {
   display: inline-block;
   margin: .5em;
   padding: .5em;
+  
+  span {
+    font-size: 3em;
+    margin: 0 .2em 0 0;
+  }
 }
 
-.ppc-text-logo {
-  color: white;
+.home-text-bg {
+  background-color: rgba(#c4c4c4, 0.2);
+  border-radius: .5em;
+  display: inline-block;
+  margin: .5em;
+  padding: .5em;
 }
 
 .home-text {
   color: white;
+  font-size: 1.5em;
   margin: .5em;
 }
 
 .create-account-btn {
   background-color: $orange;
   color: white;
+  display: block;
   border-radius: .5em;
+  border-style: none;
   margin: 1em;
   padding: 1em;
 
   a {
     text-decoration: none;
     color: white;
+    font-size: 1.5em;
   }
 }
