@@ -1,27 +1,27 @@
 import React from "react";
-// import Modal from "../../components/modal"
+import { Link } from "react-router-dom";
+
 function Home() {
   return (
-    <div className="home-background">
+    <div className="home-container">
+      
       <div className="ppc-logo-bg">
-        <h1 className="ppc-text-logo">
-          SHAW PPC <br />
-          DESIGN
-        </h1>
+        <span style={{color: "#da9f63"}}>SHAW</span> 
+        <span style={{color: "#a3becf"}}>PPC</span>   
+        <br/>
+        <span style={{color: "white"}}> DESIGN</span>
       </div>
 
+      <div className="home-text-bg">
       <p className="home-text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit elit vitae
-        augue et. Et phasellus ut nam consectetur odio rhoncus tortor. Nunc
-        metus gravida bibendum morbi. Lectus et ultrices habitasse consequat.
-        Placerat cum pharetra, cursus sit commodo, gravida. Varius adipiscing
-        vitae sed dolor quam amet, vitae. Fermentum amet fringilla nibh
-        sagittis. Risus integer tincidunt sodales nec, pulvinar volutpat nunc,
-        ipsum.
+      Welcome to WallPro. The tool designed to assist the purchasing process for clients. <br/><br/>
+      Partnered with Shaw/PPC Design providing custom interior signs and displays in almost an unlimited variety of materials.
       </p>
+      </div>
 
-      <button className="create-account-btn">Create AN ACCOUNT</button>
-      {/* <Modal /> */}
+      <button className="create-account-btn">
+        <Link to="./Login">CREATE AN ACCOUNT</Link>
+      </button>
     </div>
   );
 }
