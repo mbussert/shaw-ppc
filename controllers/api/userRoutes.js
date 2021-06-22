@@ -13,26 +13,40 @@ router.post('/', async (req, res) => {
 });
 
 router.post('/login', async (req, res) => {
-    console.log(req.body)
-        const userData = await User.findOne({ where: { username: req.body.username}});
-        if(!userData) {
-            res.status(400).json({ message: 'Incorrect username or password, please try again.'});
-            return;
+    
+    console.log('login post route')
+
+        try {
+            const userData = await User.findOne({ where: { email: req.body.email}});
+
+            console.log(userData);
+        
+            if(!userData) {
+                console.log('no login user post')
+                res.status(400).json({ message: 'Incorrect email or password, please try again.'});
+                return;
+            }
+            console.log(userData)
+            const correctPass = userData.checkPassword(req.body.password);
+    
+            if (!correctPass) {
+                res.status(400).json({ message: 'Incorrect email of password, please try again.' });
+                return;
+            }
+    
+            req.session.save(() => {
+                req.session.userId = userData.id;
+                req.session.loggedIn = true;
+    
+                res.json({ user: userData, message: 'You have successfully logged in!' });
+                console.log("You have successfully logged in!")
+            })
+
+        } catch (err) {
+            res.status(500).json(err);
+            console.log(err);
         }
-// console.log(userData)
-        const correctPass = userData.checkPassword(req.body.password);
 
-        if (!correctPass) {
-            res.status(400).json({ message: 'Incorrect username of password, please try again.' });
-            return;
-        }
-
-        req.session.save(() => {
-            req.session.userId = userData.id;
-            req.session.loggedIn = true;
-
-            res.json({ user: userData, message: 'You have successfully logged in!' });
-        })
 });
 
 router.post('/logout', (req, res) => {

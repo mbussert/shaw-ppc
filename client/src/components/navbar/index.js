@@ -1,7 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
+import ReactDOM from "react-dom";
 
 function Navbar() {
+  
   return (
     <nav>
       <ul className="links">
@@ -23,6 +24,10 @@ function Navbar() {
         <li>
           <Link to="./Create">Create</Link>
         </li>
+        <li>
+          <Link to="./About">About</Link>
+        </li>
+
       </ul>
 
       {/* <label className="icon-burger">
