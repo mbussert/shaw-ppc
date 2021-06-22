@@ -7,7 +7,6 @@ function How() {
   return (
     <div>
       <Header />
-      <h1>How</h1>
       <VideoSection />
       <Facts />
     </div>

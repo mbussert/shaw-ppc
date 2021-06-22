@@ -1,0 +1,39 @@
+.fact-section {
+    background-image: linear-gradient(blue black);
+    border-top: solid 5px $orange;
+    margin: 1em 0 .5em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.fact-title {
+    color: $orange;
+    text-transform: uppercase;
+    font-size: 2.2em;
+    padding: 1em 0 1em 0;
+}
+
+.fqa-list {
+    color: white;
+    font-size: 1.3em;
+    list-style-type: circle; 
+}
+
+.image-container {
+    padding: 2em 0 1em 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+
+.images {
+    border: solid 2px $orange;
+    padding: 1em;
+}

@@ -1,0 +1,40 @@
+.how-to-top {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.how-to-title {
+  color: $blue;
+  text-transform: uppercase;
+  font-size: 2.2em;
+  padding: 0 0 1em 0;
+}
+
+.player-wrapper {
+    position: relative;
+    padding: 0 0 1em 0;
+    // padding-top: 56.25% /* Player ratio: 100 / (1280 / 720) */
+  }
+  
+  .react-player {
+    position: relative;
+    // top: 0;
+    // left: 0;
+  }
+
+  .how-subtitle {
+    color: $orange;
+    text-transform: uppercase;
+    font-size: 2.2em;
+    padding: 0 0 1em 0;
+  }
+
+  .how-description {
+    color: white;
+    font-size: 1.3em;
+  }
