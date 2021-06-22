@@ -121,7 +121,7 @@ function Calculator() {
   return (
     <>
     <Header />
-    <Container maxWidth="sm">
+    <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
       <h1>Calculator</h1>
       <Card style={{ padding: 20 }} margin="dense" raised={true}>
         <div className="calculator">
