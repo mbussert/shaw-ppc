@@ -34,6 +34,7 @@ function Account() {
     <div>
       <div style={{ paddingBottom: 70 }}></div>
       <Header />
+
       <Container disableGutters maxWidth={false} style={{ marginBottom: 40 }}>
         <Grid container direction="row" spacing={5}>
           <Grid item xs={12} md={3} lg={3} xl={3} style={{ marginBottom: 15 }}>
@@ -41,6 +42,31 @@ function Account() {
           </Grid>
           <Grid item xs={12} md={9} lg={9} xl={9}>
             <Container disableGutters>
+              {!orders.length ? (
+                <h1 className="text-center">No Orders to Display</h1>
+              ) : (
+                <div>
+                  <h2>Orders by this user are mapped in the console!</h2>
+                  {orders.map((order) => {
+                    return console.log(order);
+
+                    //   Props to pass an Order component to be rendered on the page
+
+                    //  <Order
+                    //    key={order.id}
+                    //    id={order.id}
+                    //    email={order.email}
+                    //    firstName={order.firstName}
+                    //    height={order.height}
+                    //    lastName={order.lastName}
+                    //    linearFeet={order.linearFeet}
+                    //    material={order.material}
+                    //    phone={order.phone}
+                    //    projectTitle={order.projectTitle}
+                    //  />
+                  })}
+                </div>
+              )}
               <ProjectDetails />
             </Container>
           </Grid>
