@@ -1,9 +1,20 @@
 import React from "react";
 import { Grid, Card, CardContent, CardHeader, Button } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    maxWidth: 900,
+    height: "100%",
+  },
+}));
 
 function ProjectDetails() {
+  const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.root}>
       <Grid
         container
         columns={1}

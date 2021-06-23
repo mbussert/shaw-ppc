@@ -1,10 +1,11 @@
 import React from "react";
 import {
-  Container,
+  Grid,
   ListItem,
   Divider,
   ListItemText,
   List,
+  Button,
   Paper,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -15,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 340,
     backgroundColor: theme.palette.background.paper,
     borderRadius: 5,
+    height: "100%",
   },
 }));
 
@@ -23,16 +25,36 @@ function ProjectList() {
 
   return (
     <div className={classes.root}>
-      <h1>Project List</h1>
-      <List>
-        <ListItem button>
-          <ListItemText primary="Custom Wall 1" />
-        </ListItem>
-        <Divider />
-        <ListItem button>
-          <ListItemText primary="Custom Wall 2" />
-        </ListItem>
-      </List>
+      <Grid container direction="column" justify="center">
+        <Paper elevation={3}>
+          <Grid item>
+            <List>
+              <ListItem button>
+                <ListItemText primary="Custom Wall 1" />
+              </ListItem>
+              <Divider />
+              <ListItem button>
+                <ListItemText primary="Custom Wall 2" />
+              </ListItem>
+              <Divider />
+              <ListItem button>
+                <ListItemText primary="Custom Wall 3" />
+              </ListItem>
+              <Divider />
+            </List>
+          </Grid>
+          <Grid
+            container
+            item
+            justify="center"
+            style={{ paddingTop: 30, paddingBottom: 46 }}
+          >
+            <Button color="primary" variant="contained">
+              New Project
+            </Button>
+          </Grid>
+        </Paper>
+      </Grid>
     </div>
   );
 }
