@@ -20,7 +20,7 @@ function Home() {
       </div>
 
       <button className="create-account-btn">
-        <Link to="./Login">CREATE AN ACCOUNT</Link>
+        <Link to="./Create">CREATE AN ACCOUNT</Link>
       </button>
     </div>
   );

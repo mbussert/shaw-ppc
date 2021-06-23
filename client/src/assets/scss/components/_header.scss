@@ -5,20 +5,29 @@ Header {
 }
 
 .header-text {
-  background-color: $grayLight;
-  color: white;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 40%;
-  height: 2em;
-  border-radius: 0.5em;
-  margin: 1em 0 1em 0;
-  font-size: 2.5em;
+    background-color: $grayLight;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    // width: 40%;
+    height: 2em;
+    border-radius: 0.5em;
+    margin: 1vw 0 1vw 0;
+    font-size: 4vw;
 
   span {
     margin: 0 0.2em 0 0.2em;
   }
+}
+
+@media only screen and (max-width: 900px) {
+    .header-text {
+        height: 2em;
+        margin: 5vw 0 5vw 0;
+        font-size: 8vw;
+    }
+
 }
