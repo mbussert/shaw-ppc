@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Grid,
-  Container,
-  Card,
-  CardContent,
-  CardActions,
-  CardHeader,
-  Button,
-} from "@material-ui/core";
+import { Grid, Card, CardContent, CardHeader, Button } from "@material-ui/core";
 
 function ProjectDetails() {
   return (
