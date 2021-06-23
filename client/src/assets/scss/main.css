@@ -267,13 +267,8 @@ Header {
 }
 
 /* navbar */
-container {
-  width: 50%;
-  display: inline-block;
-  margin-bottom: 75px;
-}
-
 nav {
+  margin-bottom: 75px;
   margin-top: 15px;
   margin-bottom: 5%;
   position: fixed;
@@ -526,7 +521,7 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../../img/primary-background.png");
+  background-image: url("../img/primary-background.png");
   background-color: rgba(0, 0, 255, 0.2);
 }
 
