@@ -4,7 +4,7 @@ import API from "../../utils/API";
 
 import ProjectList from "../../components/ProjectList";
 import ProjectDetails from "../../components/ProjectDetails";
-import { Grid, Container } from "@material-ui/core";
+import { Grid, Container, Divider } from "@material-ui/core";
 
 function Account() {
   const [orders, setOrders] = useState([]);
@@ -31,19 +31,22 @@ function Account() {
   }
 
   return (
-    <Container disableGutters maxWidth={false} style={{ marginBottom: 40 }}>
+    <div>
+      <div style={{ paddingBottom: 70 }}></div>
       <Header />
-      <Grid container direction="row">
-        <Grid item xs={12} md={4} lg={4} xl={4}>
-          <ProjectList />
+      <Container disableGutters maxWidth={false} style={{ marginBottom: 40 }}>
+        <Grid container direction="row" spacing={5}>
+          <Grid item xs={12} md={3} lg={3} xl={3} style={{ marginBottom: 15 }}>
+            <ProjectList />
+          </Grid>
+          <Grid item xs={12} md={9} lg={9} xl={9}>
+            <Container disableGutters>
+              <ProjectDetails />
+            </Container>
+          </Grid>
         </Grid>
-        <Grid item xs={12} md={8} lg={8} xl={8}>
-          <Container disableGutters>
-            <ProjectDetails />
-          </Container>
-        </Grid>
-      </Grid>
-    </Container>
+      </Container>
+    </div>
   );
 }
 

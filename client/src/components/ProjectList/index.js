@@ -13,7 +13,7 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
   root: {
     width: "100%",
-    maxWidth: 340,
+    maxWidth: "100vw",
     backgroundColor: theme.palette.background.paper,
     borderRadius: 5,
     height: "100%",
