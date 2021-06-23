@@ -8,6 +8,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/login', (req, res) => {
+    console.log('Hiiiiii')
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
