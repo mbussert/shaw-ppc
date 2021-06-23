@@ -1,7 +1,7 @@
 Header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-text {
@@ -18,9 +18,9 @@ Header {
     margin: 1vw 0 1vw 0;
     font-size: 4vw;
 
-    span {
-        margin: 0 .2em 0 .2em;
-    }
+  span {
+    margin: 0 0.2em 0 0.2em;
+  }
 }
 
 @media only screen and (max-width: 900px) {

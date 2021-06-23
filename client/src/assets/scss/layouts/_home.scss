@@ -6,8 +6,8 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../../img/primary-background.png");
-  background-color: $blue
+  background-image: url("../img/primary-background.png");
+  background-color: rgba($color: blue, $alpha: 0.2);
 }
 
 .home-container {
@@ -18,36 +18,36 @@ html {
 
 .ppc-logo-bg {
   background-color: rgba(#c4c4c4, 0.2);
-  border-radius: .5em;
+  border-radius: 0.5em;
   display: inline-block;
-  margin: .5em;
-  padding: .5em;
-  
+  margin: 0.5em;
+  padding: 0.5em;
+
   span {
     font-size: 3em;
-    margin: 0 .2em 0 0;
+    margin: 0 0.2em 0 0;
   }
 }
 
 .home-text-bg {
   background-color: rgba(#c4c4c4, 0.2);
-  border-radius: .5em;
+  border-radius: 0.5em;
   display: inline-block;
-  margin: .5em;
-  padding: .5em;
+  margin: 0.5em;
+  padding: 0.5em;
 }
 
 .home-text {
   color: white;
   font-size: 1.5em;
-  margin: .5em;
+  margin: 0.5em;
 }
 
 .create-account-btn {
   background-color: $orange;
   color: white;
   display: block;
-  border-radius: .5em;
+  border-radius: 0.5em;
   border-style: none;
   margin: 1em;
   padding: 1em;
