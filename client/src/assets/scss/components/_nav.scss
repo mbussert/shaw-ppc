@@ -1,15 +1,17 @@
 /* navbar */
-container {
-  width: 50%;
-  display: inline-block;
-  margin-bottom: 75px;
-}
+// container {
+//   width: 50%;
+//   display: inline-block;
+//   margin-bottom: 75px;
+//   overflow: auto
+// }
 
 nav {
+  margin-bottom: 75px;
   margin-top: 15px;
-  margin-bottom: 5%;
   position:fixed;
   width: 150%;
+  overflow-x:scroll;
   
   ul {
     text-align: center;

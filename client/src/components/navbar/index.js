@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 function Navbar() {
   
   return (
-    <container>
     <nav>
       <ul className="links">
         {/* <li>
@@ -33,7 +32,6 @@ function Navbar() {
     </div>
       </ul>
     </nav>
-    </container>
   );
 }
 
