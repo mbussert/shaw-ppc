@@ -6,9 +6,9 @@ function Navbar() {
   return (
     <nav>
       <ul className="links">
-        <li>
+        {/* <li>
           <Link to="./">Home</Link>
-        </li>
+        </li> */}
         <li>
           <Link to="./How">How it Works</Link>
         </li>
@@ -21,20 +21,16 @@ function Navbar() {
         <li>
           <Link to="./Login">Login</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="./Create">Create</Link>
         </li>
         <li>
           <Link to="./About">About</Link>
-        </li>
-
+        </li> */}
+        <div>
+    <div className="line"></div>
+    </div>
       </ul>
-
-      {/* <label className="icon-burger">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </label> */}
     </nav>
   );
 }

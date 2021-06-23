@@ -1,14 +1,65 @@
 import React from "react";
+import {
+  Grid,
+  Container,
+  Card,
+  CardContent,
+  CardActions,
+  CardHeader,
+  Button,
+} from "@material-ui/core";
 
 function ProjectDetails() {
   return (
     <div>
-      <h1>Project Details</h1>
-      <h3>Custom Project Name</h3>
-      <h4>Custom Wall Name</h4>
-      <h4>Material</h4>
-      <h4>45ft</h4>
-      <button>New Wall</button>
+      <Grid
+        container
+        columns={1}
+        direction="column"
+        style={{ paddingTop: 5 }}
+        justify="center"
+      >
+        <Grid container item style={{ paddingBottom: 15 }} justify="center">
+          <h1>Project Details</h1>
+        </Grid>
+        <Grid item>
+          <Card style={{ padding: 15 }} margin="dense" raised={true}>
+            <CardHeader title="Custom Project Name"></CardHeader>
+            <CardContent>
+              <Grid
+                container
+                direction="row"
+                justify="center"
+                alignItems="baseline"
+                spacing={2}
+              >
+                <Grid item xs>
+                  <h4>Custom Wall Name</h4>
+                </Grid>
+                <Grid item xs>
+                  <h4>Material</h4>
+                </Grid>
+                <Grid item xs>
+                  <h4>45ft</h4>
+                </Grid>
+              </Grid>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid container item justify="center">
+          <Button
+            size="large"
+            variant="contained"
+            color="primary"
+            style={{ marginRight: 10 }}
+          >
+            New Wall
+          </Button>
+          <Button size="large" variant="contained" color="secondary">
+            Delete Project
+          </Button>
+        </Grid>
+      </Grid>
     </div>
   );
 }
