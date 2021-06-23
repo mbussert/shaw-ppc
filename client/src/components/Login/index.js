@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import API from "../../utils/API";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
 
@@ -28,8 +29,8 @@ function LoginPage() {
     }
   }
     return (
-      <form onSubmit={handleFormSubmit}>
-        <h2>Login</h2>
+      <form className="login-form" onSubmit={handleFormSubmit}>
+        <h2 className="login-title">Please Login</h2>
         <div className="user-div">
           <label htmlFor="user-login">Email:</label>
           <input 
@@ -51,8 +52,11 @@ function LoginPage() {
         </div>
 
         <button className="login-btn" type="submit">
-          Login
+          Submit
         </button>
+        
+        <p className="create-acct-opt">New User? Create an account <Link to="./Create">here</Link>.</p>
+
       </form>
     );
 }

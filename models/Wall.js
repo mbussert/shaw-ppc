@@ -53,13 +53,13 @@ Wall.init(
     linearFeet: {
       type: DataTypes.INTEGER,
     },
-    // userId: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "User",
-    //     key: "id",
-    //   },
-    // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "Users",
+        key: "id",
+      },
+    },
   },
   {
     hooks: {

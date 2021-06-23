@@ -1,6 +1,6 @@
 const express = require("express");
 const session = require('express-session');
-const routes = require('./controllers');
+const apiRoutes = require('./controllers/api');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -8,6 +8,7 @@ const passport = require('passport');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
 
 const sess = {
   secret: 'Super secret secret',
@@ -38,7 +39,11 @@ app.post('/login',
     })
   });
 
-app.use(routes);
+app.use("/api", apiRoutes);
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on ${PORT}`));
