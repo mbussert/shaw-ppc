@@ -39,6 +39,10 @@ app.post('/login',
     })
   });
 
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
+
 app.use("/api", apiRoutes);
 
 app.get("*", (req, res) => {
