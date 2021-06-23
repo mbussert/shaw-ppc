@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 
     try {
       const wallData = await Wall.findAll({
-        include: [{ model: User }]
+        include: [{ model: User, required: false }]
       })
   
       if (!wallData) {
@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
   
       res.status(200).json(wallData);
       console.log('\n', "All walls have been successfully retrieved!", '\n')
-      console.log(wallData);
+      // console.log(wallData);
 
     } catch (err) {
       res.status(500).json(err);
@@ -29,12 +29,17 @@ router.get('/', async (req, res) => {
 router.post('/', async (req, res) => {
     // Route to post an order
 
+    if(req.session.loggedIn) {
+      console.log("USER IS LOGGED IN")
+      req.body.user_id = req.session.userId
+    }
+
     try {
     const newWall = await Wall.create(req.body);
 
     res.status(200).json([{ message: 'The wall order was successfully created!' }, newWall]);
     console.log('\n', "The wall order was successfully created!", '\n');
-    console.log(newWall);
+    // console.log(newWall);
 
   } catch (err) {
     res.status(500).json(err);
