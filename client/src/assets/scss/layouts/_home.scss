@@ -1,4 +1,4 @@
-html {
+body {
   border: none;
   width: 100%;
   /* background-image: inherit; */
@@ -7,7 +7,7 @@ html {
   background-position: center;
   background-size: cover;
   background-image: url("../img/primary-background.png");
-  background-color: rgba($color: blue, $alpha: 0.2);
+  background-color: $blueDark;
 }
 
 .home-container {
@@ -60,6 +60,11 @@ html {
 }
 
 @media only screen and (max-width: 900px) {
+  body {
+   
+    background-size: cover;
+    background-image: url("../img/primary-background-mobile2.png");
+  }
   .home-container {
     max-width: 90%;
     margin: .5em;

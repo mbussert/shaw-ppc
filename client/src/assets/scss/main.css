@@ -143,21 +143,22 @@ body {
 @media only screen and (max-width: 900px) {
   .footer-container {
     flex-direction: column;
-    justify-content: space-evenly;
     align-content: center;
-    align-items: stretch;
-    flex-wrap: nowrap;
+    align-items: center;
   }
 
   .footer-card {
-    border-radius: 20px;
-    margin: 15px 10px 15px 10px;
-    padding: 5px 5px 5px 5px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-    max-width: 90%;
+    min-width: 85vw;
+  }
+
+  .footer-signup-text {
+    font-size: 1.2em;
+    margin: 0.5em 0.5em 0.5em 0.5em;
+  }
+
+  .foot-signup {
+    font-size: 1.5em;
+    margin: 0.5 0.5em 0.5em 0.5em;
   }
 
   .footer-icons {
@@ -421,7 +422,7 @@ button {
   font-size: 1rem;
 }
 
-html {
+body {
   border: none;
   width: 100%;
   /* background-image: inherit; */
@@ -430,7 +431,7 @@ html {
   background-position: center;
   background-size: cover;
   background-image: url("../img/primary-background.png");
-  background-color: rgba(0, 0, 255, 0.2);
+  background-color: #1D2837;
 }
 
 .home-container {
@@ -481,6 +482,11 @@ html {
 }
 
 @media only screen and (max-width: 900px) {
+  body {
+    background-size: cover;
+    background-image: url("../img/primary-background-mobile2.png");
+  }
+
   .home-container {
     max-width: 90%;
     margin: 0.5em;
