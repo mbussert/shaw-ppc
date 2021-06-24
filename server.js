@@ -23,18 +23,11 @@ const sess = {
 app.use(session(sess));
 
 app.use(express.json());
-<<<<<<< HEAD
-// app.use(express.urlencoded({ extended: true }));
-app.post('/login', 
-  passport.authenticate('local'), 
-  function(email, password, done) {
-=======
 app.use(express.urlencoded({ extended: true }));
 app.post(
   "/login",
   passport.authenticate("local"),
   function (email, password, done) {
->>>>>>> 954efdddf9e6005d6113643956c4cb5e1b8dc433
     User.findOne({ email: email }, function (err, user) {
       if (err) {
         return done(err);
