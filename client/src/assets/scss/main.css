@@ -76,7 +76,7 @@ body {
   text-decoration: none;
   text-align: start;
   padding: 0 20px 0 20px;
-  font-size: 1.5em;
+  font-size: 1.4em;
   text-transform: uppercase;
 }
 .footer-links ul {
@@ -555,4 +555,8 @@ body {
 
 a {
   color: #a3becf;
+}
+
+.contact-page {
+  min-height: 80vh;
 }/*# sourceMappingURL=main.css.map */
