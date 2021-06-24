@@ -1,17 +1,32 @@
 import React from "react";
 import {
   Grid,
-  Container,
   Card,
   CardContent,
-  CardActions,
   CardHeader,
   Button,
+  Typography,
 } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    width: "100%",
+    maxWidth: 900,
+    height: "100%",
+  },
+  h1: {
+    color: "#fff",
+    textTransform: "uppercase",
+    fontSize: 25,
+  },
+}));
 
 function ProjectDetails() {
+  const classes = useStyles();
+
   return (
-    <div>
+    <div className={classes.root}>
       <Grid
         container
         columns={1}
@@ -20,7 +35,7 @@ function ProjectDetails() {
         justify="center"
       >
         <Grid container item style={{ paddingBottom: 15 }} justify="center">
-          <h1>Project Details</h1>
+          <h1 className={classes.h1}>Project Details</h1>
         </Grid>
         <Grid item>
           <Card style={{ padding: 15 }} margin="dense" raised={true}>
