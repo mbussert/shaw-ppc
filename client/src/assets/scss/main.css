@@ -97,7 +97,7 @@ body {
   text-decoration: none;
   text-align: start;
   padding: 0 20px 0 20px;
-  font-size: 1.5em;
+  font-size: 1.4em;
   text-transform: uppercase;
 }
 
@@ -611,6 +611,93 @@ input:focus {
   padding: 1em;
 }
 
+.contact-form-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin: 3em 0 5em 0;
+}
+
+.contact-form {
+  min-width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  background-color: #47484950;
+  border-radius: 0.5em;
+  border: solid 2px #da9f63;
+  padding: 1.5em 1.5em 0.5em 1.5em;
+}
+
+.contact-form-text {
+  text-transform: uppercase;
+  color: #da9f63;
+  font-size: 2em;
+  margin: 0 0 1em 0;
+}
+
+.contact-form-name {
+  min-width: 100%;
+  border-radius: 0.5em;
+  border: solid 2px #da9f63;
+  background-color: #a3becf;
+  font-size: 1.2em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin: 0 0 0.5em 0;
+}
+
+.contact-form-email {
+  min-width: 100%;
+  border-radius: 0.5em;
+  border: solid 2px #da9f63;
+  background-color: #a3becf;
+  font-size: 1.2em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin: 0 0 0.5em 0;
+}
+
+.contact-form-subject {
+  min-width: 100%;
+  border-radius: 0.5em;
+  border: solid 2px #da9f63;
+  background-color: #a3becf;
+  font-size: 1.2em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin: 0 0 0.5em 0;
+}
+
+.contact-form-message {
+  min-width: 100%;
+  border-radius: 0.5em;
+  border: solid 2px #da9f63;
+  background-color: #a3becf;
+  font-size: 1.2em;
+  padding: 0.5em 0.5em 0.5em 0.5em;
+  margin: 0 0 0.5em 0;
+}
+
+.contact-form-submit {
+  color: white;
+  background-color: #da9f63;
+  border: none;
+  border-radius: 0.5em;
+  margin: 1em 1em 1em 1em;
+  padding: 0.6em;
+}
+
+@media only screen and (max-width: 900px) {
+  .contact-form {
+    min-width: 90%;
+    border-radius: 0.5em;
+    border: solid 2px #da9f63;
+    padding: 1.5em 1.5em 0.5em 1.5em;
+  }
+}
 .modal-1 {
   background-color: #1D2837;
   max-width: 75%;
@@ -832,4 +919,4 @@ body {
 a {
   color: #a3becf;
 }
-/*# sourceMappingURL=main.css.map */
+  min-height: 80vh;
