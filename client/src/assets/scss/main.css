@@ -613,25 +613,45 @@ input:focus {
 
 .contact-form-container {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 3em 0 5em 0;
 }
 
 .contact-form {
   min-width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: #47484950;
-  border-radius: 0.5em;
+  border-radius: .5em;
   border: solid 2px #da9f63;
-  padding: 1.5em 1.5em 0.5em 1.5em;
+  padding: 1.5em 1.5em .5em 1.5em;
 }
 
 .contact-form-text {
@@ -643,42 +663,42 @@ input:focus {
 
 .contact-form-name {
   min-width: 100%;
-  border-radius: 0.5em;
+  border-radius: .5em;
   border: solid 2px #da9f63;
   background-color: #a3becf;
   font-size: 1.2em;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  margin: 0 0 0.5em 0;
+  padding: .5em .5em .5em .5em;
+  margin: 0 0 .5em 0;
 }
 
 .contact-form-email {
   min-width: 100%;
-  border-radius: 0.5em;
+  border-radius: .5em;
   border: solid 2px #da9f63;
   background-color: #a3becf;
   font-size: 1.2em;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  margin: 0 0 0.5em 0;
+  padding: .5em .5em .5em .5em;
+  margin: 0 0 .5em 0;
 }
 
 .contact-form-subject {
   min-width: 100%;
-  border-radius: 0.5em;
+  border-radius: .5em;
   border: solid 2px #da9f63;
   background-color: #a3becf;
   font-size: 1.2em;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  margin: 0 0 0.5em 0;
+  padding: .5em .5em .5em .5em;
+  margin: 0 0 .5em 0;
 }
 
 .contact-form-message {
   min-width: 100%;
-  border-radius: 0.5em;
+  border-radius: .5em;
   border: solid 2px #da9f63;
   background-color: #a3becf;
   font-size: 1.2em;
-  padding: 0.5em 0.5em 0.5em 0.5em;
-  margin: 0 0 0.5em 0;
+  padding: .5em .5em .5em .5em;
+  margin: 0 0 .5em 0;
 }
 
 .contact-form-submit {
@@ -687,17 +707,18 @@ input:focus {
   border: none;
   border-radius: 0.5em;
   margin: 1em 1em 1em 1em;
-  padding: 0.6em;
+  padding: .6em;
 }
 
 @media only screen and (max-width: 900px) {
   .contact-form {
     min-width: 90%;
-    border-radius: 0.5em;
+    border-radius: .5em;
     border: solid 2px #da9f63;
-    padding: 1.5em 1.5em 0.5em 1.5em;
+    padding: 1.5em 1.5em .5em 1.5em;
   }
 }
+
 .modal-1 {
   background-color: #1D2837;
   max-width: 75%;
@@ -749,6 +770,45 @@ input:focus {
   border-radius: 0.5em;
   border: none;
   margin: 0 1em 0 1em;
+}
+
+.devcardgrid {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%;
+  height: 80vh;
+}
+
+.webdev5 {
+  float: left;
+  border: 1px solid #da9f63;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 2rem;
+  padding: 2.5rem;
+  border-radius: 2.5rem;
+  background-color: #1D2837;
+  color: #a3becf;
+}
+
+h1 {
+  margin: 1rem;
+  text-align: left;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+p {
+  font-size: 1rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 1.25rem;
 }
 
 .calculator {
@@ -919,4 +979,12 @@ body {
 a {
   color: #a3becf;
 }
+
+.contact-page {
   min-height: 80vh;
+}
+
+.MaF {
+  min-height: 90vh;
+}
+/*# sourceMappingURL=main.css.map */
