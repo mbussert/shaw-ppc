@@ -1,14 +1,15 @@
 .contact-form-container {
-    // max-width: 90%;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     align-content: center;
     justify-content: center;
+    margin: 3em 0 5em 0;
 }
 
 .contact-form {
-    // min-width: 90%;
+    min-width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,29 +17,55 @@
     justify-content: center;
     background-color: $grayDark;
     border-radius: .5em;
-    padding: .5em .5em .5em .5em;
+    border: solid 2px $orange;
+    padding: 1.5em 1.5em .5em 1.5em;
 }
 
 .contact-form-text {
+    text-transform: uppercase;
     color: $orange;
-    font-size: 1.5em;
+    font-size: 2em;
     margin: 0 0 1em 0;
 }
 
 .contact-form-name {
-    min-width: 90%;
+    min-width: 100%;
+    border-radius: .5em;
+    border: solid 2px $orange;
+    background-color: $blue;
+    font-size: 1.2em;
+    padding: .5em .5em .5em .5em;
+    margin: 0 0 .5em 0;
 }
 
 .contact-form-email {
-    min-width: 90%;
+    min-width: 100%;
+    border-radius: .5em;
+    border: solid 2px $orange;
+    background-color: $blue;
+    font-size: 1.2em;
+    padding: .5em .5em .5em .5em;
+    margin: 0 0 .5em 0;
 }
 
 .contact-form-subject {
-    min-width: 90%;
+    min-width: 100%;
+    border-radius: .5em;
+    border: solid 2px $orange;
+    background-color: $blue;
+    font-size: 1.2em;
+    padding: .5em .5em .5em .5em;
+    margin: 0 0 .5em 0;
 }
 
 .contact-form-message {
-    min-width: 90%;
+    min-width: 100%;
+    border-radius: .5em;
+    border: solid 2px $orange;
+    background-color: $blue;
+    font-size: 1.2em;
+    padding: .5em .5em .5em .5em;
+    margin: 0 0 .5em 0;
 }
 
 .contact-form-submit {
@@ -48,4 +75,14 @@
     border-radius: 0.5em;
     margin: 1em 1em 1em 1em;
     padding: .6em;
+}
+
+@media only screen and (max-width: 900px) {
+    .contact-form {
+        min-width: 90%;
+        border-radius: .5em;
+        border: solid 2px $orange;
+        padding: 1.5em 1.5em .5em 1.5em;
+    }
+
 }
