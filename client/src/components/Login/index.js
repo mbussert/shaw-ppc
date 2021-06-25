@@ -20,8 +20,9 @@ function LoginPage() {
       axios.post("/api/users/login", userObject, { headers: { "Content-Type": "application/json" } })
       .then(response => {
         if (response.status === 200) {
-          alert("You have successfully logged in!");
+          location.href = '/Calculator'
           console.log("You have successfully logged in!");
+          alert('You have successfully logged in!')
         } else {
           alert("Failed to log in. Please try again.");
         }
@@ -32,7 +33,7 @@ function LoginPage() {
       <form className="login-form" onSubmit={handleFormSubmit}>
         <h2 className="login-title">Please Login</h2>
         <div className="user-div">
-          <label htmlFor="user-login">Email:</label>
+          <label htmlFor="user-login">Email</label>
           <input 
           className="user-email" 
           type="text"
@@ -42,7 +43,7 @@ function LoginPage() {
         </div>
 
         <div className="pass-div">
-          <label htmlFor="pass-login">Password:</label>
+          <label htmlFor="pass-login">Password</label>
           <input 
           className="pass" 
           type="password"

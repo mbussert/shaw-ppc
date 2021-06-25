@@ -1,0 +1,38 @@
+[
+    { 
+        "projectTitle": "Joe's Garage",
+        "firstName": "Joey",
+        "lastName": "Salvatore",
+        "email": "jsalvatore@aol.com",
+        "phone": "8573331234",
+        "material": "vinyl",
+        "width": "86",
+        "height": "102",
+        "linearFeet": "7",
+        "user_id": "3"
+    },
+    { 
+        "projectTitle": "Mark's Garage",
+        "firstName": "Mark",
+        "lastName": "Markymark",
+        "email": "Mark@mark.com",
+        "phone": "1233211123",
+        "material": "vinyl",
+        "width": "98",
+        "height": "102",
+        "linearFeet": "5",
+        "user_id": "1"
+    },
+    { 
+        "projectTitle": "Steve's Garage",
+        "firstName": "Steve",
+        "lastName": "Mark",
+        "email": "Steve@mark.com",
+        "phone": "9995557789",
+        "material": "vinyl",
+        "width": "156",
+        "height": "100",
+        "linearFeet": "75",
+        "user_id": "2"
+    }
+]
