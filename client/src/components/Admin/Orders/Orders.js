@@ -15,6 +15,7 @@ const columns = [
     field: "clientName",
     headerName: "Client",
     width: 160,
+    type: "string",
     valueGetter: (params) =>
       `${params.getValue(params.id, "firstName") || ""} ${
         params.getValue(params.id, "lastName") || ""
@@ -52,7 +53,7 @@ const rows = [
   },
   {
     id: 2,
-    date: "06/24/2021",
+    date: "06/25/2021",
     email: "elvis@gmail.com",
     phone: "(555)555-5555",
     lastName: "Presley",
@@ -61,7 +62,7 @@ const rows = [
   },
   {
     id: 3,
-    date: "06/24/2021",
+    date: "06/22/2021",
     email: "elvis@gmail.com",
     phone: "(555)555-5555",
     lastName: "Presley",
@@ -70,7 +71,7 @@ const rows = [
   },
   {
     id: 4,
-    date: "06/24/2021",
+    date: "06/23/2021",
     email: "elvis@gmail.com",
     phone: "(555)555-5555",
     lastName: "Presley",
@@ -79,7 +80,7 @@ const rows = [
   },
   {
     id: 5,
-    date: "06/24/2021",
+    date: "06/25/2021",
     email: "elvis@gmail.com",
     phone: "(555)555-5555",
     lastName: "Presley",
@@ -97,7 +98,7 @@ const rows = [
   },
   {
     id: 7,
-    date: "06/24/2021",
+    date: "06/21/2021",
     email: "elvis@gmail.com",
     phone: "(555)555-5555",
     lastName: "Presley",
@@ -106,7 +107,7 @@ const rows = [
   },
   {
     id: 8,
-    date: "06/24/2021",
+    date: "06/20/2021",
     email: "elvis@gmail.com",
     phone: "(555)555-5555",
     lastName: "Presley",
@@ -123,9 +124,16 @@ export default function Orders() {
         <DataGrid
           rows={rows}
           columns={columns}
-          pageSize={5}
+          autoPageSize
           checkboxSelection
           disableSelectionOnClick
+          sortingOrder={["desc", "asc"]}
+          sortModel={[
+            {
+              field: "date",
+              sort: "asc",
+            },
+          ]}
         />
       </div>
     </React.Fragment>
