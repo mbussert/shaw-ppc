@@ -12,6 +12,7 @@ import Create from "./pages/Create/Create";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route exact path="/Login" component={Login} />
           <Route exact path="/Create" component={Create} />
           <Route exact path="/About" component={About} />
+          <Route exact path="/Contact" component={Contact} />
           <Route component={NotFound}/>
           </Switch>
           <Footer />
