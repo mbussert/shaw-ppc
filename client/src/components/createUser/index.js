@@ -17,17 +17,27 @@ function CreateUser() {
     }
 
     if (userObject.first && userObject.last && userObject.email) {
-      console.log("Account has been created.");
-
       API.saveUser({
         first: userObject.first,
         last: userObject.last,
         email: userObject.email,
         password: userObject.pass1
-      }).catch((err) => console.log(err));
+      })
+      .then((res) => {
+        // if (response.status === 200) {
+        //   alert('We did it!')
+        // } else if (response.status === 500) {
+        //   alert('500 error')
+        // } else if (response.status === 400) {
+        //   alert('400 error')
+        // } else {
+        //   alert('Incorrect')
+        // }
+        console.log(res.status)
+      })
+      .catch((err) => 
+      console.log(err))
       location.href='/'
-    } else {
-      console.log("Nooo!");
     }
   }
 
