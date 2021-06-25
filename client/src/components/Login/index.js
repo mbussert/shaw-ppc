@@ -20,7 +20,7 @@ function LoginPage() {
       axios.post("/api/users/login", userObject, { headers: { "Content-Type": "application/json" } })
       .then(response => {
         if (response.status === 200) {
-          alert("You have successfully logged in!");
+          location.href = '/Calculator'
           console.log("You have successfully logged in!");
         } else {
           alert("Failed to log in. Please try again.");

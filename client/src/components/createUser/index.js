@@ -25,7 +25,7 @@ function CreateUser() {
         email: userObject.email,
         password: userObject.pass1
       }).catch((err) => console.log(err));
-
+      location.href='/'
     } else {
       console.log("Nooo!");
     }
