@@ -1,6 +1,6 @@
 # Wall-Pro MPP
 ### --Wall Covering Calculator and Material Procurement Portal--
-![shaw-ppc](./client/src/assets/img/wall-pro-logo.png)
+![shaw-ppc](./client/src/assets/img/wp-logo-bg.png)
 
 ## Table of Contents:
 
@@ -26,7 +26,7 @@ Repository: https://github.com/mbussert/shaw-ppc
 
 ### Description:
 
-The application will assist clients in calculating square footage measurements for vinyl installation material deliverables on behalf of the design company. The average user will be able to utilize the calculator tool to place product orders, potentially have access to an augmented reality capability to visualize the placement, save their account info, and notify the administration team of their new orders.
+The application will assist clients in calculating square footage measurements for wall installation material deliverables on behalf of the design company. The average user will be able to utilize the calculator tool to place product orders, save their account info to view order history, and notify the administration team of their new orders.
 
 ### User Story:
 
@@ -126,4 +126,4 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Tests:
 
-No tests have been created for this application.
+Tests coming soon...
