@@ -7,7 +7,8 @@ class About extends Component {
       <div className="devcardgrid">
           <div className="webdev5">
           <h1>Project</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mollis mauris vel felis aliquet, non vulputate neque semper. Nam dolor leo, tempor eleifend semper quis, consectetur id libero. Nullam eget risus non elit eleifend ullamcorper sit amet id nisi. Sed venenatis sed orci tincidunt venenatis. Duis a ex eu ligula tristique cursus id et lectus. Nullam sagittis et metus sit amet congue. Etiam at commodo diam. Nullam vel sollicitudin arcu. Aliquam gravida auctor erat scelerisque gravida. Quisque elit dolor, vulputate lobortis massa tempor, iaculis varius lorem. Cras ornare odio leo, sit amet pellentesque sem dictum id. Duis lacus justo, hendrerit a posuere vehicula, rhoncus vel nulla. Suspendisse tempor tortor a risus laoreet, nec ornare dolor sagittis.</p>
+          <p>The application will assist clients in calculating square footage measurements for vinyl installation material deliverables on behalf of the design company. 
+            The average user will be able to utilize the calculator tool to place product orders, potentially have access to an augmented reality capability to visualize the placement, save their account info, and notify the administration team of their new orders.</p>
         </div>
         <div className="webdev5">
           <h1>Jon</h1>
