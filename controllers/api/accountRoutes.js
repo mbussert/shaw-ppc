@@ -11,8 +11,7 @@ console.log('wall routes get request')
   
       if (!wallData) {
         res.status(404).json({ message: 'No wall orders found.' });
-        return;
-        console.log('no wall data here')
+        return console.log('no wall data here')
       }
   
       res.status(200).json(wallData);
