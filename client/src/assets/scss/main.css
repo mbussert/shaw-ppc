@@ -775,7 +775,7 @@ input:focus {
 .devcardgrid {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  width: 100%;
+  width: 100vw;
   height: 80vh;
 }
 
@@ -795,10 +795,11 @@ input:focus {
 }
 
 h1 {
-  margin: 1rem;
+  margin: .15rem;
   text-align: left;
   -ms-flex-line-pack: center;
       align-content: center;
+  padding: 0.5rem;
 }
 
 p {
@@ -808,7 +809,7 @@ p {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  margin: 1.25rem;
+  margin: 1.15rem;
 }
 
 .calculator {

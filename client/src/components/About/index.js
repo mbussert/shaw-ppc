@@ -18,14 +18,14 @@ class About extends Component {
           <p>Email</p>
         </div>
         <div className="webdev5">
-          <h1>Heather</h1>
+          <h1>Al</h1>
           <hr></hr>
           <p>GitHub</p>
           <p>LinkedIn</p>
           <p>Email</p>
         </div>
         <div className="webdev5">
-          <h1>Al</h1>
+          <h1>Heather</h1>
           <hr></hr>
           <p>GitHub</p>
           <p>LinkedIn</p>

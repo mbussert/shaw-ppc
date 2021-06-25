@@ -1,6 +1,6 @@
 .devcardgrid {
   box-sizing: border-box;
-  width: 100%;
+  width: 100vw;
   height: 80vh;
   }
 
@@ -17,14 +17,15 @@
 }
 
 h1 {
-  margin: 1rem;
+  margin: .15rem;
   text-align: left;
   align-content: center;
+  padding: 0.5rem;
 }
 
 p {
   font-size: 1rem;
   justify-content: center;
   align-content: center;
-  margin: 1.25rem;
+  margin: 1.15rem;
 }
