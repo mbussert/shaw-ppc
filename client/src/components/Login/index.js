@@ -33,7 +33,7 @@ function LoginPage() {
       <form className="login-form" onSubmit={handleFormSubmit}>
         <h2 className="login-title">Please Login</h2>
         <div className="user-div">
-          <label htmlFor="user-login">Email:</label>
+          <label htmlFor="user-login">Email</label>
           <input 
           className="user-email" 
           type="text"
@@ -43,7 +43,7 @@ function LoginPage() {
         </div>
 
         <div className="pass-div">
-          <label htmlFor="pass-login">Password:</label>
+          <label htmlFor="pass-login">Password</label>
           <input 
           className="pass" 
           type="password"

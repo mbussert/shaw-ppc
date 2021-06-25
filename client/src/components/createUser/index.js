@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import API from "../../utils/API";
+import { Link } from "react-router-dom";
 
 function CreateUser() {
   const [userObject, setUser] = useState({});
@@ -42,10 +43,10 @@ function CreateUser() {
   }
 
   return (
-    <form onSubmit={handleFormSubmit}>
-      <h2>Create an account</h2>
+    <form className="create-form" onSubmit={handleFormSubmit}>
+      <h2 className="create-title">Create an account</h2>
       <div className="userFirst-div">
-        <label>First Name:</label>
+        <label>First Name</label>
         <input
           className="add-first"
           type="text"
@@ -55,7 +56,7 @@ function CreateUser() {
       </div>
 
       <div className="userLast-div">
-        <label>Last Name:</label>
+        <label>Last Name</label>
         <input
           className="add-last"
           name="last"
@@ -65,7 +66,7 @@ function CreateUser() {
       </div>
 
       <div className="userEmail-div">
-        <label>Email:</label>
+        <label>Email</label>
         <input
           className="add-email"
           name="email"
@@ -75,7 +76,7 @@ function CreateUser() {
       </div>
 
       <div className="userPass-div">
-        <label>Password:</label>
+        <label>Password</label>
         <input
           className="add-pass"
           name="pass1"
@@ -85,7 +86,7 @@ function CreateUser() {
       </div>
 
       <div className="userPass-div-div">
-        <label>Password:</label>
+        <label>Re-Enter Password</label>
         <input
           className="pass-add-pass"
           name="pass2"
@@ -97,7 +98,10 @@ function CreateUser() {
       <button className="create-btn" type="submit">
         Create an Account
       </button>
+
+      <p className="login-opt">Already have an account? Sign in <Link to="./Login">here</Link>.</p>
     </form>
+
   );
 }
 
