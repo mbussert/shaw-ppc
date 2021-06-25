@@ -1,8 +1,30 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
+import API from "../../utils/API";
 
-function Navbar() {
-  
+function Navbar(props) {
+
+  function verifyStatus() {
+    if(props.loginStatus === "The user is logged in.") {
+      return  <Link to = "./" onClick={logOutUser}>Log Out</Link>
+    } else {
+      return  <Link to="./Login">Log In</Link>
+    } 
+  }
+
+  function showAccount() {
+    if(props.loginStatus === "The user is logged in.") {
+      return <li><Link to="./Account">Account</Link></li>
+    } else {
+      return null
+    } 
+  }
+
+  function logOutUser() {
+    API.logOutUser().catch((err) => console.log(err));
+  }
+
   return (
     <nav>
       <ul className="links">
@@ -15,11 +37,12 @@ function Navbar() {
         <li>
           <Link to="./Calculator">Calculator</Link>
         </li>
-        <li>
+        {showAccount()}
+        {/* <li>
           <Link to="./Account">Account</Link>
-        </li>
+        </li> */}
         <li>
-          <Link to="./Login">Login</Link>
+          {verifyStatus()}
         </li>
         {/* <li>
           <Link to="./Create">Create</Link>
