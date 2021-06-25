@@ -22,6 +22,7 @@ function LoginPage() {
         if (response.status === 200) {
           location.href = '/Calculator'
           console.log("You have successfully logged in!");
+          alert('You have successfully logged in!')
         } else {
           alert("Failed to log in. Please try again.");
         }
