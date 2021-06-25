@@ -10,5 +10,11 @@
         "password": "steve1234",
         "first": "Steve",
         "last": "Mark"
+    },
+    {
+        "email": "jsalvatore@aol.com",
+        "password": "mark1234",
+        "first": "Joey",
+        "last": "Salvatore"
     }
 ]
