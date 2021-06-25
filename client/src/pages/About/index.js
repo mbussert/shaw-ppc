@@ -6,7 +6,9 @@ function AboutPage() {
     return (
         <div>
             <Header />
-            <About/>
+            <div className="MaF">
+                <About/>
+            </div>
         </div>
     );
 }

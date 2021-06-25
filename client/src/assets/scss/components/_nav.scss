@@ -7,15 +7,17 @@
 // }
 
 nav {
-  margin-bottom: 75px;
-  margin-top: 15px;
-  margin-bottom: 5%;
-  position: relative;
-  width: 150%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  margin: 1rem;
+  width: 100vw;
 
   ul {
     text-align: center;
-    list-style-type: none;
     list-style-type: none;
     margin: 0;
     padding: 15px;
@@ -38,13 +40,12 @@ nav {
     border-radius: 8px;
   }
   .line {
-    float: right;
     margin-top: 12px;
     border-radius: 1px;
     align-items: right;
     justify-content: end;
     border-bottom: solid 4px $orange;
-    width: 70%;
+    width: 100%;
   }
 }
 
