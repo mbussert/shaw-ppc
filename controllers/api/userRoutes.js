@@ -12,6 +12,21 @@ router.post('/', async (req, res) => {
         })
 });
 
+router.get('/authenticate', async (req, res) => {
+
+    if (req.session.loggedIn) {
+        res.send({
+            login: "The user is logged in.",
+            userId: req.session.userId
+        })
+        return;
+    } else {
+        res.send(false)
+        return;
+    }
+
+});
+
 router.post('/login', async (req, res) => {
     
     console.log('login post route')
