@@ -26,7 +26,6 @@ function Create() {
     <div>
       <Navbar loginStatus={loginStatus} />
       <Header />
-      <h1>Create an account</h1>
       <CreateUser />
     </div>
   );

@@ -1,0 +1,82 @@
+* {
+	box-sizing: border-box;
+	transition: .25s all ease;
+}
+
+.create-form {
+	display: block;
+	position: relative;
+	z-index: 0;
+	margin: 4rem auto 4rem;
+    padding: 5rem 4rem 5rem 4rem;
+	width: 100%;
+    border-radius: 2em;
+	max-width: 630px;
+	min-height: 680px;
+    background-color: #c4c4c420;
+	box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85); 
+}
+
+.create-title {
+    color: $blue;
+    text-transform: uppercase;
+    font-size: 2em;
+    margin-bottom: 3rem;
+    align-items: baseline;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.userFirst-div, .userLast-div, .userEmail-div, .userPass-div, .userPass-div-div {
+    color: white;
+	text-transform: uppercase;
+	font-size: 1em;
+	margin-bottom: 1rem;
+    padding-bottom: 0.2em;
+}
+
+.create-btn {
+    background-color: $orange;
+	color: #ffffff;
+	font-size: 1rem;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 3rem;
+	padding: .75rem;
+	border-radius: 2rem;
+	display: block;
+	width: 100%;
+	border: none;
+	cursor: pointer;
+}
+
+.login-opt {
+    font-size: 1.1rem;
+    padding-top: 1.5em;
+    color: white;
+    margin-top: 1.5rem;
+  }
+
+.add-first, .add-last, .add-email, .add-pass, .pass-add-pass {
+	color: white;
+	font-size: 1.15rem;
+	width: 100%;
+	padding: .5rem 1rem;
+	border: 2px solid transparent;
+	outline: none;
+	border-radius: 1.5rem;
+	background-color: rgba(255, 255, 255, 0.25);
+	letter-spacing: 1px; 
+    margin-top: 1.2rem;
+}
+
+input:hover,
+input:focus {
+    color: white;
+	border: 2px solid rgba(243, 241, 241, 0.479);
+	background-color: transparent;
+}

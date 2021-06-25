@@ -16,7 +16,6 @@ function Home() {
 
     API.authenticateUser()
       .then((response) => {
-        console.log(response)
         setLoginStatus(response.data.login);
       })
       .catch((err) => console.log(err));

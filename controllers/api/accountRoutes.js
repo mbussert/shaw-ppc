@@ -9,7 +9,7 @@ router.get('/:id', async (req, res) => {
   
       if (!wallData) {
         res.status(404).json({ message: 'No wall orders found.' });
-        return;
+        return console.log('no wall data here')
       }
   
       res.status(200).json(wallData);
