@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Facts() {
     return (
@@ -15,7 +16,13 @@ function Facts() {
                 <img className="images" src="" alt="sc1" />
                 <img className="images" src="" alt="sc2" />
             </div>
+
+        <button className="calc-btn">
+            <Link to="./Calculator">Calculator</Link>
+        </button>
+        
         </div>
+
         );
     }
 
