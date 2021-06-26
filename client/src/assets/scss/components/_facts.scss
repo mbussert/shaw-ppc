@@ -20,7 +20,14 @@
 .fqa-list {
     color: white;
     font-size: 1.3em;
-    list-style-type: circle; 
+    list-style-type: circle;
+    padding-inline-start: 0.5em;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 .image-container {
@@ -36,4 +43,17 @@
 .images {
     border: solid 2px $orange;
     padding: 1em;
+    margin: 2em;
 }
+
+.calc-btn {
+    background-color: $orange;
+    color: white;
+    display: block;
+    border-radius: 0.5em;
+    border-style: none;
+    margin: 3em;
+    padding: 1em;
+    text-decoration: none;
+    font-size: 1.5em;
+  }
