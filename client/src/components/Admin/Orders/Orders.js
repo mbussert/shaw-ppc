@@ -84,21 +84,27 @@ export default function Orders() {
   useEffect(() => {
     async function fetchData() {
       const request = await API.getOrders();
-      setTableData(request.data.results);
-      console.log(request);
+      setTableData(request.data);
+      console.log(request.data);
       return request;
     }
     fetchData();
   }, []);
 
   const columns = [
-    { field: "id", headerName: "ID", width: 100 },
+    { field: "id", headerName: "ID", width: 91 },
     {
       field: "date",
       headerName: "Date",
       width: 180,
       type: "date",
       editable: false,
+    },
+    {
+      field: "projectTitle",
+      headerName: "Project Title",
+      width: 160,
+      type: "string",
     },
     {
       field: "clientName",
@@ -110,6 +116,7 @@ export default function Orders() {
           params.getValue(params.id, "lastName") || ""
         }`,
     },
+
     {
       field: "email",
       headerName: "Email",
@@ -125,7 +132,7 @@ export default function Orders() {
 
     {
       field: "projectTotal",
-      headerName: "Project Size",
+      headerName: "Project Size (Linear Ft)",
       width: "110",
     },
   ];
@@ -135,12 +142,13 @@ export default function Orders() {
   tableData.map((order) =>
     rows.push({
       id: order.id,
+      projectTitle: order.projectTitle,
       phone: order.phone,
       lastName: order.lastName,
       firstName: order.firstName,
       email: order.email,
-      date: order.date,
-      projectTotal: order.projectTotal,
+      date: order.createdAt,
+      projectTotal: order.linearFeet,
     })
   );
 
