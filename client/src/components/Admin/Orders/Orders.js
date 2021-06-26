@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Title from "../Title/Title";
 import { DataGrid } from "@material-ui/data-grid";
+import { IconButton, Grid } from "@material-ui/core";
+import { Delete, AssignmentTurnedIn } from "@material-ui/icons";
 import API from "../../../utils/API";
 
 // const rows = [
@@ -81,14 +83,23 @@ import API from "../../../utils/API";
 export default function Orders() {
   const [tableData, setTableData] = useState([]);
 
+  const [selection, setSelection] = React.useState([]);
+  const [deletedRows, setDeletedRows] = useState([]);
+
+  const handlePurge = () => {
+    setDeleted([...deleted, ...selection]);
+    setItems(items.filter((i) => !selection.some((s) => s.id === i.id)));
+    setSelection([]);
+  };
+
   useEffect(() => {
-    async function fetchData() {
-      const request = await API.getOrders();
-      setTableData(request.data);
-      console.log(request.data);
-      return request;
-    }
-    fetchData();
+    API.getOrders()
+      .then((res) => {
+        setTableData(res.data);
+      })
+      .catch((error) => {
+        console.log("Error retrieving order data.");
+      });
   }, []);
 
   const columns = [
@@ -154,7 +165,30 @@ export default function Orders() {
 
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Grid container justify="space-between">
+        <Grid item>
+          <Title>Recent Orders </Title>
+        </Grid>
+        <Grid item>
+          <IconButton
+            aria-label="mark completed"
+            onClick={handlePurge}
+            color="action"
+          >
+            <AssignmentTurnedIn fontSize="medium" />
+          </IconButton>
+
+          <IconButton
+            aria-label="delete row"
+            onClick={handlePurge}
+            color="secondary"
+            fontSize="medium"
+          >
+            <Delete />
+          </IconButton>
+        </Grid>
+      </Grid>
+
       <div style={{ height: 500, width: "100%" }}>
         <DataGrid
           rows={rows}
@@ -169,6 +203,13 @@ export default function Orders() {
               sort: "asc",
             },
           ]}
+          onSelectionModelChange={({ selectionModel }) => {
+            const rowIds = selectionModel.map((rowId) =>
+              parseInt(String(rowId), 10)
+            );
+            const rowsToDelete = rows.filter((row) => rowIds.includes(row.id));
+            setDeletedRows(rowsToDelete);
+          }}
         />
       </div>
     </React.Fragment>
