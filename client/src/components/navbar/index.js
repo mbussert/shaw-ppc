@@ -22,7 +22,15 @@ function Navbar(props) {
   }
 
   function logOutUser() {
-    API.logOutUser().catch((err) => console.log(err));
+    API.logOutUser().then( () => {
+
+      // Refreshes the page if on the homepage to ensure the navbar gets refreshed with the new state
+
+      if (window.location.href = "/") {
+        location.reload();
+      }
+    }
+    ).catch((err) => console.log(err));
   }
 
   return (
