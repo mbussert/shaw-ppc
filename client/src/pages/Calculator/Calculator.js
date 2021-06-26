@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
+import Navbar from "../../components/navbar";
 import API from "../../utils/API";
 import {
   Container,
@@ -39,6 +40,21 @@ function Calculator() {
   const [formObject, setFormObject] = useState({
     material: "Material WC-J3",
   });
+
+  const [loginStatus, setLoginStatus] = useState([]);
+
+  useEffect(() => {
+    loadStatus();
+  }, []);
+
+  function loadStatus() {
+
+    API.authenticateUser()
+      .then((response) => {
+        setLoginStatus(response.data.login);
+      })
+      .catch((err) => console.log(err));
+  }
 
   function handleInputChange(event) {
     const { name, value } = event.target;
@@ -122,6 +138,7 @@ function Calculator() {
 
   return (
     <>
+      <Navbar loginStatus={loginStatus} />
       <Header />
       <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
         <Card style={{ padding: 20 }} margin="dense" raised={true}>
