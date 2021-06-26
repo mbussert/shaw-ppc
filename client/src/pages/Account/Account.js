@@ -37,6 +37,14 @@ function Account() {
   
     API.authenticateUser()
       .then((response) => {
+
+        // Users that are not logged in cannot visit the Account page
+
+        if(response.data === false) {
+          location.replace("/Login")
+          return;
+        }
+
         setLoginStatus(response.data.login);
         userId = response.data.userId;
         loadOrders(userId);

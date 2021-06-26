@@ -25,20 +25,12 @@ function CreateUser() {
         password: userObject.pass1
       })
       .then((res) => {
-        // if (response.status === 200) {
-        //   alert('We did it!')
-        // } else if (response.status === 500) {
-        //   alert('500 error')
-        // } else if (response.status === 400) {
-        //   alert('400 error')
-        // } else {
-        //   alert('Incorrect')
-        // }
-        console.log(res.status)
+        if (res.status === 200) {
+          location.href="/Login"
+        }
       })
       .catch((err) => 
       console.log(err))
-      location.href='/'
     }
   }
 
