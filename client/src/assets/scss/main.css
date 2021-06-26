@@ -266,8 +266,8 @@ Header {
   max-width: 630px;
   min-height: 500px;
   background-color: #c4c4c420;
-  -webkit-box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
-          box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+  -webkit-box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
+          box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
 }
 
 .login-title {
@@ -420,8 +420,8 @@ nav .line {
   max-width: 630px;
   min-height: 680px;
   background-color: #c4c4c420;
-  -webkit-box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
-          box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+  -webkit-box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
+          box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
 }
 
 .create-title {
