@@ -13,8 +13,8 @@
     border-radius: 2em;
 	max-width: 630px;
 	min-height: 680px;
-    background-color: #c4c4c420;
-	box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85); 
+    background-color: $background;
+	box-shadow: $boxshadow;
 }
 
 .create-title {
@@ -74,9 +74,37 @@
     margin-top: 1.2rem;
 }
 
-.add-first, .add-last, .add-email, .add-pass, .pass-add-pass:hover,
-.add-first, .add-last, .add-email, .add-pass, .pass-add-pass:focus {
+.add-first:hover, 
+.add-first:focus {
     color: white;
+	border: 2px solid rgba(243, 241, 241, 0.479);
+	background-color: transparent;
+}
+
+.add-last:hover,
+.add-last:focus {
+	color: white;
+	border: 2px solid rgba(243, 241, 241, 0.479);
+	background-color: transparent;
+}
+
+.add-email:hover,
+.add-email:focus {
+	color: white;
+	border: 2px solid rgba(243, 241, 241, 0.479);
+	background-color: transparent;
+}
+
+.add-pass:hover,
+.add-pass:focus {
+	color: white;
+	border: 2px solid rgba(243, 241, 241, 0.479);
+	background-color: transparent;
+}
+
+.pass-add-pass:hover,
+.pass-add-pass:focus {
+	color: white;
 	border: 2px solid rgba(243, 241, 241, 0.479);
 	background-color: transparent;
 }

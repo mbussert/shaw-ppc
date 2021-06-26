@@ -266,8 +266,8 @@ Header {
   max-width: 630px;
   min-height: 500px;
   background-color: #c4c4c420;
-  -webkit-box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
-          box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+  -webkit-box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
+          box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
 }
 
 .login-title {
@@ -420,8 +420,8 @@ nav .line {
   max-width: 630px;
   min-height: 680px;
   background-color: #c4c4c420;
-  -webkit-box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
-          box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85);
+  -webkit-box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
+          box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
 }
 
 .create-title {
@@ -492,8 +492,36 @@ nav .line {
   margin-top: 1.2rem;
 }
 
-.add-first, .add-last, .add-email, .add-pass, .pass-add-pass:hover,
-.add-first, .add-last, .add-email, .add-pass, .pass-add-pass:focus {
+.add-first:hover,
+.add-first:focus {
+  color: white;
+  border: 2px solid rgba(243, 241, 241, 0.479);
+  background-color: transparent;
+}
+
+.add-last:hover,
+.add-last:focus {
+  color: white;
+  border: 2px solid rgba(243, 241, 241, 0.479);
+  background-color: transparent;
+}
+
+.add-email:hover,
+.add-email:focus {
+  color: white;
+  border: 2px solid rgba(243, 241, 241, 0.479);
+  background-color: transparent;
+}
+
+.add-pass:hover,
+.add-pass:focus {
+  color: white;
+  border: 2px solid rgba(243, 241, 241, 0.479);
+  background-color: transparent;
+}
+
+.pass-add-pass:hover,
+.pass-add-pass:focus {
   color: white;
   border: 2px solid rgba(243, 241, 241, 0.479);
   background-color: transparent;
@@ -583,6 +611,25 @@ nav .line {
   color: white;
   font-size: 1.3em;
   list-style-type: circle;
+  -webkit-padding-start: 0.5em;
+          padding-inline-start: 0.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .image-container {
@@ -609,6 +656,19 @@ nav .line {
 .images {
   border: solid 2px #da9f63;
   padding: 1em;
+  margin: 2em;
+}
+
+.calc-btn {
+  background-color: #da9f63;
+  color: white;
+  display: block;
+  border-radius: 0.5em;
+  border-style: none;
+  margin: 3em;
+  padding: 1em;
+  text-decoration: none;
+  font-size: 1.5em;
 }
 
 .contact-form-container {
