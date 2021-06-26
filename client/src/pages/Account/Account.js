@@ -1,24 +1,27 @@
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
+import Navbar from "../../components/navbar";
 import API from "../../utils/API";
 
 import ProjectList from "../../components/ProjectList";
 import ProjectDetails from "../../components/ProjectDetails";
 import { Grid, Container, Divider } from "@material-ui/core";
 
+let userId; 
+
 function Account() {
   const [orders, setOrders] = useState([]);
+  const [loginStatus, setLoginStatus] = useState([]);
 
   useEffect(() => {
-    loadOrders();
+    loadStatus();
   }, []);
 
-  function loadOrders() {
-    // 1 is the first ID locally created in the database (i.e. the first account)
-    // 1 is currently hardcoded for testing; need to use React to get the user's ID that is logged in
+  function loadOrders(userId) {
 
-    API.getOrdersById(1)
+    API.getOrdersById(userId)
       .then((res) => {
+
         if (res.data.length === 0) {
           console.log("No orders found.");
         }
@@ -30,9 +33,23 @@ function Account() {
       .catch((err) => console.log(err));
   }
 
+  function loadStatus() {
+  
+    API.authenticateUser()
+      .then((response) => {
+        setLoginStatus(response.data.login);
+        userId = response.data.userId;
+        loadOrders(userId);
+      })
+      .catch((err) => console.log(err));
+
+      return;
+  }
+
   return (
     <div>
       <div style={{ paddingBottom: 70 }}></div>
+      <Navbar loginStatus={loginStatus} />
       <Header />
 
       <Container disableGutters maxWidth={false} style={{ marginBottom: 40 }}>
