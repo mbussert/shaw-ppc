@@ -6,20 +6,16 @@ router.post('/', async (req, res) => {
 
     const userData = await User.create(req.body);
     
-    req.session.save(() => {
-      req.session.userId = userData.id;
-      req.session.loggedIn = true;
-      res.status(200).json(userData);
-    })
     if (!userData) {
       res
       .status(400)
       .json({ message: "Incorrect email or password, please try again" })
       .send('Incorrect email or password')
       console.log('\n', "Incorrect email or password", '\n');
-
-      return; 
     }
+
+    res.status(200).json({ message: "You have successfully logged in!"});
+
   } catch(err) {
     res.status(500).json(err)
     console.log(err)
