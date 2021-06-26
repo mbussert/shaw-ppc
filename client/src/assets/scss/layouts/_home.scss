@@ -17,7 +17,7 @@ body {
 }
 
 .ppc-logo-bg {
-  background-color: rgba(#c4c4c4, 0.2);
+  background-color: $background;
   border-radius: 0.5em;
   display: inline-block;
   margin: 0.5em;
@@ -30,7 +30,8 @@ body {
 }
 
 .home-text-bg {
-  background-color: rgba(#c4c4c4, 0.2);
+  background-color: $background;
+  box-shadow: $boxshadow;
   border-radius: 0.5em;
   display: inline-block;
   margin: 0.5em;
@@ -49,8 +50,9 @@ body {
   display: block;
   border-radius: 0.5em;
   border-style: none;
-  margin: 1em;
+  margin: 1.5em 1em 1em 1em;
   padding: 1em;
+  box-shadow: $boxshadow;
 
   a {
     text-decoration: none;
@@ -77,7 +79,6 @@ body {
     
   }
   .ppc-logo-bg {
-    background-color: rgba(#c4c4c4, 0.2);
     border-radius: .5em;
     display: inline-block;
     margin: .5em;
