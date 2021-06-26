@@ -96,7 +96,7 @@ export default function Orders() {
     {
       field: "date",
       headerName: "Date",
-      width: 180,
+      width: 130,
       type: "date",
       editable: false,
     },
@@ -147,7 +147,7 @@ export default function Orders() {
       lastName: order.lastName,
       firstName: order.firstName,
       email: order.email,
-      date: order.createdAt,
+      date: new Date(order.createdAt).toLocaleDateString(),
       projectTotal: order.linearFeet,
     })
   );
