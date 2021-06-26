@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Navbar from "./components/navbar";
 import Wrapper from "./components/Wrapper";
 import Home from "./pages/Home/Home";
 import How from "./pages/How/How";
@@ -12,22 +11,25 @@ import Create from "./pages/Create/Create";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import About from "./pages/About";
+import Contact from "./pages/Contact/Contact";
+import Admin from "./pages/Admin";
 
 function App() {
   return (
     <div className="App">
       <Wrapper>
         <Router>
-          <Navbar />
           <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/How" component={How} />
-          <Route exact path="/Calculator" component={Calculator} />
-          <Route exact path="/Account" component={Account} />
-          <Route exact path="/Login" component={Login} />
-          <Route exact path="/Create" component={Create} />
-          <Route exact path="/About" component={About} />
-          <Route component={NotFound}/>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/How" component={How} />
+            <Route exact path="/Calculator" component={Calculator} />
+            <Route exact path="/Account" component={Account} />
+            <Route exact path="/Login" component={Login} />
+            <Route exact path="/Create" component={Create} />
+            <Route exact path="/About" component={About} />
+            <Route exact path="/Contact" component={Contact} />
+            <Route exact path="/Admin" component={Admin} />
+            <Route component={NotFound} />
           </Switch>
           <Footer />
         </Router>

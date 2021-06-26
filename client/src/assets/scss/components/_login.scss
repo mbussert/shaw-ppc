@@ -1,43 +1,89 @@
+* {
+	box-sizing: border-box;
+	transition: .25s all ease;
+}
+
 .login-form {
-  background-color: #c4c4c420;
-  color: white;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 40%;
+	display: block;
+	position: relative;
+	z-index: 0;
+	margin: 4rem auto 4rem;
+  padding: 5rem 4rem 5rem 4rem;
+	width: 100%;
   border-radius: 2em;
-  margin: 3em 0 3em 0;
-  flex-wrap: wrap;
-  flex-direction: column;
-  align-content: stretch;
-  padding: 1em;
+	max-width: 630px;
+	min-height: 500px;
+  background-color: #c4c4c420;
+	box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.85); 
 }
 
 .login-title {
   color: $blue;
   text-transform: uppercase;
-  font-size: 1.2em;
-  padding: 0.5em 0 0.5em 0;
+  font-size: 2em;
+  margin-bottom: 3rem;
+  align-items: baseline;
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.user-div {
-  padding: 1em;
-}
-
-.pass-div {
-  padding: 0.5em;
+.user-div, .pass-div {
+  color: white;
+	text-transform: uppercase;
+	font-size: 1em;
+	margin-bottom: 1rem;
+  padding-bottom: 0.2em;
 }
 
 .login-btn {
   background-color: $orange;
-  color: white;
-  border-radius: 0.5em;
-  width: 25%;
-  margin-top: 1em;
+	color: #ffffff;
+	font-size: 1rem;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin-top: 3rem;
+	padding: .75rem;
+	border-radius: 2rem;
+	display: block;
+	width: 100%;
+	border: none;
+	cursor: pointer;
 }
 
 .create-acct-opt {
-  font-size: smaller;
+  font-size: 1.1rem;
   padding-top: 1.5em;
+  color: white;
+  margin-top: 1.5rem;
+}
+
+.pass, .user-email {
+  color: white;
+	font-size: 1.15rem;
+	width: 100%;
+	padding: .5rem 1rem;
+	border: 2px solid transparent;
+	outline: none;
+	border-radius: 1.5rem;
+	background-color: rgba(255, 255, 255, 0.25);
+	letter-spacing: 1px; 
+  margin-top: 1.2rem;
+}
+
+.user-email:hover,
+.user-email:focus {
+  color: white;
+	border: 2px solid rgba(243, 241, 241, 0.479);
+	background-color: transparent;
+}
+
+.pass:hover,
+.pass:focus {
+  color: white;
+	border: 2px solid rgba(243, 241, 241, 0.479);
+	background-color: transparent;
 }

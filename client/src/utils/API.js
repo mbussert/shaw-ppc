@@ -9,6 +9,15 @@ export default {
       this.getAllUser(allUsers);
     })
   },
+
+  authenticateUser: function() {
+    return axios.get('/api/users/authenticate');
+  },
+  
+  logOutUser: function() {
+    return axios.post('/api/users/logout');
+  },
+
   // Get all orders
   getOrders: function() {
     return axios.get("/api/orders");
