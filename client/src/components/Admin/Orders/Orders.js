@@ -83,7 +83,7 @@ import API from "../../../utils/API";
 export default function Orders() {
   const [tableData, setTableData] = useState([]);
 
-  const [selection, setSelection] = React.useState([]);
+  const [selection, setSelection] = useState([]);
   const [deletedRows, setDeletedRows] = useState([]);
 
   const handlePurge = () => {
