@@ -1,6 +1,24 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+import Navbar from "../../components/navbar";
+import API from "../../utils/API";
 
 function ContactForm() {
+
+    const [loginStatus, setLoginStatus] = useState([]);
+
+    useEffect(() => {
+        loadStatus();
+    }, []);
+
+  function loadStatus() {
+
+    API.authenticateUser()
+      .then((response) => {
+        setLoginStatus(response.data.login);
+      })
+      .catch((err) => console.log(err));
+  }
+
     const [values,setValues] = useState({
         fullName: "",
         email: "",
@@ -8,6 +26,8 @@ function ContactForm() {
         message: "",
     })
     return (
+        <>
+        <Navbar loginStatus={loginStatus} />
         <div className="contact-form-container">
             <h2 className="contact-form-text">Contact US</h2>
             <form className="contact-form">
@@ -44,6 +64,7 @@ function ContactForm() {
             </form>
             
         </div>
+        </>
     )
 }
 
