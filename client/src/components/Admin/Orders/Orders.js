@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Title from "../Title/Title";
 import { DataGrid } from "@material-ui/data-grid";
+import { IconButton, Grid } from "@material-ui/core";
+import { Delete, AssignmentTurnedIn } from "@material-ui/icons";
 import API from "../../../utils/API";
 
 // const rows = [
@@ -81,24 +83,39 @@ import API from "../../../utils/API";
 export default function Orders() {
   const [tableData, setTableData] = useState([]);
 
+  const [selection, setSelection] = useState([]);
+  const [deletedRows, setDeletedRows] = useState([]);
+
+  const handlePurge = () => {
+    setDeleted([...deleted, ...selection]);
+    setItems(items.filter((i) => !selection.some((s) => s.id === i.id)));
+    setSelection([]);
+  };
+
   useEffect(() => {
-    async function fetchData() {
-      const request = await API.getOrders();
-      setTableData(request.data.results);
-      console.log(request);
-      return request;
-    }
-    fetchData();
+    API.getOrders()
+      .then((res) => {
+        setTableData(res.data);
+      })
+      .catch((error) => {
+        console.log("Error retrieving order data.");
+      });
   }, []);
 
   const columns = [
-    { field: "id", headerName: "ID", width: 100 },
+    { field: "id", headerName: "ID", width: 91 },
     {
       field: "date",
       headerName: "Date",
-      width: 180,
+      width: 130,
       type: "date",
       editable: false,
+    },
+    {
+      field: "projectTitle",
+      headerName: "Project Title",
+      width: 160,
+      type: "string",
     },
     {
       field: "clientName",
@@ -110,6 +127,7 @@ export default function Orders() {
           params.getValue(params.id, "lastName") || ""
         }`,
     },
+
     {
       field: "email",
       headerName: "Email",
@@ -125,7 +143,7 @@ export default function Orders() {
 
     {
       field: "projectTotal",
-      headerName: "Project Size",
+      headerName: "Project Size (Linear Ft)",
       width: "110",
     },
   ];
@@ -135,18 +153,42 @@ export default function Orders() {
   tableData.map((order) =>
     rows.push({
       id: order.id,
+      projectTitle: order.projectTitle,
       phone: order.phone,
       lastName: order.lastName,
       firstName: order.firstName,
       email: order.email,
-      date: order.date,
-      projectTotal: order.projectTotal,
+      date: new Date(order.createdAt).toLocaleDateString(),
+      projectTotal: order.linearFeet,
     })
   );
 
   return (
     <React.Fragment>
-      <Title>Recent Orders</Title>
+      <Grid container justify="space-between">
+        <Grid item>
+          <Title>Recent Orders </Title>
+        </Grid>
+        <Grid item>
+          <IconButton
+            aria-label="mark completed"
+            onClick={handlePurge}
+            color="action"
+          >
+            <AssignmentTurnedIn fontSize="medium" />
+          </IconButton>
+
+          <IconButton
+            aria-label="delete row"
+            onClick={handlePurge}
+            color="secondary"
+            fontSize="medium"
+          >
+            <Delete />
+          </IconButton>
+        </Grid>
+      </Grid>
+
       <div style={{ height: 500, width: "100%" }}>
         <DataGrid
           rows={rows}
@@ -161,6 +203,13 @@ export default function Orders() {
               sort: "asc",
             },
           ]}
+          onSelectionModelChange={({ selectionModel }) => {
+            const rowIds = selectionModel.map((rowId) =>
+              parseInt(String(rowId), 10)
+            );
+            const rowsToDelete = rows.filter((row) => rowIds.includes(row.id));
+            setDeletedRows(rowsToDelete);
+          }}
         />
       </div>
     </React.Fragment>
