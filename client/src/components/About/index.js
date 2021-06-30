@@ -15,44 +15,44 @@ class About extends Component {
         <div className="webdev5">
           <h1>Jon</h1>
           <hr></hr>
-          <p><TargetBlank label="Github" target="_blank" openLink="https://github.com/Yeatman51"/></p>
-          <p><TargetBlank label="LinkedIn" target="_blank" openLink="https://www.linkedin.com/in/jon-yeatman/"/></p>
-          <p><ButtonMailto label="Email" mailto="mailto:jonlyeatman@gmail.com"/></p>
+          <a href="https://github.com/Yeatman51" target="_blank" rel="noopener noreferrer">Github</a>
+          <a href="https://www.linkedin.com/in/jon-yeatman/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:jonlyeatman@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </div>
         <div className="webdev5">
           <h1>Al</h1>
           <hr></hr>
-          <p><TargetBlank label="Github" target="_blank" openLink="https://github.com/almurawski15"/></p>
-          <p><TargetBlank label="LinkedIn" target="_blank" openLink="https://www.linkedin.com/in/alexandra-murawski-8a312769/"/></p>
-          <p><ButtonMailto label="Email" mailto="mailto:almurawski15@gmail.com"/></p>
+          <a href="https://github.com/almurawski15" target="_blank" rel="noopener noreferrer">Github</a>
+          <a href="https://www.linkedin.com/in/alexandra-murawski-8a312769/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:almurawski15@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </div>
         <div className="webdev5">
           <h1>Heather</h1>
           <hr></hr>
-          <p><TargetBlank label="Github" target="_blank" openLink="https://github.com/hstor3"/></p>
-          <p><TargetBlank label="LinkedIn" target="_blank" openLink="https://www.linkedin.com/in/heather-storseth-5571501b9/"/></p>
-          <p><ButtonMailto label="Email" mailto="mailto:heatherstorseth3@gmail.com"/></p>
+          <a href="https://github.com/hstor3" target="_blank" rel="noopener noreferrer">Github</a>
+          <a href="https://www.linkedin.com/in/heather-storseth-5571501b9/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:heatherstorseth3@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </div>
         <div className="webdev5">
           <h1>Michael</h1>
           <hr></hr>
-          <p><TargetBlank label="Github" target="_blank" openLink="https://github.com/mbussert"/></p>
-          <p><TargetBlank label="LinkedIn" openLink="https://www.linkedin.com/in/michaelbussert/"/></p>
-          <p><ButtonMailto label="Email" mailto="mailto:mbussert@gmail.com"/></p>
+          <a href="https://github.com/mbussert" target="_blank" rel="noopener noreferrer">Github</a>
+          <a href="https://www.linkedin.com/in/michaelbussert/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:mbussert@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </div>
         <div className="webdev5">
           <h1>Valerie</h1>
           <hr></hr>
-          <p><TargetBlank label="Github" target="_blank" openLink="https://github.com/vruss14"/></p>
-          <p><TargetBlank label="LinkedIn" openLink="https://www.linkedin.com/in/valerie-russell-732731162/"/></p>
-          <p><ButtonMailto label="Email" mailto="mailto:vruss14@gmail.com"/></p>
+          <a href="https://github.com/vruss14" target="_blank" rel="noopener noreferrer">Github</a>
+          <a href="https://www.linkedin.com/in/valerie-russell-732731162/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:vruss14@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </div>
         <div className="webdev5">
           <h1>Brandon</h1>
           <hr></hr>
-          <p><TargetBlank label="Github" target="_blank" openLink="https://github.com/CrispyCoder817"/></p>
-          <p><TargetBlank label="LinkedIn" openLink="https://www.linkedin.com/in/brandongeorgemerritt/"/></p>
-          <p><ButtonMailto label="Email" mailto="mailto:brandongmerritt@gmail.com"/></p>
+          <a href="https://github.com/CrispyCoder817" target="_blank" rel="noopener noreferrer">Github</a>
+          <a href="https://www.linkedin.com/in/brandongeorgemerritt/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="mailto:brandongmerritt@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </div>
       </div>
     );
