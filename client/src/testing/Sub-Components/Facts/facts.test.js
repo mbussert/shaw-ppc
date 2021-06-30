@@ -1,7 +1,8 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
-import Facts from "../../../components/facts/index.js";
+import { unmountComponentAtNode } from "react-dom";
+import Facts from "../../../components/Facts/index.js";
+import setUpTest from "../../setUpTest.js";
+import { shallow } from "enzyme";
 
 let container = null;
 beforeEach(() => {
@@ -19,12 +20,11 @@ afterEach(() => {
 
 describe("Facts", () => {
 
-    it("renders successfully to the page", () => {
-        act(() => {
-        render(<Facts />, container);
-        });
-        expect(container.innerHTML).not.toBeNull();
-        expect(container.innerHTML).not.toBeUndefined();
-        expect(container.innerHTML).toContain("h1", "ul", "img");
+  it("renders without crashing and displays relevant text content", () => {
+
+      shallow(<Facts />);
+      expect(container.textContent).not.toBeNull();
+      
     });
+
 });
