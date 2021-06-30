@@ -1,8 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link } from "react-router-dom";
 
-function Modal() {
-    return (
+
+    const Modal = ({ isShowing, hide }) => isShowing ? ReactDOM.createPortal(
+
+    <React.Fragment>
         <div className="modal-1">
             
             <div className="modal-title">
@@ -18,15 +20,15 @@ function Modal() {
             </div>
 
             <div className="modal-buttons">
-                <button className="modal-btn-continue">CONTINUE</button>
+                <button className="modal-btn-continue" onClick={hide}>CONTINUE</button>
 
                 <Link to="./Login">
                 <button className="modal-btn-signup">SIGN UP</button>
                 </Link>
             </div>
-            
+    
         </div>
-    )
-}
+  </React.Fragment>, document.body
+) : null;
 
 export default Modal;

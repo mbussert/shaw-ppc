@@ -1,7 +1,8 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { unmountComponentAtNode } from "react-dom";
 import Header from "../../../components/Header/index.js";
+import setUpTest from "../../setUpTest.js";
+import { shallow } from "enzyme";
 
 let container = null;
 beforeEach(() => {
@@ -19,12 +20,10 @@ afterEach(() => {
 
 describe("Header", () => {
 
-    it("renders successfully to the page", () => {
-        act(() => {
-        render(<Header />, container);
-        });
-        expect(container.innerHTML).not.toBeNull();
-        expect(container.innerHTML).not.toBeUndefined();
-        expect(container.innerHTML).toContain("header", "span", "SHAW", "PPC", "DESIGN");
+    it("renders successfully to the page without crashing", () => {
+
+      shallow(<Header />)
+      expect(container.textContent).not.toBeNull();
+
     });
 });
