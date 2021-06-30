@@ -862,7 +862,7 @@ h1 {
   padding: 0.5rem;
 }
 
-p {
+a {
   font-size: 1rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
