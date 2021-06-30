@@ -52,7 +52,7 @@ function Footer() {
             <p className="footer-signup-text">Sign up now for your free account so you can track all of your
                projects in one convenient place
             </p>
-            <Link className="footer-link-btn" to="./Login">
+            <Link className="footer-link-btn" to="./Create">
               <h5 className="foot-signup">SIGN UP</h5>
             </Link>
           </div>

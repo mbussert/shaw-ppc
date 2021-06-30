@@ -21,6 +21,8 @@ import {
 // import { makeStyles } from "@material-ui/core/styles";
 import InfoIcon from "@material-ui/icons/Info";
 import Arithmetic from "./arithmetic.js";
+import Modal from "../../components/modal/Modal";
+import useModal from "../../components/modal/useModal";
 import Project from "../../components/Project";
 
 // const useStyles = makeStyles((theme) => ({
@@ -38,9 +40,19 @@ import Project from "../../components/Project";
 function Calculator() {
   // const classes = useStyles();
 
-  // const [formObject, setFormObject] = useState({
-  //   material: "Material WC-J3",
-  // });
+  const { isShowing, toggle } = useModal();
+
+  function showModal() {
+    if (props.loginStatus != "The user is logged in.") {
+      return <Modal isShowing={isShowing} />;
+    } else {
+      return null;
+    }
+  }
+
+  const [formObject, setFormObject] = useState({
+    material: "Material WC-J3",
+  });
 
   const [loginStatus, setLoginStatus] = useState([]);
 
@@ -140,7 +152,10 @@ function Calculator() {
     <>
       <Navbar loginStatus={loginStatus} />
       <Header />
-      <Project />
+      <Modal isShowing={isShowing} hide={toggle} />
+      <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
+        <Project />
+      </Container>
     </>
   );
 }
