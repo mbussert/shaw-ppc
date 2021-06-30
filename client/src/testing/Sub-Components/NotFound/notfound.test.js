@@ -1,8 +1,8 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { unmountComponentAtNode } from "react-dom";
 import NotFound from "../../../components/NotFound/index.js";
-import { BrowserRouter } from 'react-router-dom';
+import setUpTest from "../../setUpTest.js";
+import { shallow } from "enzyme";
 
 let container = null;
 beforeEach(() => {
@@ -20,15 +20,8 @@ afterEach(() => {
 
 describe("NotFound", () => {
 
-    it("renders successfully to the page", () => {
-        act(() => {
-        render(
-        <BrowserRouter>
-            <NotFound />
-        </BrowserRouter>, container);
-        });
-        expect(container.innerHTML).not.toBeNull();
-        expect(container.innerHTML).not.toBeUndefined();
-        expect(container.innerHTML).toContain("h1", "button", "Link", "404");
-    });
+  it("renders successfully to the page without crashing", () => {
+    shallow(<NotFound />)
+    expect(container.textContent).not.toBeNull();     
+  });
 });
