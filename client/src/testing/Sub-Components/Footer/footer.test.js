@@ -1,8 +1,8 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { unmountComponentAtNode } from "react-dom";
 import Footer from "../../../components/Footer/index.js";
-import { BrowserRouter } from 'react-router-dom';
+import setUpTest from "../../setUpTest.js";
+import { shallow } from "enzyme";
 
 let container = null;
 beforeEach(() => {
@@ -20,16 +20,11 @@ afterEach(() => {
 
 describe("Footer", () => {
 
-    it("renders successfully to the page", () => {
-        act(() => {
-        render(
-        <BrowserRouter>
-          <Footer />
-        </BrowserRouter>, container);
-        });
-        expect(container.innerHTML).not.toBeNull();
-        expect(container.innerHTML).not.toBeUndefined();
-        expect(container.innerHTML).toContain("footer", "ul", "li", "Link", "href", "https", "alt");
+    it("renders successfully to the page without crashing", () => {
+
+        shallow(<Footer />)
+        expect(container.textContent).not.toBeNull();
+
     });
 
 });

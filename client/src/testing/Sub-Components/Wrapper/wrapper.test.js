@@ -1,7 +1,8 @@
 import React from "react";
-import { render, unmountComponentAtNode } from "react-dom";
-import { act } from "react-dom/test-utils";
+import { unmountComponentAtNode } from "react-dom";
 import Wrapper from "../../../components/Wrapper/index.js";
+import setUpTest from "../../setUpTest.js";
+import { shallow } from "enzyme";
 
 let container = null;
 beforeEach(() => {
@@ -18,21 +19,14 @@ afterEach(() => {
 });
 
 describe("Wrapper", () => {
+  
+  it ("renders successfully to the page with or without props", () => {
+ 
+      shallow(<Wrapper />)
+      expect(container.textContent).not.toBeNull();  
+      
+      shallow(<Wrapper name="Test Prop" />);
+      expect(container.textContent).not.toBeNull();  
 
-    it("renders successfully to the page with or without props", () => {
-        act(() => {
-        render(<Wrapper />, container);
-        });
-        expect(container.innerHTML).not.toBeNull();
-        expect(container.innerHTML).not.toBeUndefined();
-
-        act(() => {
-            render(<Wrapper name="Test Prop" />, container);
-            });
-            expect(container.innerHTML).not.toBeNull();
-            expect(container.innerHTML).not.toBeUndefined();
-            expect(container.innerHTML).toContain("main", "wrapper");
-
-    });
-
-});
+  })
+})

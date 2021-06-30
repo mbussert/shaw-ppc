@@ -1,6 +1,6 @@
 import React from "react";
 import { unmountComponentAtNode } from "react-dom";
-import ProjectDetails from "../../../components/ProjectDetails/index.js";
+import Orders from "../../../components/Admin/Orders/Orders.js";
 import setUpTest from "../../setUpTest.js";
 import { shallow } from "enzyme";
 
@@ -18,12 +18,13 @@ afterEach(() => {
   container = null;
 });
 
-describe("ProjectDetails", () => {
+describe("Orders", () => {
 
-  it("renders successfully to the page without crashing", () => {
+  it("renders without crashing and displays relevant text content", () => {
 
-    shallow(<ProjectDetails />)
-    expect(container.textContent).not.toBeNull();     
+      shallow(<Orders />);
 
-  });
+      expect(container.textContent).not.toBeNull();
+    });
+
 });
