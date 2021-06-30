@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import ButtonMailto from "../MailtoButton";
-import TargetBlank from "../TargetBlank";
 
 class About extends Component {
   render() {

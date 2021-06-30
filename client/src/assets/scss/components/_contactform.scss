@@ -9,14 +9,15 @@
 }
 
 .contact-form {
+    background-color: $background;
     min-width: 75%;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     align-content: center;
     justify-content: center;
-    background-color: $grayDark;
     border-radius: .5em;
+    box-shadow: $boxshadow;
     border: solid 2px $orange;
     padding: 1.5em 1.5em .5em 1.5em;
 }
@@ -28,53 +29,71 @@
     margin: 0 0 1em 0;
 }
 
-.contact-form-name {
-    min-width: 100%;
-    border-radius: .5em;
-    border: solid 2px $orange;
-    background-color: $blue;
-    font-size: 1.2em;
-    padding: .5em .5em .5em .5em;
-    margin: 0 0 .5em 0;
+.contact-form label {
+    color: white;
+	text-transform: uppercase;
+	font-size: 1em;
+	margin: 1rem 0 0 0;
+    padding: 0 0 0.2em 0;
 }
 
-.contact-form-email {
-    min-width: 100%;
-    border-radius: .5em;
-    border: solid 2px $orange;
-    background-color: $blue;
-    font-size: 1.2em;
-    padding: .5em .5em .5em .5em;
-    margin: 0 0 .5em 0;
-}
+// .contact-form-name {
+//     min-width: 100%;
+//     border-radius: .5em;
+//     border: solid 2px $orange;
+//     background-color: $input;
+//     color: white;
+//     font-size: 1.2em;
+//     padding: .5em .5em .5em .5em;
+//     margin: 0 0 .5em 0;
+// }
 
-.contact-form-subject {
-    min-width: 100%;
-    border-radius: .5em;
-    border: solid 2px $orange;
-    background-color: $blue;
-    font-size: 1.2em;
-    padding: .5em .5em .5em .5em;
-    margin: 0 0 .5em 0;
-}
-
+.contact-form-name,
+.contact-form-email,
+.contact-form-subject,
 .contact-form-message {
-    min-width: 100%;
-    border-radius: .5em;
-    border: solid 2px $orange;
-    background-color: $blue;
-    font-size: 1.2em;
-    padding: .5em .5em .5em .5em;
-    margin: 0 0 .5em 0;
+	background-color: rgba(255, 255, 255, 0.25);
+	border: 2px solid $orange;
+	border-radius: .5em;
+	color: white;
+	width: 100%;
+	font-size: 1.15rem;
+	outline: none;
+	letter-spacing: 1px; 
+	padding: .5em .5em .5em .5em;
+    margin: 1.2rem 0 .5em 0;
 }
+
+.contact-form-name:hover,
+.contact-form-name:focus,
+.contact-form-email:hover,
+.contact-form-email:focus,
+.contact-form-subject:hover,
+.contact-form-subject:focus,
+.contact-form-message:hover,
+.contact-form-message:focus
+ {
+    color: white;
+    border: 2px solid rgba(243, 241, 241, 0.479);
+    background-color: transparent;
+}
+
 
 .contact-form-submit {
     color: white;
     background-color: $orange;
+    box-shadow: $boxshadow;
     border: none;
     border-radius: 0.5em;
-    margin: 1em 1em 1em 1em;
-    padding: .6em;
+    text-align: center;
+    margin: 1.5em 1em 1em 1em;
+    padding: .6em 2em .6em 2em;
+}
+
+.contact-form-submit:hover {
+    color: $orange;
+    border: 2px solid $orange;
+    background-color: transparent;
 }
 
 @media only screen and (max-width: 900px) {
