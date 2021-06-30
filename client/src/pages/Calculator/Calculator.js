@@ -153,9 +153,8 @@ function Calculator() {
       <Navbar loginStatus={loginStatus} />
       <Header />
       <Modal isShowing={isShowing} hide={toggle} />
-      <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
-        <Project />
-      </Container>
+
+      <Project />
     </>
   );
 }
