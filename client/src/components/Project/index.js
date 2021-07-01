@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import {
   Container,
   Button,
-  Icon,
+  IconButton,
   TextField,
   Select,
   MenuItem,
@@ -22,6 +22,13 @@ import {
   StepContent,
   Paper,
   Typography,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableHead,
+  TableRow,
+  Link,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
@@ -30,6 +37,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import AddIcon from "@material-ui/icons/Add";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 function getSteps() {
   return ["Create Your Project", "Add Wall(s)", "Save/Submit"];
@@ -40,11 +48,24 @@ function getStepContent(step) {
 
   const handleClickOpen = () => {
     setOpen(true);
+    console.log(rows);
   };
 
   const handleClose = () => {
     setOpen(false);
   };
+
+  function createData(wallName, width, height, linearFeet) {
+    return { wallName, width, height, linearFeet };
+  }
+
+  const rows = [
+    createData("Wall #1", 159, 6.0, 24),
+    createData("Wall #2", 237, 9.0, 37),
+    createData("Wall #3", 262, 16.0, 24),
+    createData("Wall #4", 305, 3.7, 67),
+    createData("Wall #5", 356, 16.0, 49),
+  ];
 
   switch (step) {
     case 0:
@@ -106,16 +127,59 @@ function getStepContent(step) {
       );
     case 1:
       return (
-        <Grid container justify="center" style={{ marginBottom: 10 }}>
+        <Grid
+          container
+          justify="center"
+          style={{ marginTop: 20, marginBottom: 60 }}
+        >
           <Grid container item justify="center">
             <div>
-              <Button
-                variant="outlined"
-                color="primary"
-                onClick={handleClickOpen}
-              >
-                Add New Wall
-              </Button>
+              {rows.length > 0 ? (
+                <TableContainer style={{ marginTop: 15, marginBottom: 20 }}>
+                  <Table size="small">
+                    <TableHead>
+                      <TableRow>
+                        <TableCell>Wall Name</TableCell>
+                        <TableCell>Width</TableCell>
+                        <TableCell>Height</TableCell>
+                        <TableCell>Linear Feet</TableCell>
+                        <TableCell></TableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {rows.map((row) => (
+                        <TableRow key={row.wallName}>
+                          <TableCell component="th" scope="row">
+                            {row.wallName}
+                          </TableCell>
+                          <TableCell>{row.width}</TableCell>
+                          <TableCell>{row.height}</TableCell>
+                          <TableCell>{row.linearFeet}</TableCell>
+                          <TableCell>
+                            <Link color="inherit" href="#">
+                              Delete
+                            </Link>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+              ) : (
+                <h2 style={{ marginBottom: 15 }}>
+                  No walls have been added to your project.
+                </h2>
+              )}
+              <Grid container justify="center">
+                <Button
+                  variant="outlined"
+                  color="primary"
+                  onClick={handleClickOpen}
+                  startIcon={<AddIcon />}
+                >
+                  New Wall
+                </Button>
+              </Grid>
               <Dialog
                 open={open}
                 onClose={handleClose}
@@ -157,6 +221,7 @@ function getStepContent(step) {
                     style={{ marginBottom: 10, width: "49%" }}
                   />
                 </DialogContent>
+
                 <DialogActions>
                   <Button onClick={handleClose} color="secondary">
                     Cancel
@@ -171,7 +236,17 @@ function getStepContent(step) {
         </Grid>
       );
     case 2:
-      return `X`;
+      return (
+        <Grid
+          container
+          justify="center"
+          style={{ marginTop: 20, marginBottom: 60 }}
+        >
+          <Grid container item justify="center">
+            Test
+          </Grid>
+        </Grid>
+      );
     default:
       return "Unknown step";
   }
