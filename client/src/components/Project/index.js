@@ -37,7 +37,6 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import AddIcon from "@material-ui/icons/Add";
-import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 function getSteps() {
   return ["Create Your Project", "Add Wall(s)", "Save/Submit"];
@@ -55,16 +54,16 @@ function getStepContent(step) {
     setOpen(false);
   };
 
-  function createData(wallName, width, height, linearFeet) {
-    return { wallName, width, height, linearFeet };
+  function createData(wallName, width, height, linearFeet, border) {
+    return { wallName, width, height, linearFeet, border };
   }
 
   const rows = [
-    createData("Wall #1", 159, 6.0, 24),
-    createData("Wall #2", 237, 9.0, 37),
-    createData("Wall #3", 262, 16.0, 24),
-    createData("Wall #4", 305, 3.7, 67),
-    createData("Wall #5", 356, 16.0, 49),
+    createData("Wall #1", 159, 6.0, 24, "true"),
+    createData("Wall #2", 237, 9.0, 37, "false"),
+    createData("Wall #3", 262, 16.0, 24, "true"),
+    createData("Wall #4", 305, 3.7, 67, "true"),
+    createData("Wall #5", 356, 16.0, 49, "true"),
   ];
 
   switch (step) {
@@ -143,6 +142,7 @@ function getStepContent(step) {
                         <TableCell>Width</TableCell>
                         <TableCell>Height</TableCell>
                         <TableCell>Linear Feet</TableCell>
+                        <TableCell>Border</TableCell>
                         <TableCell></TableCell>
                       </TableRow>
                     </TableHead>
@@ -155,6 +155,7 @@ function getStepContent(step) {
                           <TableCell>{row.width}</TableCell>
                           <TableCell>{row.height}</TableCell>
                           <TableCell>{row.linearFeet}</TableCell>
+                          <TableCell>{row.border}</TableCell>
                           <TableCell>
                             <Link color="inherit" href="#">
                               Delete
@@ -210,6 +211,7 @@ function getStepContent(step) {
                     type="number"
                     helperText="Inches"
                     style={{ marginBottom: 10, marginRight: 10, width: "49%" }}
+                    required
                   />
                   <TextField
                     id="height"
@@ -219,7 +221,22 @@ function getStepContent(step) {
                     type="number"
                     helperText="Inches"
                     style={{ marginBottom: 10, width: "49%" }}
+                    required
                   />
+                  <Grid container item justify="center">
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          name="border"
+                          id="border"
+                          color="primary"
+                          defaultChecked
+                          margin="dense"
+                        />
+                      }
+                      label="Add 6 inch border (recommended)"
+                    />
+                  </Grid>
                 </DialogContent>
 
                 <DialogActions>
