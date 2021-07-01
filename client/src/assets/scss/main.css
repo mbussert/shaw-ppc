@@ -311,11 +311,17 @@ Header {
   letter-spacing: 1px;
   margin-top: 3rem;
   padding: .75rem;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   display: block;
   width: 100%;
   border: none;
   cursor: pointer;
+}
+
+.login-btn:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
 }
 
 .create-acct-opt {
@@ -332,7 +338,7 @@ Header {
   padding: .5rem 1rem;
   border: 2px solid transparent;
   outline: none;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   background-color: rgba(255, 255, 255, 0.25);
   letter-spacing: 1px;
   margin-top: 1.2rem;
@@ -465,11 +471,17 @@ nav .line {
   letter-spacing: 1px;
   margin-top: 3rem;
   padding: .75rem;
-  border-radius: 2rem;
+  border-radius: 0.75rem;
   display: block;
   width: 100%;
   border: none;
   cursor: pointer;
+}
+
+.create-btn:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
 }
 
 .login-opt {
@@ -486,7 +498,7 @@ nav .line {
   padding: .5rem 1rem;
   border: 2px solid transparent;
   outline: none;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   background-color: rgba(255, 255, 255, 0.25);
   letter-spacing: 1px;
   margin-top: 1.2rem;
