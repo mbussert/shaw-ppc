@@ -18,16 +18,12 @@
 }
 
 .fqa-list {
-    color: white;
-    font-size: 1.3em;
-    list-style-type: circle;
-    padding-inline-start: 0.5em;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
+    background: #FFF; 
+    font-size: 20px;
+    max-width: 15em;
+    margin: auto;
+    padding: 0.5em 1em;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
 }
 
 .image-container {
@@ -47,14 +43,18 @@
 }
 
 .calc-btn {
-    color: white;
     background-color: $orange;
-    box-shadow: $boxshadow;
-    border: none;
-    border-radius: 0.5em;
-    text-align: center;
+	color: #ffffff;
+    font-size: 1em;
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	border-radius: 0.75rem;
+	display: block;
+	border: none;
+	cursor: pointer;
     margin: 1.5em 1em 1em 1em;
-    padding: .6em 2em .6em 2em;
+    padding: 1em 3em 1em 3em;
   }
 
 .calc-btn:hover {
