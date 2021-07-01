@@ -47,13 +47,18 @@
 }
 
 .calc-btn {
-    background-color: $orange;
     color: white;
-    display: block;
+    background-color: $orange;
+    box-shadow: $boxshadow;
+    border: none;
     border-radius: 0.5em;
-    border-style: none;
-    margin: 3em;
-    padding: 1em;
-    text-decoration: none;
-    font-size: 1.5em;
+    text-align: center;
+    margin: 1.5em 1em 1em 1em;
+    padding: .6em 2em .6em 2em;
   }
+
+.calc-btn:hover {
+    color: $orange;
+    border: 2px solid $orange;
+    background-color: transparent;
+}
