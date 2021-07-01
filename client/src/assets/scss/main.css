@@ -862,36 +862,54 @@ nav .line {
 }
 
 .devcardgrid {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  width: 100vw;
-  height: 80vh;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 106vh;
+  max-width: 100vw;
+  margin: 1vw;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
-.webdev5 {
-  float: left;
+.web-dev-header-card {
   border: 1px solid #da9f63;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 2rem;
   padding: 2.5rem;
   border-radius: 2.5rem;
   background-color: #1D2837;
   color: #a3becf;
+  box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: column;
 }
 
-h1 {
-  margin: .15rem;
+.webdev5 {
+  border: 1px solid #da9f63;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: row;
+  border-radius: 2.5rem;
+  background-color: #1D2837;
+  color: #a3becf;
+  box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
+  box-sizing: border-box;
+  max-width: 85vw;
+  max-height: 20vh;
+  margin: 2rem;
+  padding: 2.5rem;
+}
+.webdev5 h1 {
+  margin: 0.15rem;
   text-align: left;
   -ms-flex-line-pack: center;
       align-content: center;
   padding: 0.5rem;
 }
-
-a {
+.webdev5 a {
   font-size: 1rem;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -986,6 +1004,15 @@ body {
   font-size: 1.5em;
 }
 
+.create-account-btn:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
+}
+.create-account-btn:hover a {
+  color: #da9f63;
+}
+
 @media only screen and (max-width: 900px) {
   body {
     background-size: cover;
@@ -1075,9 +1102,4 @@ a {
 
 .contact-page {
   min-height: 80vh;
-}
-
-.MaF {
-  min-height: 90vh;
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */
