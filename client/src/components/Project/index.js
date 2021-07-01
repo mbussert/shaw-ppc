@@ -42,6 +42,18 @@ function getSteps() {
   return ["Create Your Project", "Add Wall(s)", "Save/Submit"];
 }
 
+function createData(wallName, width, height, linearFeet, border) {
+  return { wallName, width, height, linearFeet, border };
+}
+
+const rows = [
+  createData("Wall #1", 159, 6.0, 24, "true"),
+  createData("Wall #2", 237, 9.0, 37, "false"),
+  createData("Wall #3", 262, 16.0, 24, "true"),
+  createData("Wall #4", 305, 3.7, 67, "true"),
+  createData("Wall #5", 356, 16.0, 49, "true"),
+];
+
 function getStepContent(step) {
   const [open, setOpen] = React.useState(false);
 
@@ -53,18 +65,6 @@ function getStepContent(step) {
   const handleClose = () => {
     setOpen(false);
   };
-
-  function createData(wallName, width, height, linearFeet, border) {
-    return { wallName, width, height, linearFeet, border };
-  }
-
-  const rows = [
-    createData("Wall #1", 159, 6.0, 24, "true"),
-    createData("Wall #2", 237, 9.0, 37, "false"),
-    createData("Wall #3", 262, 16.0, 24, "true"),
-    createData("Wall #4", 305, 3.7, 67, "true"),
-    createData("Wall #5", 356, 16.0, 49, "true"),
-  ];
 
   switch (step) {
     case 0:
@@ -292,7 +292,12 @@ function Project() {
   const classes = useStyles();
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    if (activeStep === 1 && rows <= 0) {
+      alert("Please add at least one wall to proceed.");
+      setActiveStep((prevActiveStep) => prevActiveStep);
+    } else {
+      setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    }
   };
 
   const handleBack = () => {
