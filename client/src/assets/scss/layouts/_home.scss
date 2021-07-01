@@ -61,6 +61,16 @@ body {
   }
 }
 
+.create-account-btn:hover {
+  color: $orange;
+  border: 2px solid $orange;
+  background-color: transparent;
+
+  a {
+    color: $orange;
+  }
+}
+
 @media only screen and (max-width: 900px) {
   body {
    

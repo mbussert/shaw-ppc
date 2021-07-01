@@ -4,12 +4,15 @@ import { Link } from "react-router-dom";
 class About extends Component {
   render() {
     return (
-      <div className="devcardgrid">
-          <div className="webdev5">
+      <>
+       <div className="web-dev-header-card">
           <h1>Project</h1>
           <p>The application will assist clients in calculating square footage measurements for vinyl installation material deliverables on behalf of the design company. 
             The average user will be able to utilize the calculator tool to place product orders, potentially have access to an augmented reality capability to visualize the placement, save their account info, and notify the administration team of their new orders.</p>
         </div>
+
+      <div className="devcardgrid">
+         
         <div className="webdev5">
           <h1>Jon</h1>
           <hr></hr>
@@ -53,6 +56,7 @@ class About extends Component {
           <a href="mailto:brandongmerritt@gmail.com" target="_blank" rel="noopener noreferrer">Email</a>
         </div>
       </div>
+      </>
     );
   }
 }
