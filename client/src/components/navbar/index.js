@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
 import API from "../../utils/API";
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 function Navbar(props) {
   function verifyStatus() {
@@ -68,6 +69,9 @@ function Navbar(props) {
         </div>
       </ul>
     </nav>
+    </div>
+    <div className="hamburgerMQ">
+    <GiHamburgerMenu/>
     </div>
     </div>
   );
