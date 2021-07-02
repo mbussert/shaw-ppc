@@ -255,13 +255,40 @@ function getStepContent(step) {
       );
     case 2:
       return (
-        <Grid
-          container
-          justify="center"
-          style={{ marginTop: 20, marginBottom: 60 }}
-        >
+        <Grid container style={{ marginTop: 20, marginBottom: 60 }}>
           <Grid container item justify="center">
-            Test
+            <Typography variant="h5">Project Title: </Typography>
+            <Typography variant="h6" style={{ paddingLeft: 10 }}>
+              Test
+            </Typography>
+          </Grid>
+          <Grid container item>
+            <TableContainer style={{ marginTop: 15 }}>
+              <Table size="small">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Wall Name</TableCell>
+                    <TableCell>Width</TableCell>
+                    <TableCell>Height</TableCell>
+                    <TableCell>Linear Feet</TableCell>
+                    <TableCell>Border</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row) => (
+                    <TableRow key={row.wallName}>
+                      <TableCell component="th" scope="row">
+                        {row.wallName}
+                      </TableCell>
+                      <TableCell>{row.width}</TableCell>
+                      <TableCell>{row.height}</TableCell>
+                      <TableCell>{row.linearFeet}</TableCell>
+                      <TableCell>{row.border}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </Grid>
         </Grid>
       );
