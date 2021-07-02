@@ -29,6 +29,7 @@ import {
   TableHead,
   TableRow,
   Link,
+  Snackbar,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
@@ -42,6 +43,18 @@ function getSteps() {
   return ["Create Your Project", "Add Wall(s)", "Save/Submit"];
 }
 
+function createData(wallName, width, height, linearFeet, border) {
+  return { wallName, width, height, linearFeet, border };
+}
+
+const rows = [
+  createData("Wall #1", 159, 6.0, 24, "Yes"),
+  createData("Wall #2", 237, 9.0, 37, "No"),
+  createData("Wall #3", 262, 16.0, 24, "Yes"),
+  createData("Wall #4", 305, 3.7, 67, "Yes"),
+  createData("Wall #5", 356, 16.0, 49, "Yes"),
+];
+
 function getStepContent(step) {
   const [open, setOpen] = React.useState(false);
 
@@ -53,18 +66,6 @@ function getStepContent(step) {
   const handleClose = () => {
     setOpen(false);
   };
-
-  function createData(wallName, width, height, linearFeet, border) {
-    return { wallName, width, height, linearFeet, border };
-  }
-
-  const rows = [
-    createData("Wall #1", 159, 6.0, 24, "true"),
-    createData("Wall #2", 237, 9.0, 37, "false"),
-    createData("Wall #3", 262, 16.0, 24, "true"),
-    createData("Wall #4", 305, 3.7, 67, "true"),
-    createData("Wall #5", 356, 16.0, 49, "true"),
-  ];
 
   switch (step) {
     case 0:
@@ -254,13 +255,40 @@ function getStepContent(step) {
       );
     case 2:
       return (
-        <Grid
-          container
-          justify="center"
-          style={{ marginTop: 20, marginBottom: 60 }}
-        >
+        <Grid container style={{ marginTop: 20, marginBottom: 60 }}>
           <Grid container item justify="center">
-            Test
+            <Typography variant="h5">Project Title: </Typography>
+            <Typography variant="h6" style={{ paddingLeft: 10 }}>
+              Test
+            </Typography>
+          </Grid>
+          <Grid container item>
+            <TableContainer style={{ marginTop: 15 }}>
+              <Table size="small">
+                <TableHead>
+                  <TableRow>
+                    <TableCell>Wall Name</TableCell>
+                    <TableCell>Width</TableCell>
+                    <TableCell>Height</TableCell>
+                    <TableCell>Linear Feet</TableCell>
+                    <TableCell>Border</TableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {rows.map((row) => (
+                    <TableRow key={row.wallName}>
+                      <TableCell component="th" scope="row">
+                        {row.wallName}
+                      </TableCell>
+                      <TableCell>{row.width}</TableCell>
+                      <TableCell>{row.height}</TableCell>
+                      <TableCell>{row.linearFeet}</TableCell>
+                      <TableCell>{row.border}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
           </Grid>
         </Grid>
       );
@@ -306,6 +334,11 @@ function Project() {
   return (
     <Grid container justify="center">
       <div className={classes.root}>
+        <Paper square elevation={0}>
+          <Typography align="center" variant="h4" style={{ paddingTop: 20 }}>
+            Project Calculator
+          </Typography>
+        </Paper>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((label, index) => (
             <Step key={label}>
@@ -326,6 +359,7 @@ function Project() {
                       color="primary"
                       onClick={handleNext}
                       className={classes.button}
+                      disabled={activeStep === 1 && rows.length <= 0}
                     >
                       {activeStep === steps.length - 1 ? "Submit" : "Next"}
                     </Button>
