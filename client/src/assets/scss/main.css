@@ -354,7 +354,7 @@ Header {
 
 /* navbar */
 .navLogo {
-  margin: .5em 0 .5em .5em;
+  margin: 0.5em 0 0.5em 0.5em;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -442,6 +442,14 @@ nav .line {
   display: none;
 }
 
+.mobileNav {
+  display: none;
+}
+
+.mobileLinks {
+  display: none;
+}
+
 @media only screen and (max-width: 900px) {
   .hamburgerMQ {
     height: 2em;
@@ -452,6 +460,12 @@ nav .line {
   }
   nav {
     display: none;
+  }
+  .mobileNav {
+    display: inline-block;
+  }
+  .mobileLinks {
+    display: inline-block;
   }
 }
 * {
