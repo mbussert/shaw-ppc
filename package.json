@@ -39,6 +39,7 @@
     "node-sass": "^6.0.0",
     "nodemailer": "^6.6.1",
     "passport": "^0.4.1",
+    "react-icons": "^4.2.0",
     "react-player": "^2.9.0",
     "react-router-dom": "^5.2.0",
     "recharts": "^2.0.9",
