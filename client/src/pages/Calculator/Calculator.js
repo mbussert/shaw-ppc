@@ -43,7 +43,7 @@ function Calculator() {
   const { isShowing, toggle } = useModal();
 
   function showModal() {
-    if (props.loginStatus != "The user is logged in.") {
+    if (loginStatus != "The user is logged in.") {
       return <Modal isShowing={isShowing} />;
     } else {
       return null;
@@ -152,8 +152,8 @@ function Calculator() {
     <>
       <Navbar loginStatus={loginStatus} />
       <Header />
-      <Modal isShowing={isShowing} hide={toggle} />
-
+      {showModal()}
+      {/* <Modal isShowing={isShowing} hide={toggle} /> */}
       <Project />
     </>
   );
