@@ -38,17 +38,15 @@ router.get('/authenticate', async (req, res) => {
 });
 
 router.post("/login", async (req, res) => {
+
+  try {
+
     const userData = await User.findOne({
       where: { email: req.body.email },
     });
   
     if (!userData) {
-      res
-        .status(400)
-        .json({ message: "Incorrect email or password, please try again" })
-        .send('Incorrect email or password')
-        console.log('\n', "Incorrect email or password", '\n');
-        return; 
+      return res.status(400).json({ message: "Incorrect email or password, please try again" })
     }
   
     const validPassword = userData.checkPassword(req.body.password);
@@ -56,7 +54,7 @@ router.post("/login", async (req, res) => {
       res
         .status(400)
         .json({ message: "Incorrect email or password, please try again" })
-        .send('Incorrect email or password')
+        // .send('Incorrect email or password')
         console.log('\n', "Incorrect email or password", '\n');
         return; 
     }
@@ -68,8 +66,13 @@ router.post("/login", async (req, res) => {
       .send('You are now logged in')
       console.log('\n', "You are now logged in", '\n');
       return; 
-    });
-  });
+    })
+
+  } catch(err) {
+    res.status(500).json(err)
+    console.log(err)
+  }
+});
 
 router.post("/logout", (req, res) => {
   if (req.session.loggedIn) {
