@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Modal () {
 
@@ -31,10 +31,12 @@ function Modal () {
 
                 <div className="modal-buttons">
                     <button className="modal-btn-continue" onClick = {() => hideModal()} >CONTINUE</button>
-
-                    <Link to="./Login">
-                    <button className="modal-btn-signup">SIGN UP</button>
-                    </Link>
+                    
+                    <button className="modal-btn-signup">
+                    <NavLink to="./Login">
+                    SIGN UP
+                    </NavLink>
+                    </button>
                 </div>
 
             </div>
