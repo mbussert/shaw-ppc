@@ -1,7 +1,8 @@
 .modal-1 {
     // background-image: linear-gradient(#1D2837, #162A45, #254666);
     background-color: $blueDark;
-    max-width: 75%;
+    max-width: 85vw;
+    max-height: 33vh;
     border-radius: 1em;
     z-index: 2;
     position: absolute;
@@ -15,13 +16,13 @@
     color: white;
     // text-transform: uppercase;
     text-transform: capitalize;
-    font: 1em sans-serif;
+    font: 1.5 vw sans-serif;
 
 }
 
 .modal-body{
     color: white;
-    font: 1.5em sans-serif;
+    font: 1.5vw sans-serif;
     margin: 1em;
 }
 
@@ -34,17 +35,37 @@
 .modal-btn-continue {
     color: white;
     background-color: $orange;
-    padding: 1em;
+    padding: 1vw;
     border-radius: 0.5em;
     border: none;
     margin: 0 1em 0 1em;
 }
 
-.modal-btn-signup{
+.modal-btn-continue:hover {
+    color: $orange;
+    border: 2px solid $orange;
+    background-color: transparent;
+  
+    a {
+      color: $orange;
+    }
+}
+
+.modal-btn-signup {
     color: white;
     background-color: $orange;
-    padding: 1em;
+    padding: 1vw;
     border-radius: 0.5em;
     border: none;
     margin: 0 1em 0 1em;
+}
+
+.modal-btn-signup:hover {
+    color: $orange;
+    border: 2px solid $orange;
+    background-color: transparent;
+  
+    a {
+      color: $orange;
+    }
 }
