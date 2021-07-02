@@ -28,6 +28,7 @@
     align-content: center;
     justify-content: center;
     width: auto;
+    text-align: center;
     
     li:nth-child(odd) {
         color: $blue;
@@ -36,6 +37,7 @@
 
     li:nth-child(even) {
         background-color: $background;
+        line-height: 2em;
     }
 }
 
@@ -57,6 +59,7 @@
     border: solid 2px $orange;
     padding: 1em;
     margin: 2em;
+    max-width: 80vw;
 }
 
 .create-account-btn:hover {
