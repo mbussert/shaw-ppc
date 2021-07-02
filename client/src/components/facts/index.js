@@ -5,22 +5,28 @@ function Facts() {
     return (
         <div className="fact-section">
             <h1 className="fact-title">Q & A</h1>
-            
+
             <ul className="fqa-list">
-                <li> Step 1: Navigate to the calculator tool page. </li>
-                <li> Step 2: Enter your project information. </li>
-                    <li> Note: Manually convert measurements to inches for input.</li>
+                <li> What measurements am I able to enter with the tool? </li>
+                <li> Users are able to enter measurements in inches. Please calculate manually your measurements from feet to inches to continue calculation of orders.
+                    <br/> Distance in inches = (distance in feet) x (12 inches/foot)
+                </li>
+                <li> Can I calculate more than one wall in an order? </li>
+                <li> Users may calculate multiple wall measurements all under one project name/order.</li>
+                <li> Can I use the calculator tool without creating an account with WallPro?</li>
+                <li> Users are not required to create an account to use the calculator tool however we strongly suggest you do to reference previous calculations.</li>
             </ul>
 
             <div className="image-container">
-                <p>STEP 1</p>
-                <img className="images" src="" alt="sc1" />
-                <p>STEP 2</p>
-                <img className="images" src="" alt="sc2" />
+                <img className="images" src="/images/calculator-snapshot1.PNG" alt="sc1" />
+                <img className="images" src="/images/calculator-snapshot2.png" alt="sc1" alt="sc2" />
+                <img className="images" src="/images/calculator-snapshot3.png" alt="sc1" alt="sc2" />
+                <img className="images" src="/images/calculator-snapshot4.png" alt="sc1" alt="sc2" />
             </div>
 
-        <button className="calc-btn">
-            <Link to="./Calculator">Calculator</Link>
+        <button className="create-account-btn">
+            <Link to="./Calculator">
+                CALCULATOR TOOL</Link>
         </button>
         
         </div>
