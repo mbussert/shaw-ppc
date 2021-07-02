@@ -619,18 +619,19 @@ nav .line {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 
 .how-to-title {
   color: #a3becf;
   text-transform: uppercase;
   font-size: 2.2em;
-  padding: 0 0 1em 0;
+  padding: 1em 0 1em 0;
 }
 
 .player-wrapper {
@@ -646,13 +647,14 @@ nav .line {
   color: #da9f63;
   text-transform: uppercase;
   font-size: 2.2em;
-  padding: 0 0 1em 0;
+  padding: 1em 0 1em 0;
 }
 
 .how-description {
   color: white;
   font-size: 1.3em;
   margin: 1.2em;
+  line-height: 2em;
 }
 
 .fact-section {
@@ -709,6 +711,7 @@ nav .line {
       -ms-flex-pack: center;
           justify-content: center;
   width: auto;
+  text-align: center;
 }
 
 .fqa-list li:nth-child(odd) {
@@ -718,6 +721,7 @@ nav .line {
 
 .fqa-list li:nth-child(even) {
   background-color: #c4c4c420;
+  line-height: 2em;
 }
 
 .fqa-list li {
@@ -749,6 +753,7 @@ nav .line {
   border: solid 2px #da9f63;
   padding: 1em;
   margin: 2em;
+  max-width: 80vw;
 }
 
 .create-account-btn:hover {
