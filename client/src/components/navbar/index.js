@@ -41,12 +41,17 @@ function Navbar(props) {
       .catch((err) => console.log(err));
   }
 
-  const [open, setOpen] = React.useState(false);
-  // const node = React.useRef();
+  const [open, setOpen] = useState({ display: "show" });
+
   return (
     <div>
       <div className="navLogo">
         <Link to="./"><img className="navImg" src="/images/wall-pro-logo.png" /></Link>
+        
+        <div className="hamburger">
+        <GiHamburgerMenu open={open} setOpen={setOpen}/>
+        </div>
+
         <nav>
           <ul className="links">
             <li>
@@ -60,63 +65,15 @@ function Navbar(props) {
               <Link to="./Account">Account</Link>
             </li> */}
             <li>{verifyStatus()}</li>
-            {/* <li>
-              <Link to="./Create">Create</Link>
-            </li>
-            <li>
-              <Link to="./About">About</Link>
-            </li> */}
+           
             <div className="line"></div>
           </ul>
         </nav>
       </div>
       
-      
-      <div className="hamburgerMQ">
-        <GiHamburgerMenu open={open} setOpen={setOpen}/>
-      </div>
-      <nav className="mobileNav">
-          <ul className="mobileLinks">
-            <li>
-              <Link to="./How">How it Works</Link>
-            </li>
-            <li>
-              <Link to="./Calculator">Calculator</Link>
-            </li>
-            {showAccount()}
-            {/* <li>
-              <Link to="./Account">Account</Link>
-            </li> */}
-            <li>{verifyStatus()}</li>
-            {/* <li>
-              <Link to="./Create">Create</Link>
-            </li>
-            <li>
-              <Link to="./About">About</Link>
-            </li> */}
-          </ul>
-        </nav>
     </div>
   );
 }
 
-const Menu = ({ open }) => {
-  return (
-    <StyledMenu open={open}>
-      <a href="/">
-        <span role="img" aria-label="about us">💁🏻‍♂️</span>
-        About us
-      </a>
-      <a href="/">
-        <span role="img" aria-label="price">💸</span>
-        Pricing
-        </a>
-      <a href="/">
-        <span role="img" aria-label="contact">📩</span>
-        Contact
-        </a>
-    </StyledMenu>
-  )
-}
 
 export default Navbar;

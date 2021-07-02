@@ -75,10 +75,22 @@ nav {
 }
 
 @media only screen and (max-width: 900px) {
-  .hamburgerMQ {
-    height: 2em;
+  .navLogo {
+    margin: 0.5em 0 0.5em 0.5em;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+  }
+  .navImg {
+    max-width: 22vw;
+    margin: 0.5em;
+  }
+  .hamburger {
     margin: 5vw 5vw;
-    font-size: 8vw;
+    font-size: 13vw;
     display: inline-block;
     color: $orange;
   }
@@ -86,12 +98,7 @@ nav {
   nav {
     display: none;
   }
-  .mobileNav {
-    display: inline-block;
-  }
-  .mobileLinks {
-    display: inline-block;
-  }
+  
 }
 
 /*# sourceMappingURL=style.css.map */
