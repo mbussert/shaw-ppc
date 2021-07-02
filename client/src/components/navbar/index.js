@@ -44,7 +44,6 @@ function Navbar(props) {
     <div>
     <div className="navLogo">
           <Link to="./"><img className="navImg" src="/images/wall-pro-logo.png"/></Link>
-        
     <nav>
       <ul className="links">
         <li>
