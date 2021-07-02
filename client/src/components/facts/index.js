@@ -16,8 +16,10 @@ function Facts() {
             </ul>
 
             <div className="image-container">
-                <img className="images" src="" alt="sc1" />
-                <img className="images" src="" alt="sc2" />
+                <img className="images" src="/images/calculator-snapshot1.PNG" alt="sc1" />
+                <img className="images" src="/images/calculator-snapshot2.png" alt="sc1" alt="sc2" />
+                <img className="images" src="/images/calculator-snapshot3.png" alt="sc1" alt="sc2" />
+                <img className="images" src="/images/calculator-snapshot4.png" alt="sc1" alt="sc2" />
             </div>
 
         <button className="create-account-btn">
