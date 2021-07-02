@@ -5,21 +5,22 @@ function Facts() {
     return (
         <div className="fact-section">
             <h1 className="fact-title">Q & A</h1>
-            
+
             <ul className="fqa-list">
-                <li> Step 1: Navigate to the calculator tool page. </li>
-                <li> Step 2: Enter your project information. </li>
-                <li> Note: Manually convert measurements to inches for input.</li>
+                <li> What measurements am I able to enter with the tool? </li>
+                <li> Users are able to enter measurements in inches. Please calculate manually your measurements from feet to inches to continue calculation of orders.</li>
+                <li> Can I calculate more than one wall in an order? </li>
+                <li> Users may calculate multiple wall measurements all under one project name/order.</li>
+                <li> Can I use the calculator tool without creating an account with WallPro?</li>
+                <li> Users are not required to create an account to use the calculator tool but it is suggested to reference previous calculations.</li>
             </ul>
 
             <div className="image-container">
-                <p>STEP 1</p>
                 <img className="images" src="" alt="sc1" />
-                <p>STEP 2</p>
                 <img className="images" src="" alt="sc2" />
             </div>
 
-        <button className="calc-btn" type="submit">
+        <button className="create-account-btn">
             <Link to="./Calculator">
                 Calculator Tool</Link>
         </button>
