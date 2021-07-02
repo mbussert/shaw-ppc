@@ -74,6 +74,7 @@ function CreateUser() {
           name="pass1"
           onChange={handleInputChange}
           type="password"
+          placeholder="Password must be 8 characters or more"
         />
       </div>
 

@@ -244,12 +244,18 @@ Header {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 3rem;
-  padding: 0.75rem;
-  border-radius: 2rem;
+  padding: .75rem;
+  border-radius: 0.75rem;
   display: block;
   width: 100%;
   border: none;
   cursor: pointer;
+}
+
+.login-btn:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
 }
 
 .create-acct-opt {
@@ -266,7 +272,7 @@ Header {
   padding: 0.5rem 1rem;
   border: 2px solid transparent;
   outline: none;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   background-color: rgba(255, 255, 255, 0.25);
   letter-spacing: 1px;
   margin-top: 1.2rem;
@@ -427,12 +433,18 @@ nav .line {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-top: 3rem;
-  padding: 0.75rem;
-  border-radius: 2rem;
+  padding: .75rem;
+  border-radius: 0.75rem;
   display: block;
   width: 100%;
   border: none;
   cursor: pointer;
+}
+
+.create-btn:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
 }
 
 .login-opt {
@@ -449,7 +461,7 @@ nav .line {
   padding: 0.5rem 1rem;
   border: 2px solid transparent;
   outline: none;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   background-color: rgba(255, 255, 255, 0.25);
   letter-spacing: 1px;
   margin-top: 1.2rem;
@@ -493,18 +505,28 @@ nav .line {
 .how-to-top {
   color: white;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
 .how-to-title {
   color: #a3becf;
   text-transform: uppercase;
   font-size: 2.2em;
-  padding: 0 0 1em 0;
+  padding: 1em 0 1em 0;
 }
 
 .player-wrapper {
@@ -520,12 +542,14 @@ nav .line {
   color: #da9f63;
   text-transform: uppercase;
   font-size: 2.2em;
-  padding: 0 0 1em 0;
+  padding: 1em 0 1em 0;
 }
 
 .how-description {
   color: white;
   font-size: 1.3em;
+  margin: 1.2em;
+  line-height: 2em;
 }
 
 .fact-section {
@@ -549,15 +573,42 @@ nav .line {
 
 .fqa-list {
   color: white;
-  font-size: 1.3em;
-  list-style-type: circle;
-  padding-inline-start: 0.5em;
-  align-items: center;
+  font-size: 1.2em;
+  -webkit-padding-start: 0.5em;
+          padding-inline-start: 0.5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: auto;
+  text-align: center;
+}
+
+.fqa-list li:nth-child(odd) {
+  color: #a3becf;
+  font-size: 1.3em;
+}
+
+.fqa-list li:nth-child(even) {
+  background-color: #c4c4c420;
+  line-height: 2em;
+}
+
+.fqa-list li {
+  margin: 1em;
 }
 
 .image-container {
@@ -574,18 +625,13 @@ nav .line {
   border: solid 2px #da9f63;
   padding: 1em;
   margin: 2em;
+  max-width: 80vw;
 }
 
-.calc-btn {
-  background-color: #da9f63;
-  color: white;
-  display: block;
-  border-radius: 0.5em;
-  border-style: none;
-  margin: 3em;
-  padding: 1em;
-  text-decoration: none;
-  font-size: 1.5em;
+.create-account-btn:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
 }
 
 .contact-form-container {
