@@ -29,6 +29,7 @@ import {
   TableHead,
   TableRow,
   Link,
+  Snackbar,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Dialog from "@material-ui/core/Dialog";
@@ -47,11 +48,11 @@ function createData(wallName, width, height, linearFeet, border) {
 }
 
 const rows = [
-  createData("Wall #1", 159, 6.0, 24, "true"),
-  createData("Wall #2", 237, 9.0, 37, "false"),
-  createData("Wall #3", 262, 16.0, 24, "true"),
-  createData("Wall #4", 305, 3.7, 67, "true"),
-  createData("Wall #5", 356, 16.0, 49, "true"),
+  createData("Wall #1", 159, 6.0, 24, "Yes"),
+  createData("Wall #2", 237, 9.0, 37, "No"),
+  createData("Wall #3", 262, 16.0, 24, "Yes"),
+  createData("Wall #4", 305, 3.7, 67, "Yes"),
+  createData("Wall #5", 356, 16.0, 49, "Yes"),
 ];
 
 function getStepContent(step) {
@@ -292,12 +293,7 @@ function Project() {
   const classes = useStyles();
 
   const handleNext = () => {
-    if (activeStep === 1 && rows <= 0) {
-      alert("Please add at least one wall to proceed.");
-      setActiveStep((prevActiveStep) => prevActiveStep);
-    } else {
-      setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    }
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };
 
   const handleBack = () => {
@@ -311,6 +307,11 @@ function Project() {
   return (
     <Grid container justify="center">
       <div className={classes.root}>
+        <Paper square elevation={0}>
+          <Typography align="center" variant="h4" style={{ paddingTop: 20 }}>
+            Project Calculator
+          </Typography>
+        </Paper>
         <Stepper activeStep={activeStep} orientation="vertical">
           {steps.map((label, index) => (
             <Step key={label}>
@@ -331,6 +332,7 @@ function Project() {
                       color="primary"
                       onClick={handleNext}
                       className={classes.button}
+                      disabled={activeStep === 1 && rows.length <= 0}
                     >
                       {activeStep === steps.length - 1 ? "Submit" : "Next"}
                     </Button>
