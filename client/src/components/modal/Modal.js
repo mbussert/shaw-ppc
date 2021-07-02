@@ -31,10 +31,12 @@ function Modal () {
 
                 <div className="modal-buttons">
                     <button className="modal-btn-continue" onClick = {() => hideModal()} >CONTINUE</button>
-
+                    
+                    <button className="modal-btn-signup">
                     <NavLink to="./Login">
-                    <button className="modal-btn-signup">SIGN UP</button>
+                    SIGN UP
                     </NavLink>
+                    </button>
                 </div>
 
             </div>

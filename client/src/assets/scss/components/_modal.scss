@@ -1,8 +1,14 @@
 .modal-1 {
     // background-image: linear-gradient(#1D2837, #162A45, #254666);
     background-color: $blueDark;
+    display: flex;
+    align-content: center;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
     max-width: 85vw;
-    max-height: 33vh;
+    min-height: 33vh;
     border-radius: 1em;
     z-index: 2;
     position: absolute;
@@ -16,13 +22,14 @@
     color: white;
     // text-transform: uppercase;
     text-transform: capitalize;
-    font: 1.5 vw sans-serif;
+    text-align: center;
+    font-size: 1.5vw;
 
 }
 
 .modal-body{
     color: white;
-    font: 1.5vw sans-serif;
+    font-size: 1.5vw;
     margin: 1em;
 }
 
@@ -35,9 +42,9 @@
 .modal-btn-continue {
     color: white;
     background-color: $orange;
-    padding: 1vw;
-    border-radius: 0.5em;
     border: none;
+    border-radius: 0.5em;
+    padding: 1vw;
     margin: 0 1em 0 1em;
 }
 
@@ -54,10 +61,15 @@
 .modal-btn-signup {
     color: white;
     background-color: $orange;
-    padding: 1vw;
-    border-radius: 0.5em;
     border: none;
+    border-radius: 0.5em;
+    padding: 1vw;
     margin: 0 1em 0 1em;
+    a {
+        display: block;
+        color: white;
+        text-decoration: none;
+    }
 }
 
 .modal-btn-signup:hover {
@@ -67,5 +79,27 @@
   
     a {
       color: $orange;
+    }
+}
+
+@media only screen and (max-width: 856px) {
+
+    .modal-title{
+        text-align: center;
+        font-size: 3vw;
+    
+    }
+    .modal-body{
+        font-size: 3vw;
+        margin: 1em;
+    }
+    .modal-btn-continue {
+        padding: 1vw;
+        border-radius: 0.5em;
+        margin: 0 1em 0 1em;
+    }
+    .modal-btn-signup {
+        padding: 1vw;
+        margin: 0 1em 0 1em;
     }
 }
