@@ -21,18 +21,16 @@
 }
 
 nav {
+  position: relative;
   display: flex;
   align-content: center;
   flex-direction: row;
   justify-content: flex-end;
   margin: 0.5em;
-  position: relative;
   width: 100vw;
 
   ul {
     text-align: center;
-    list-style-type: none;
-    list-style-type: none;
     margin: 0;
     padding: 0.5em;
   }
@@ -63,14 +61,15 @@ nav {
     width: 100%;
   }
 }
-.hamburgerMQ {
+.hamburger {
   display: none;
 }
 
-.mobileNav {
+.mobile-nav {
   display: none;
 }
-.mobileLinks {
+
+.mobile-links {
   display: none;
 }
 
@@ -98,6 +97,32 @@ nav {
   nav {
     display: none;
   }
+
+  .mobile-nav {
+    // display: none;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+    margin: 0.5em;
+    width: 100vw;
+    .mobile-links{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: center;
+      flex-wrap: nowrap;
+      margin: 0;
+      padding: 0.5em;
+    }
+    a {
+      font-size: 5vw;
+    }
+  }
+
   
 }
 

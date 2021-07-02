@@ -41,7 +41,12 @@ function Navbar(props) {
       .catch((err) => console.log(err));
   }
 
-  const [open, setOpen] = useState({ display: "show" });
+  // const [status, setStatus] = useState({ display: "show" });
+
+  // function hideNav() {
+  //     setStatus({display: "hide"})
+  // }
+
 
   return (
     <div>
@@ -49,7 +54,7 @@ function Navbar(props) {
         <Link to="./"><img className="navImg" src="/images/wall-pro-logo.png" /></Link>
         
         <div className="hamburger">
-        <GiHamburgerMenu open={open} setOpen={setOpen}/>
+        <GiHamburgerMenu />
         </div>
 
         <nav>
@@ -70,6 +75,23 @@ function Navbar(props) {
           </ul>
         </nav>
       </div>
+
+      <nav className="mobile-nav">
+          <ul className="mobile-links">
+            <li>
+              <Link to="./How">How it Works</Link>
+            </li>
+            <li>
+              <Link to="./Calculator">Calculator</Link>
+            </li>
+            {showAccount()}
+            {/* <li>
+              <Link to="./Account">Account</Link>
+            </li> */}
+            <li>{verifyStatus()}</li>
+           
+          </ul>
+        </nav>
       
     </div>
   );
