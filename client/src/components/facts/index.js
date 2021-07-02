@@ -22,7 +22,7 @@ function Facts() {
 
         <button className="create-account-btn">
             <Link to="./Calculator">
-                Calculator Tool</Link>
+                CALCULATOR TOOL</Link>
         </button>
         
         </div>
