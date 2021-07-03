@@ -1,3 +1,9 @@
+// *******************
+//
+// DONT EDIT THIS FILE
+//
+// *******************
+
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Navbar from "../../components/navbar";
@@ -48,7 +54,6 @@ function Calculator() {
   }, []);
 
   function loadStatus() {
-
     API.authenticateUser()
       .then((response) => {
         setLoginStatus(response.data.login);
