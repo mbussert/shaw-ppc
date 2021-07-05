@@ -1,9 +1,3 @@
-// *******************
-//
-// DONT EDIT THIS FILE
-//
-// *******************
-
 import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Navbar from "../../components/navbar";
@@ -216,7 +210,8 @@ function Calculator() {
                   variant="outlined"
                   name="email"
                   onChange={handleInputChange}
-                  helperText="Please enter your email address."
+                  error={formik.touched.email && Boolean(formik.errors.email)}
+                  helperText={formik.touched.email && formik.errors.email}
                   style={{ margin: 8 }}
                   margin="dense"
                   required
