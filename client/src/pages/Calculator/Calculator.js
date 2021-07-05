@@ -210,8 +210,7 @@ function Calculator() {
                   variant="outlined"
                   name="email"
                   onChange={handleInputChange}
-                  error={formik.touched.email && Boolean(formik.errors.email)}
-                  helperText={formik.touched.email && formik.errors.email}
+                  helperText="Please enter a valid email address."
                   style={{ margin: 8 }}
                   margin="dense"
                   required
