@@ -290,7 +290,7 @@ function Calculator() {
 
                   <Hidden xsDown>
                     <Tooltip
-                      title="You may use a unique project name or feel free to simply use your store name/number."
+                      title="Adds a 6 inch margin (3 inches on top and bottom)."
                       placement="right"
                     >
                       <InfoIcon color="primary" />
