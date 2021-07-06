@@ -44,7 +44,7 @@ nav {
     color: #fcfcfc;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 1.5vw;
+    padding: 1.5vw .5vw 1.5vw .5vw;
   }
   a:hover {
     background-color: $orange;
@@ -58,7 +58,7 @@ nav {
     align-items: right;
     justify-content: end;
     border-bottom: solid 4px $orange;
-    width: 100%;
+    width: 95%;
   }
 }
 .hamburger {

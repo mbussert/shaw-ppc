@@ -38,8 +38,8 @@ function Modal () {
                     </NavLink>
                     </button>
                 </div>
-
             </div>
+            <div className="overlay"></div>
         </React.Fragment>
         )
 
