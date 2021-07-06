@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Wrapper from "./components/Wrapper";
 import Home from "./pages/Home/Home";
 import How from "./pages/How/How";
-import Calculator from "./pages/Calculator/Calculator";
+import Calculator from "./pages/Calculator/Calculator copy.js";
 import Account from "./pages/Account/Account";
 import Login from "./pages/Login/Login";
 import Create from "./pages/Create/Create";
@@ -15,6 +15,11 @@ import Contact from "./pages/Contact/Contact";
 import Admin from "./pages/Admin";
 
 function App() {
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <div className="App">
       <Wrapper>

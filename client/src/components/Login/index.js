@@ -12,7 +12,21 @@ function LoginPage() {
     displaySnackbar: false
   });
 
+  function emailOnly(event) {
+    const emailValidation = /^[a-zA-Z0-9@.]*$/
+    const emailResult = emailValidation.test(event);
+    return emailResult
+  }
+
   function handleInputChange(e) {
+
+    if(e.target.name === "email") {
+      const checkEmail = emailOnly(e.target.value);
+      if(checkEmail === false) {
+        e.target.value = e.target.value.substring(0, e.target.value.length - 1);
+      }
+    }
+
     const { name, value } = e.target;
     getUser({...userObject, [name]: value})
   }
@@ -31,6 +45,7 @@ function LoginPage() {
             alert('You have successfully logged in!');
           }
         }, () => {
+          setOpen(true);
           setLoginAlert({displaySnackbar: true});
         }
       )
@@ -49,6 +64,7 @@ function LoginPage() {
       }
 
       setOpen(false);
+      setLoginAlert(false);
     }
 
     return (
