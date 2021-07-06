@@ -25,6 +25,7 @@ import Modal from "../../components/modal/Modal";
 import useModal from "../../components/modal/useModal";
 import { Snackbar } from "@material-ui/core";
 import MuiAlert from '@material-ui/lab/Alert';
+import { Prompt } from "react-router-dom";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -189,12 +190,9 @@ function Calculator() {
       border: formObject.border
     }).then((response) => {
       if (response.status === 200) {
-
-        console.log("Successful order");
-
         setOpen(true);
-        setSuccessAlert({displaySnackbar: true});
-        return;
+        setSuccessAlert({displaySnackbar: true})
+        clearForm();
       }
     }, () => {
       setOpen(true);
@@ -255,6 +253,16 @@ function Calculator() {
     }
   }
 
+  // Determines if the user has input a value into the form
+  // Used only when a user navigates away from the page when the form is partially filled out
+  function checkForm() {
+    if(formObject.projectTitle || formObject.firstName || formObject.lastName || formObject.email || formObject.width || formObject.height) {
+      return true
+    } else {
+      return false
+    }
+  }
+
   return (
     <>
       <Navbar loginStatus={loginStatus} />
@@ -276,6 +284,8 @@ function Calculator() {
           </Alert>
         </Snackbar>
       ) : null}
+
+    <Prompt when={checkForm()} message="Are you sure you want to leave this page? Your order will not be saved." />
 
       <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
         <Card style={{ padding: 20 }} margin="dense" raised={true}>
