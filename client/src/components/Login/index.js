@@ -41,8 +41,6 @@ function LoginPage() {
         (response) => {
           if (response.status === 200) {
             location.href = '/Calculator'
-            console.log("You have successfully logged in!");
-            alert('You have successfully logged in!');
           }
         }, () => {
           setOpen(true);
