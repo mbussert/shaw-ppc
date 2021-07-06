@@ -332,7 +332,7 @@ nav a {
   color: #fcfcfc;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 1.5vw;
+  padding: 1.5vw 0.5vw 1.5vw 0.5vw;
 }
 nav a:hover {
   background-color: #da9f63;
@@ -346,7 +346,7 @@ nav .line {
   align-items: right;
   justify-content: end;
   border-bottom: solid 4px #da9f63;
-  width: 100%;
+  width: 95%;
 }
 
 .hamburger {
@@ -844,9 +844,11 @@ nav .line {
   box-sizing: border-box;
   min-height: 106vh;
   max-width: 100vw;
-  margin: 1vw;
+  margin: 1vw 1vw 4vw 1vw;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
 }
 
 .web-dev-header-card {
@@ -865,14 +867,14 @@ nav .line {
 }
 
 .webdev5 {
-  border: 1px solid #da9f63;
-  display: flex;
-  justify-content: flex-start;
-  align-content: center;
-  flex-direction: row;
-  border-radius: 2.5rem;
   background-color: #1D2837;
   color: #a3becf;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-content: center;
+  border: 1px solid #da9f63;
+  border-radius: 2.5rem;
   box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
   box-sizing: border-box;
   max-width: 85vw;
@@ -893,6 +895,30 @@ nav .line {
   margin: 1.15rem;
 }
 
+@media only screen and (max-width: 900px) {
+  .webdev5 {
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: stretch;
+    max-width: 85vw;
+    min-height: 35vh;
+    margin: 2vw;
+    padding: 2.5vw;
+  }
+  .webdev5 h1 {
+    margin: 0.15rem;
+    text-align: left;
+    align-content: center;
+    padding: 0.5rem;
+  }
+  .webdev5 a {
+    font-size: 1rem;
+    justify-content: center;
+    align-content: center;
+    margin: 1.15rem;
+  }
+}
 .calculator {
   display: flex;
   flex-direction: column;
