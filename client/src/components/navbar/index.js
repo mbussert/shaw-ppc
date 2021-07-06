@@ -51,7 +51,7 @@ function Navbar(props) {
   return (
     <div>
       <div className="navLogo">
-        <Link to="./"><img className="navImg" src="/images/wall-pro-logo.png" /></Link>
+        <Link to="./"><img className="navImg" src="/images/wall-pro-logo.png" alt="WallPro logo" /></Link>
         
         <div className="hamburger">
         <GiHamburgerMenu />
