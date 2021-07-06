@@ -21,6 +21,10 @@ import {
 // import { makeStyles } from "@material-ui/core/styles";
 import InfoIcon from "@material-ui/icons/Info";
 import Arithmetic from "./arithmetic.js";
+import Modal from "../../components/modal/Modal";
+import useModal from "../../components/modal/useModal";
+import { Snackbar } from "@material-ui/core";
+import MuiAlert from '@material-ui/lab/Alert';
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -39,11 +43,13 @@ function Calculator() {
 
   const [formObject, setFormObject] = useState({
     material: "Material WC-J3",
+    border: true
   });
 
   const [loginStatus, setLoginStatus] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     loadStatus();
   }, []);
 
@@ -56,7 +62,70 @@ function Calculator() {
       .catch((err) => console.log(err));
   }
 
+  const [orderAlert, setOrderAlert] = useState({
+    displaySnackbar: false
+  });
+
+  const [successAlert, setSuccessAlert] = useState({
+    displaySnackbar: false
+  });
+
+  function alphabeticalOnly(event) {
+    const alphabeticalValidation = /^[a-zA-Z]+$/
+    const azResult = alphabeticalValidation.test(event);
+    return azResult;
+  }
+
+  function emailOnly(event) {
+    const emailValidation = /^[a-zA-Z0-9@.]*$/
+    const emailResult = emailValidation.test(event);
+    return emailResult
+  }
+
+  function phoneOnly(event) {
+    const phoneValidation = /^[0-9()-]*$/
+    const phoneResult = phoneValidation.test(event);
+    return phoneResult
+  }
+
+  function numberOnly(event) {
+    const decimalValidation = /^\d+(\.\d{1,4})?$/
+    const decResult = decimalValidation.test(event);
+    return decResult;
+  }
+
   function handleInputChange(event) {
+
+    if(event.target.name === "firstName" || event.target.name === "lastName") {
+      const checkName = alphabeticalOnly(event.target.value);
+      if(checkName === false) {
+        event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+      }
+    }
+
+    if(event.target.name === "email") {
+      const checkEmail = emailOnly(event.target.value);
+      if(checkEmail === false) {
+        event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+      }
+    }
+
+    if(event.target.name === "phone") {
+      const checkPhone = phoneOnly(event.target.value);
+      if(checkPhone === false) {
+        event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+      }
+    }
+
+    if(event.target.name === "width" || event.target.name === "height") {
+
+      const checkNum = numberOnly(event.target.value);
+      if(checkNum === false) {
+        event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+      }
+
+    }
+
     const { name, value } = event.target;
     setFormObject({ ...formObject, [name]: value });
   }
@@ -103,10 +172,10 @@ function Calculator() {
     console.log(
       `Thanks for posting your project! Based on the measurements you entered, your project requires a total of ${Arithmetic.calculate(
         formObject.width,
-        formObject.height
+        formObject.height,
+        formObject.border
       )} linear feet of material.`
     );
-    console.log("View the order locally at localhost:3001/api/orders");
 
     API.saveOrder({
       projectTitle: formObject.projectTitle,
@@ -117,22 +186,72 @@ function Calculator() {
       material: formObject.material,
       width: formObject.width,
       height: formObject.height,
-    }).catch((err) => console.log(err));
+      border: formObject.border
+    }).then((response) => {
+      if (response.status === 200) {
+
+        console.log("Successful order");
+
+        setOpen(true);
+        setSuccessAlert({displaySnackbar: true});
+        return;
+      }
+    }, () => {
+      setOpen(true);
+      setOrderAlert({displaySnackbar: true});
+      return;
+    })
+    .catch((err) => console.log(err));
+  }
+
+  function Alert(props) {
+    return <MuiAlert elevation={6} variant="filled" {...props} />;
+  }
+
+  const [open, setOpen] = React.useState(true);
+
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setOpen(false);
+    setOrderAlert(false);
+    setSuccessAlert(false);
   }
 
   function clearForm() {
-    setFormObject({ ...initialState });
+
+    setFormObject({
+      projectTitle: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      phone: "",
+      material: "Material WC-J3",
+      width: "",
+      height: "",
+      border: true
+    });
+
+    document.getElementById("calculator-form").reset();
+
   }
 
   function borderToggle() {
     if (border.checked) {
-      console.log("Checked");
-      setFormObject({ ...formObject, border: false });
-      console.log(formObject);
-    } else {
-      console.log("Unchecked");
       setFormObject({ ...formObject, border: true });
-      console.log(formObject);
+    } else {
+      setFormObject({ ...formObject, border: false });
+    }
+  }
+
+  const { isShowing, toggle } = useModal();
+
+  function showModal() {
+    if (loginStatus != "The user is logged in.") {
+      return <Modal isShowing={isShowing} />;
+    } else {
+      return null;
     }
   }
 
@@ -140,10 +259,28 @@ function Calculator() {
     <>
       <Navbar loginStatus={loginStatus} />
       <Header />
+      {showModal()}
+
+      {successAlert.displaySnackbar === true ? (
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="success">
+            Your order has been submitted. Thank you!
+          </Alert>
+        </Snackbar>
+      ) : null}
+
+      {orderAlert.displaySnackbar === true ? (
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="warning">
+            Failed to submit your order. Please try again.
+          </Alert>
+        </Snackbar>
+      ) : null}
+
       <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
         <Card style={{ padding: 20 }} margin="dense" raised={true}>
           <div className="calculator">
-            <form autoComplete="off">
+            <form id="calculator-form" autoComplete="off">
               <Grid container justify="flex-end">
                 <Hidden xsDown>
                   <Grid item>
