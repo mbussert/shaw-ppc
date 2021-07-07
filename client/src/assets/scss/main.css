@@ -483,23 +483,29 @@ nav .line {
   nav {
     display: none;
   }
+  .spaceForce {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px;
+  }
   .mobile-nav {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     position: absolute;
-    z-index: 2;
-    -webkit-box-orient: vertical;
+    z-index: 1;
+    -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-line-pack: center;
         align-content: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
@@ -507,8 +513,10 @@ nav .line {
     border-radius: 1em;
     -webkit-box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
             box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
-    margin: 0.5em;
-    width: 96vw;
+    border: solid 2px #da9f63;
+    margin: .5em;
+    width: 90vw;
+    height: 12vh;
   }
   .mobile-nav .mobile-links {
     display: -webkit-box;
@@ -518,21 +526,25 @@ nav .line {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-    margin: 0;
-    padding: 0.5em;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 2em;
+    padding: 5em;
   }
   .mobile-nav a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     font-size: 5vw;
     border-bottom: solid 2px #da9f63;
     padding: 0;
+    margin: .25rem;
   }
   .mobile-nav .mobile-overlay {
     position: fixed;
@@ -541,7 +553,7 @@ nav .line {
     right: 0;
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.9);
-    z-index: 1;
+    z-index: 2;
   }
 }
 * {

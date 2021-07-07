@@ -41,11 +41,6 @@ function Navbar(props) {
       .catch((err) => console.log(err));
   }
 
-  // const [status, setStatus] = useState({ display: "show" });
-
-  // function hideNav() {
-  //     setStatus({display: "hide"})
-  // }
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
     setNavbarOpen(prev => !prev)
@@ -84,8 +79,8 @@ function Navbar(props) {
         </nav>
       </div>
       
+  <div className="spaceForce">
       <div className="mobile-nav" style={navbarOpen ? {display:"flex"} : {display:"none"}}>
-      {/* <button onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}</button> */}
           <ul className= "mobile-links">
             <li>
               <Link to="./How">How it Works</Link>
@@ -98,11 +93,10 @@ function Navbar(props) {
               <Link to="./Account">Account</Link>
             </li> */}
             <li>{verifyStatus()}</li>
-
           </ul>
         </div>
-      {/* <div className="mobile-overlay"></div> */}
     </div>
+  </div>
   );
 }
 
