@@ -9,7 +9,7 @@ function VideoSection () {
                 <div className='player-wrapper'>
                 <ReactPlayer
                 className='react-player'
-                url='https://www.youtube.com/watch?v=aFYsJYPye94'
+                url='https://youtu.be/DqI3lNLyCWE'
                 height='100%'
                 width='100%'
                 controls={true}
