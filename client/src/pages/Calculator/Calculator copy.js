@@ -26,7 +26,6 @@ import useModal from "../../components/modal/useModal";
 import { Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Prompt } from "react-router-dom";
-import { placeholder } from "sequelize/types/lib/operators";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -309,7 +308,7 @@ function Calculator() {
       />
 
       <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
-        <Card style={{ backgroundColor: "#c4c4c420", color: "white", borderRadius: "2rem", border: "solid 2px #da9f63", padding: 20 }} margin="dense" raised={true}>
+        <Card style={{ backgroundColor: "#c4c4c420", color: "white", borderRadius: "2rem", border: "solid 2px #da9f63", boxShadow: "0 7.6vh 10.6vh -3.0vh rgba(0, 0, 0, 0.85)", padding: 20 }} margin="dense" raised={true}>
           <div className="calculator">
             <form id="calculator-form" autoComplete="off">
               <Grid container justify="flex-end">
