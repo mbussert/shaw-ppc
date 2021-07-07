@@ -26,6 +26,7 @@ import useModal from "../../components/modal/useModal";
 import { Snackbar } from "@material-ui/core";
 import MuiAlert from "@material-ui/lab/Alert";
 import { Prompt } from "react-router-dom";
+import { placeholder } from "sequelize/types/lib/operators";
 
 // const useStyles = makeStyles((theme) => ({
 //   root: {
@@ -308,7 +309,7 @@ function Calculator() {
       />
 
       <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
-        <Card style={{ padding: 20 }} margin="dense" raised={true}>
+        <Card style={{ backgroundColor: "#c4c4c420", color: "white", borderRadius: "2rem", border: "solid 2px #da9f63", padding: 20 }} margin="dense" raised={true}>
           <div className="calculator">
             <form id="calculator-form" autoComplete="off">
               <Grid container justify="flex-end">
@@ -318,7 +319,7 @@ function Calculator() {
                       title="You may use a unique project name or feel free to simply use your store name/number."
                       placement="right"
                     >
-                      <InfoIcon color="primary" />
+                      <InfoIcon style={{color: "#da9f63"}} />
                     </Tooltip>
                   </Grid>
                 </Hidden>
@@ -331,7 +332,7 @@ function Calculator() {
                   name="projectTitle"
                   onChange={handleInputChange}
                   helperText="Please enter a title for your project."
-                  style={{ margin: 8 }}
+                  style={{ color: "white", margin: 8 }}
                   margin="dense"
                   fullWidth
                   required
@@ -429,7 +430,7 @@ function Calculator() {
                         onChange={borderToggle}
                         name="border"
                         id="border"
-                        color="primary"
+                        style={{color: "#da9f63"}} 
                         defaultChecked
                         margin="dense"
                       />
@@ -442,7 +443,7 @@ function Calculator() {
                       title="Adds a 6 inch margin (3 inches on top and bottom)."
                       placement="right"
                     >
-                      <InfoIcon color="primary" />
+                      <InfoIcon style={{color: "#da9f63"}}  />
                     </Tooltip>
                   </Hidden>
                 </Grid>
@@ -454,7 +455,7 @@ function Calculator() {
                       size="medium"
                       disableElevation
                       onClick={validateFormSubmission}
-                      style={{ margin: 8 }}
+                      style={{ backgroundColor: "#da9f63", color: "white", margin: 8 }}
                       margin="normal"
                     >
                       Calculate
@@ -464,7 +465,7 @@ function Calculator() {
                       size="medium"
                       disableElevation
                       onClick={() => clearForm()}
-                      style={{ margin: 8 }}
+                      style={{ backgroundColor: "#c4c4c420", color: "white", border: "solid 2px #da9f63", margin: 8 }}
                       margin="normal"
                     >
                       Clear
