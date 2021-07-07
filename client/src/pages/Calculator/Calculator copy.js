@@ -307,7 +307,7 @@ function Calculator() {
         message="Are you sure you want to leave this page? Your order will not be saved."
       />
 
-      <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
+      <Container maxWidth="sm" style={{ paddingTop: 30, paddingBottom: 50 }}>
         <Card style={{ backgroundColor: "#c4c4c420", color: "white", borderRadius: "2rem", border: "solid 2px #da9f63", boxShadow: "0 7.6vh 10.6vh -3.0vh rgba(0, 0, 0, 0.85)", padding: 20 }} margin="dense" raised={true}>
           <div className="calculator">
             <form id="calculator-form" autoComplete="off">
@@ -331,7 +331,9 @@ function Calculator() {
                   name="projectTitle"
                   onChange={handleInputChange}
                   helperText="Please enter a title for your project."
-                  style={{ color: "white", margin: 8 }}
+                  style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   fullWidth
                   required
@@ -345,6 +347,8 @@ function Calculator() {
                   onChange={handleInputChange}
                   helperText="Please enter your first name."
                   style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   required
                 />
@@ -356,6 +360,8 @@ function Calculator() {
                   onChange={handleInputChange}
                   helperText="Please enter your last name."
                   style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   required
                 />
@@ -367,6 +373,8 @@ function Calculator() {
                   onChange={handleInputChange}
                   helperText="Please enter your email address."
                   style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   required
                 />
@@ -379,6 +387,8 @@ function Calculator() {
                   onChange={handleInputChange}
                   helperText="e.g. (555)555-5555"
                   style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   required
                 />
@@ -407,6 +417,8 @@ function Calculator() {
                     type="number"
                     onChange={handleInputChange}
                     style={{ margin: 8 }}
+                    InputLabelProps={{className: "textfieldLabel"}}
+                    InputProps={{className: "textfield"}}
                     margin="normal"
                     helperText="Inches"
                   />
@@ -418,6 +430,8 @@ function Calculator() {
                     onChange={handleInputChange}
                     type="number"
                     style={{ margin: 8 }}
+                    InputLabelProps={{className: "textfieldLabel"}}
+                    InputProps={{className: "textfield"}}
                     margin="normal"
                     helperText="Inches"
                   />

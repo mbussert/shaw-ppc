@@ -46,7 +46,7 @@ function ProjectDetails(props) {
           {props.orders.map((order) => {
             return (
               <Card
-                style={{ backgroundColor: "#c4c4c420", color: "white", borderRadius: "2rem", border: "solid 2px #da9f63", padding: 15, margin: 20, width: 345 }}
+                style={{ backgroundColor: "#c4c4c420", color: "white", borderRadius: "2rem", border: "solid 2px #da9f63", boxShadow: "0 7.6vh 10.6vh -3.0vh rgba(0, 0, 0, 0.85)", padding: 15, margin: 20, width: 345 }}
                 margin="dense"
                 raised={true}
               >
@@ -98,7 +98,7 @@ function ProjectDetails(props) {
             size="large"
             variant="contained"
             color="primary"
-            style={{ backgroundColor: "#c4c4c420", color: "white", border: "solid 2px #da9f63", marginRight: 10 }}
+            style={{ backgroundColor: "#c4c4c420", color: "white", border: "solid 2px #da9f63", boxShadow: "0 7.6vh 10.6vh -3.0vh rgba(0, 0, 0, 0.85)", marginRight: 10 }}
             href="/Calculator"
           >
             New Project
