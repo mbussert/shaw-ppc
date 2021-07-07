@@ -30,8 +30,6 @@ const useStyles = makeStyles((theme) => ({
 function ProjectDetails(props) {
   const classes = useStyles();
 
-  console.log(props);
-
   return (
     <div className={classes.root}>
       <Grid
@@ -64,8 +62,8 @@ function ProjectDetails(props) {
                   </h3>
 
                   <h3 className={classes.h3}>{order.material}</h3>
-                  <h3 className={classes.h3}>Height: {order.height}</h3>
-                  <h3 className={classes.h3}>Width: {order.width}</h3>
+                  <h3 className={classes.h3}>Height: {order.height} (in)</h3>
+                  <h3 className={classes.h3}>Width: {order.width} (in)</h3>
                   <h3 className={classes.h3}>
                     Border: {order.border ? "Yes" : "No"}
                   </h3>

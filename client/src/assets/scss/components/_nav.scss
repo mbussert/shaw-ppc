@@ -98,39 +98,56 @@ nav {
     display: none;
   }
 
+  .spaceForce {
+    display: flex;
+    margin: 10px;
+  }
+
   .mobile-nav {
-    display: none;
+    display: flex;
     position: absolute;
-    z-index: 2;
-    // display: flex;
-    flex-direction: column;
+    z-index: 1;
+    flex-direction: row;
     align-content: center;
     justify-content: center;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     align-items: flex-end;
     background-color: $background;
     border-radius: 1em;
     box-shadow: $boxshadow;
-    // border: solid 2px $orange;
-    margin: 0.5em;
-    width: 96vw;
+    border: solid 2px $orange;
+    margin: .5em;
+    width: 90vw;
+    height: 12vh;
+
     .mobile-links{
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
+      align-items: center;
       justify-content: center;
-      flex-wrap: nowrap;
-      margin: 0;
-      padding: 0.5em;
+      flex-wrap: wrap;
+      margin: 2em;
+      padding: 5em;
     }
     a {
+      display: flex;
       font-size: 5vw;
       border-bottom: solid 2px $orange;
       padding: 0;
+      margin: .25rem;
+      
     }
-  }
 
-  
+    .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .9);
+    z-index: 2;
+    }
+  }  
 }
-
 /*# sourceMappingURL=style.css.map */
+
