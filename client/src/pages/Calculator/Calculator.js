@@ -137,13 +137,13 @@ function Calculator() {
 
   function borderToggle() {
     if (border.checked) {
-      console.log("Checked");
+      // console.log("Checked");
       setFormObject({ ...formObject, border: false });
-      console.log(formObject);
+      // console.log(formObject);
     } else {
-      console.log("Unchecked");
+      // console.log("Unchecked");
       setFormObject({ ...formObject, border: true });
-      console.log(formObject);
+      // console.log(formObject);
     }
   }
 
