@@ -105,7 +105,7 @@ Sequelize | Passport
 
 ### Usage:
 
-Demo video coming soon...
+![Gif demo of WallPro](./client/src/assets/img/wallpro_gif.gif)
 
 #
 
