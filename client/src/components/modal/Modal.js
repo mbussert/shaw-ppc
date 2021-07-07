@@ -1,12 +1,21 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect, useCallback, useRef} from 'react'
 import { NavLink } from "react-router-dom";
 
 function Modal () {
+
+    const modalRef = useRef();
+   
 
     const [status, setStatus] = useState({ display: "show" });
 
     function hideModal() {
         setStatus({display: "hide"})
+    }
+
+    const closeModal = e => {
+        if (modalRef.current === e.target) {
+            hideModal(false);
+        }
     }
 
     if(status.display === "hide") {
@@ -39,7 +48,7 @@ function Modal () {
                     </button>
                 </div>
             </div>
-            <div className="overlay"></div>
+            <div className="overlay" ref={modalRef} onClick={hideModal}></div>
         </React.Fragment>
         )
 
