@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import { Link } from "react-router-dom";
-import ReactDOM from "react-dom";
 import API from "../../utils/API";
 import { GiHamburgerMenu } from 'react-icons/gi';
+
 
 function Navbar(props) {
   function verifyStatus() {
@@ -41,12 +41,30 @@ function Navbar(props) {
       .catch((err) => console.log(err));
   }
 
-  const [open, setOpen] = React.useState(false);
-  // const node = React.useRef();
+  // const [status, setStatus] = useState({ display: "show" });
+
+  // function hideNav() {
+  //     setStatus({display: "hide"})
+  // }
+  const [navbarOpen, setNavbarOpen] = useState(false);
+  const handleToggle = () => {
+    setNavbarOpen(prev => !prev)
+  }
+  
+  const hamNavClick = () => {
+    setNavbarOpen(!navbarOpen)
+    // console.log('mobilehamnavclick');
+  }
+
   return (
     <div>
       <div className="navLogo">
-        <Link to="./"><img className="navImg" src="/images/wall-pro-logo.png" /></Link>
+        <Link to="./"><img className="navImg" src="/images/wall-pro-logo.png" alt="WallPro logo" /></Link>
+        
+        <div className="hamburger">
+        <GiHamburgerMenu onClick={hamNavClick}/>
+        </div>
+
         <nav>
           <ul className="links">
             <li>
@@ -60,23 +78,15 @@ function Navbar(props) {
               <Link to="./Account">Account</Link>
             </li> */}
             <li>{verifyStatus()}</li>
-            {/* <li>
-              <Link to="./Create">Create</Link>
-            </li>
-            <li>
-              <Link to="./About">About</Link>
-            </li> */}
+           
             <div className="line"></div>
           </ul>
         </nav>
       </div>
       
-      
-      <div className="hamburgerMQ">
-        <GiHamburgerMenu open={open} setOpen={setOpen}/>
-      </div>
-      <nav className="mobileNav">
-          <ul className="mobileLinks">
+      <div className="mobile-nav" style={navbarOpen ? {display:"flex"} : {display:"none"}}>
+      {/* <button onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}</button> */}
+          <ul className= "mobile-links">
             <li>
               <Link to="./How">How it Works</Link>
             </li>
@@ -88,35 +98,13 @@ function Navbar(props) {
               <Link to="./Account">Account</Link>
             </li> */}
             <li>{verifyStatus()}</li>
-            {/* <li>
-              <Link to="./Create">Create</Link>
-            </li>
-            <li>
-              <Link to="./About">About</Link>
-            </li> */}
+
           </ul>
-        </nav>
+        </div>
+      {/* <div className="mobile-overlay"></div> */}
     </div>
   );
 }
 
-const Menu = ({ open }) => {
-  return (
-    <StyledMenu open={open}>
-      <a href="/">
-        <span role="img" aria-label="about us">💁🏻‍♂️</span>
-        About us
-      </a>
-      <a href="/">
-        <span role="img" aria-label="price">💸</span>
-        Pricing
-        </a>
-      <a href="/">
-        <span role="img" aria-label="contact">📩</span>
-        Contact
-        </a>
-    </StyledMenu>
-  )
-}
 
 export default Navbar;
