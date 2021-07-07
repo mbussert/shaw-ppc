@@ -25,7 +25,6 @@ function Account() {
           throw console.log(res.data.message);
         }
         setOrders(res.data);
-        console.log(res.data);
       })
       .catch((err) => console.log(err));
   }
@@ -49,6 +48,14 @@ function Account() {
     return;
   }
 
+  function deleteOrderFromDatabase(event) {
+    event.preventDefault();
+
+    API.deleteOrder(event.target.value)
+    .then(res => loadOrders(userId))
+    .catch(err => console.log(err));
+  }
+
   return (
     <div>
       <div style={{ paddingBottom: 70 }}></div>
@@ -59,9 +66,9 @@ function Account() {
         <Grid container spacing={5} justify="center">
           <Grid item xs={12} md={9} lg={9} xl={9}>
             {orders.length <= 0 ? (
-              <h1 className="text-center">No Orders to Display</h1>
+              <h1 className="header-text">No Orders to Display</h1>
             ) : (
-              <ProjectDetails orders={orders} />
+              <ProjectDetails deleteOrderFromDatabase={deleteOrderFromDatabase} orders={orders} />
             )}
           </Grid>
         </Grid>

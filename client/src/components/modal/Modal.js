@@ -28,13 +28,13 @@ function Modal () {
                 
                 <div className="modal-title">
                     <h1> It looks like you are not 
-                        Currently logged in</h1>
+                        Currently logged in!</h1>
                 </div>
 
                 <div className="modal-body">
                     <p>
-                    You can continue to use the calculator however you will not be able 
-                    to save the results until you create an account
+                    You can continue to use the calculator, however, you will not be able 
+                    to save the results until you create an account.
                     </p>
                 </div>
 
@@ -42,7 +42,7 @@ function Modal () {
                     <button className="modal-btn-continue" onClick = {() => hideModal()} >CONTINUE</button>
                     
                     <button className="modal-btn-signup">
-                    <NavLink to="./Login">
+                    <NavLink to="./Create">
                     SIGN UP
                     </NavLink>
                     </button>
