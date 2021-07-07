@@ -65,7 +65,6 @@ function Navbar(props) {
         <Link to="./"><img className="navImg" src="/images/wall-pro-logo.png" alt="WallPro logo" /></Link>
         <div className="hamburger">
         <GiHamburgerMenu onClick={hamNavClick}/>
-        <GiHamburgerMenu />
         </div>
         <nav>
           <ul className="links">
@@ -87,7 +86,6 @@ function Navbar(props) {
       </div>
   <div className="spaceForce">
     <div className="mobile-nav" style={navbarOpen ? {display:"flex"} : {display:"none"}}>
-        <nav className="mobile-nav">
           <ul className="mobile-links">
             <li>
               <Link to="./How">How it Works</Link>
@@ -101,7 +99,6 @@ function Navbar(props) {
             </li> */}
             <li>{verifyStatus()}</li>
           </ul>
-        </nav>
         </div>
   </div>
   </div>
