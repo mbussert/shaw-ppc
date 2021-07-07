@@ -40,7 +40,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import AddIcon from "@material-ui/icons/Add";
 
 function getSteps() {
-  return ["Create Your Project", "Add Wall(s)", "Save/Submit"];
+  return ["Create Your Project", "Add Wall(s)", "Save & Submit"];
 }
 
 function createData(wallName, width, height, linearFeet, border) {
@@ -60,7 +60,6 @@ function getStepContent(step) {
 
   const handleClickOpen = () => {
     setOpen(true);
-    console.log(rows);
   };
 
   const handleClose = () => {

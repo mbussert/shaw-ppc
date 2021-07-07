@@ -26,12 +26,12 @@ function Footer() {
               <li>
                 <Link to="./Calculator">Calculator</Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="./Account">Account</Link>
-              </li>
-              <li>
+              </li> */}
+              {/* <li>
                 <Link to="./Login">Login</Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="./Contact">Contact</Link>
               </li>

@@ -7,8 +7,9 @@ describe("Arithmetic", () => {
       const width = 445;
       const height = 114.25;
       const correctAnswer = 91;
+      const border = true;
 
-      const customerCalculation = Arithmetic.calculate(width, height);
+      const customerCalculation = Arithmetic.calculate(width, height, border);
 
       expect(customerCalculation).toEqual(correctAnswer);
     });

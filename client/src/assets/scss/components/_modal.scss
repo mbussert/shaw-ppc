@@ -42,7 +42,7 @@
 .modal-btn-continue {
     color: white;
     background-color: $orange;
-    border: none;
+    border: 2px solid $orange;
     border-radius: 0.5em;
     padding: 1vw;
     margin: 0 1em 0 1em;
@@ -61,7 +61,7 @@
 .modal-btn-signup {
     color: white;
     background-color: $orange;
-    border: none;
+    border: 2px solid $orange;
     border-radius: 0.5em;
     padding: 1vw;
     margin: 0 1em 0 1em;
@@ -80,6 +80,16 @@
     a {
       color: $orange;
     }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 1;
 }
 
 @media only screen and (max-width: 856px) {

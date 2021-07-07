@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import Navbar from "../../components/navbar";
 import API from "../../utils/API";
-
-import ProjectList from "../../components/ProjectList";
 import ProjectDetails from "../../components/ProjectDetails";
 import { Grid, Container, Divider } from "@material-ui/core";
 
-let userId; 
+let userId;
 
 function Account() {
   const [orders, setOrders] = useState([]);
@@ -18,10 +16,8 @@ function Account() {
   }, []);
 
   function loadOrders(userId) {
-
     API.getOrdersById(userId)
       .then((res) => {
-
         if (res.data.length === 0) {
           console.log("No orders found.");
         }
@@ -29,19 +25,18 @@ function Account() {
           throw console.log(res.data.message);
         }
         setOrders(res.data);
+        console.log(res.data);
       })
       .catch((err) => console.log(err));
   }
 
   function loadStatus() {
-  
     API.authenticateUser()
       .then((response) => {
-
         // Users that are not logged in cannot visit the Account page
 
-        if(response.data === false) {
-          location.replace("/Login")
+        if (response.data === false) {
+          location.replace("/Login");
           return;
         }
 
@@ -51,7 +46,7 @@ function Account() {
       })
       .catch((err) => console.log(err));
 
-      return;
+    return;
   }
 
   return (
@@ -60,40 +55,14 @@ function Account() {
       <Navbar loginStatus={loginStatus} />
       <Header />
 
-      <Container disableGutters maxWidth={false} style={{ marginBottom: 40 }}>
-        <Grid container direction="row" spacing={5}>
-          <Grid item xs={12} md={3} lg={3} xl={3} style={{ marginBottom: 15 }}>
-            <ProjectList />
-          </Grid>
+      <Container disableGutters maxWidth="lg" style={{ marginBottom: 40 }}>
+        <Grid container spacing={5} justify="center">
           <Grid item xs={12} md={9} lg={9} xl={9}>
-            <Container disableGutters>
-              {!orders.length ? (
-                <h1 className="text-center">No Orders to Display</h1>
-              ) : (
-                <div>
-                  <h2>Orders by this user are mapped in the console!</h2>
-                  {orders.map((order) => {
-                    return console.log(order);
-
-                    //   Props to pass an Order component to be rendered on the page
-
-                    //  <Order
-                    //    key={order.id}
-                    //    id={order.id}
-                    //    email={order.email}
-                    //    firstName={order.firstName}
-                    //    height={order.height}
-                    //    lastName={order.lastName}
-                    //    linearFeet={order.linearFeet}
-                    //    material={order.material}
-                    //    phone={order.phone}
-                    //    projectTitle={order.projectTitle}
-                    //  />
-                  })}
-                </div>
-              )}
-              <ProjectDetails />
-            </Container>
+            {orders.length <= 0 ? (
+              <h1 className="text-center">No Orders to Display</h1>
+            ) : (
+              <ProjectDetails orders={orders} />
+            )}
           </Grid>
         </Grid>
       </Container>
