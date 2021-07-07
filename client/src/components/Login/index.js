@@ -78,7 +78,7 @@ function LoginPage() {
       ) : null}
         
          <form className="login-form" onSubmit={handleFormSubmit}>
-        <h2 className="login-title">Please Login</h2>
+        <h2 className="login-title">Please Log in</h2>
         <div className="user-div">
           <label htmlFor="user-login">Email</label>
           <input 

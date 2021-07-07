@@ -19,7 +19,7 @@ function VideoSection () {
 
             <p className="how-description">WallPro, the calculator tool to ease your purchasing process! 
             <br/>For guidance of use, please watch this short demo video for the best user experience. 
-            <br/>Should you have any questions or concerns, contact us. 
+            <br/>Should you have any questions or concerns, please don't hesitate to contact us.
 
             </p>
 
