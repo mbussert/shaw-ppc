@@ -40,12 +40,15 @@ Wall.init(
       default: "Material WC-J3"
     },
     width: {
-      type: DataTypes.STRING,
+      type: DataTypes.DECIMAL(10, 4),
       allowNull: false,
     },
     height: {
-      type: DataTypes.STRING,
+      type: DataTypes.DECIMAL(10,4),
       allowNull: false,
+    },
+    border: {
+      type: DataTypes.BOOLEAN,
     },
     linearFeet: {
       type: DataTypes.INTEGER,
@@ -64,8 +67,16 @@ Wall.init(
       beforeCreate: async (data) => {
         const numOfPanels = data.width / 50;
         const panelsRounded = Math.ceil(numOfPanels);
-        const adjustedHeight = parseFloat(data.height) + 6;
-        const heightCalculation = adjustedHeight * panelsRounded;
+
+        let orderHeight;
+        
+        if(data.border) {
+          orderHeight = parseFloat(data.height) + 6;
+        } else {
+          orderHeight = parseFloat(data.height);
+        }
+
+        const heightCalculation = orderHeight * panelsRounded;
         const dividedHeight = heightCalculation / 12
         data.linearFeet = Math.ceil(dividedHeight);
       }

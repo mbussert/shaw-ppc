@@ -126,4 +126,4 @@ Contributions are what make the open source community such an amazing place to b
 
 ## Tests:
 
-Tests coming soon...
+Tests for this web application have been built with Jest and Enzyme. To run the tests, ```cd``` into the client folder and ensure that all dev dependencies have been installed correctly. Then, run ```npm test``` run all testing suites.

@@ -41,6 +41,7 @@ function Navbar(props) {
       .catch((err) => console.log(err));
   }
 
+
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
     setNavbarOpen(prev => !prev)
@@ -50,16 +51,22 @@ function Navbar(props) {
     setNavbarOpen(!navbarOpen)
     // console.log('mobilehamnavclick');
   }
+  // const [status, setStatus] = useState({ display: "show" });
+
+  // function hideNav() {
+  //     setStatus({display: "hide"})
+  // }
+
+
 
   return (
     <div>
       <div className="navLogo">
         <Link to="./"><img className="navImg" src="/images/wall-pro-logo.png" alt="WallPro logo" /></Link>
-        
         <div className="hamburger">
         <GiHamburgerMenu onClick={hamNavClick}/>
+        <GiHamburgerMenu />
         </div>
-
         <nav>
           <ul className="links">
             <li>
@@ -78,10 +85,10 @@ function Navbar(props) {
           </ul>
         </nav>
       </div>
-      
   <div className="spaceForce">
-      <div className="mobile-nav" style={navbarOpen ? {display:"flex"} : {display:"none"}}>
-          <ul className= "mobile-links">
+    <div className="mobile-nav" style={navbarOpen ? {display:"flex"} : {display:"none"}}>
+        <nav className="mobile-nav">
+          <ul className="mobile-links">
             <li>
               <Link to="./How">How it Works</Link>
             </li>
@@ -94,8 +101,9 @@ function Navbar(props) {
             </li> */}
             <li>{verifyStatus()}</li>
           </ul>
+        </nav>
         </div>
-    </div>
+  </div>
   </div>
   );
 }

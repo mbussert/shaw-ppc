@@ -9,6 +9,7 @@ function Create() {
   const [loginStatus, setLoginStatus] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     loadStatus();
   }, []);
 
@@ -16,8 +17,12 @@ function Create() {
 
     API.authenticateUser()
       .then((response) => {
-        console.log(response)
         setLoginStatus(response.data.login);
+
+        // Prevents logged in users from creating new accounts
+        if(response.data.login === "The user is logged in.") {
+          location.replace("/")
+        }
       })
       .catch((err) => console.log(err));
   }

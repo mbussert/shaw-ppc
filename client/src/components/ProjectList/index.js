@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ProjectList() {
+function ProjectList(props) {
   const classes = useStyles();
 
   return (
@@ -29,18 +29,16 @@ function ProjectList() {
         <Paper elevation={3}>
           <Grid item>
             <List>
-              <ListItem button>
-                <ListItemText primary="Custom Wall 1" />
-              </ListItem>
-              <Divider />
-              <ListItem button>
-                <ListItemText primary="Custom Wall 2" />
-              </ListItem>
-              <Divider />
-              <ListItem button>
-                <ListItemText primary="Custom Wall 3" />
-              </ListItem>
-              <Divider />
+              {props.orders.map((order) => {
+                return (
+                  <>
+                    <ListItem button>
+                      <ListItemText primary={order.projectTitle} />
+                    </ListItem>
+                    <Divider />
+                  </>
+                );
+              })}
             </List>
           </Grid>
           <Grid
@@ -49,7 +47,7 @@ function ProjectList() {
             justify="center"
             style={{ paddingTop: 30, paddingBottom: 46 }}
           >
-            <Button color="primary" variant="contained">
+            <Button color="primary" variant="contained" href="/Calculator">
               New Project
             </Button>
           </Grid>

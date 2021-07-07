@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player';
 function VideoSection () {
     return (
         <section className="how-to-top">
-            <h1 className="how-to-title">How to Use</h1>
+            <h1 className="how-to-title">Welcome to WallPro How To</h1>
 
                 <div className='player-wrapper'>
                 <ReactPlayer
@@ -15,9 +15,11 @@ function VideoSection () {
                 controls={true}
                 />
                 </div>
-            <h2 className="how-subtitle">Brief Title</h2>
+            <h2 className="how-subtitle">WallPro Video Demo</h2>
 
-            <p className="how-description">This will be a brief description of the walkthrough video.
+            <p className="how-description">WallPro, the calculator tool to ease your purchasing process! 
+            <br/>For guidance of use, please watch this short demo video for the best user experience. 
+            <br/>Should you have any questions or concerns, contact us. 
 
             </p>
 

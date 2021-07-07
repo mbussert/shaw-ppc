@@ -311,11 +311,17 @@ Header {
   letter-spacing: 1px;
   margin-top: 3rem;
   padding: .75rem;
-  border-radius: 2rem;
+  border-radius: 0.75rem;
   display: block;
   width: 100%;
-  border: none;
+  border: 2px solid #da9f63;
   cursor: pointer;
+}
+
+.login-btn:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
 }
 
 .create-acct-opt {
@@ -332,7 +338,7 @@ Header {
   padding: .5rem 1rem;
   border: 2px solid transparent;
   outline: none;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   background-color: rgba(255, 255, 255, 0.25);
   letter-spacing: 1px;
   margin-top: 1.2rem;
@@ -619,11 +625,17 @@ nav .line {
   letter-spacing: 1px;
   margin-top: 3rem;
   padding: .75rem;
-  border-radius: 2rem;
+  border-radius: 0.75rem;
   display: block;
   width: 100%;
-  border: none;
+  border: 2px solid #da9f63;
   cursor: pointer;
+}
+
+.create-btn:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
 }
 
 .login-opt {
@@ -640,7 +652,7 @@ nav .line {
   padding: .5rem 1rem;
   border: 2px solid transparent;
   outline: none;
-  border-radius: 1.5rem;
+  border-radius: 0.75rem;
   background-color: rgba(255, 255, 255, 0.25);
   letter-spacing: 1px;
   margin-top: 1.2rem;
@@ -695,18 +707,19 @@ nav .line {
           justify-content: center;
   -ms-flex-line-pack: center;
       align-content: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  text-align: center;
 }
 
 .how-to-title {
   color: #a3becf;
   text-transform: uppercase;
   font-size: 2.2em;
-  padding: 0 0 1em 0;
+  padding: 1em 0 1em 0;
 }
 
 .player-wrapper {
@@ -722,12 +735,14 @@ nav .line {
   color: #da9f63;
   text-transform: uppercase;
   font-size: 2.2em;
-  padding: 0 0 1em 0;
+  padding: 1em 0 1em 0;
 }
 
 .how-description {
   color: white;
   font-size: 1.3em;
+  margin: 1.2em;
+  line-height: 2em;
 }
 
 .fact-section {
@@ -763,8 +778,7 @@ nav .line {
 
 .fqa-list {
   color: white;
-  font-size: 1.3em;
-  list-style-type: circle;
+  font-size: 1.2em;
   -webkit-padding-start: 0.5em;
           padding-inline-start: 0.5em;
   -webkit-box-align: center;
@@ -784,6 +798,22 @@ nav .line {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  width: auto;
+  text-align: center;
+}
+
+.fqa-list li:nth-child(odd) {
+  color: #a3becf;
+  font-size: 1.3em;
+}
+
+.fqa-list li:nth-child(even) {
+  background-color: #c4c4c420;
+  line-height: 2em;
+}
+
+.fqa-list li {
+  margin: 1em;
 }
 
 .image-container {
@@ -811,18 +841,13 @@ nav .line {
   border: solid 2px #da9f63;
   padding: 1em;
   margin: 2em;
+  max-width: 80vw;
 }
 
-.calc-btn {
-  background-color: #da9f63;
-  color: white;
-  display: block;
-  border-radius: 0.5em;
-  border-style: none;
-  margin: 3em;
-  padding: 1em;
-  text-decoration: none;
-  font-size: 1.5em;
+.create-account-btn:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
 }
 
 .contact-form-container {
@@ -919,7 +944,7 @@ nav .line {
   background-color: #da9f63;
   -webkit-box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
           box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
-  border: none;
+  border: 2px solid #da9f63;
   border-radius: 0.5em;
   text-align: center;
   margin: 1.5em 1em 1em 1em;
@@ -943,7 +968,24 @@ nav .line {
 
 .modal-1 {
   background-color: #1D2837;
-  max-width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-width: 85vw;
+  min-height: 33vh;
   border-radius: 1em;
   z-index: 2;
   position: absolute;
@@ -957,12 +999,13 @@ nav .line {
 .modal-title {
   color: white;
   text-transform: capitalize;
-  font: 1em sans-serif;
+  text-align: center;
+  font-size: 1.5vw;
 }
 
 .modal-body {
   color: white;
-  font: 1.5em sans-serif;
+  font-size: 1.5vw;
   margin: 1em;
 }
 
@@ -979,19 +1022,75 @@ nav .line {
 .modal-btn-continue {
   color: white;
   background-color: #da9f63;
-  padding: 1em;
+  border: 2px solid #da9f63;
   border-radius: 0.5em;
-  border: none;
+  padding: 1vw;
   margin: 0 1em 0 1em;
+}
+
+.modal-btn-continue:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
+}
+
+.modal-btn-continue:hover a {
+  color: #da9f63;
 }
 
 .modal-btn-signup {
   color: white;
   background-color: #da9f63;
-  padding: 1em;
+  border: 2px solid #da9f63;
   border-radius: 0.5em;
-  border: none;
+  padding: 1vw;
   margin: 0 1em 0 1em;
+}
+
+.modal-btn-signup a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+
+.modal-btn-signup:hover {
+  color: #da9f63;
+  border: 2px solid #da9f63;
+  background-color: transparent;
+}
+
+.modal-btn-signup:hover a {
+  color: #da9f63;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+@media only screen and (max-width: 856px) {
+  .modal-title {
+    text-align: center;
+    font-size: 3vw;
+  }
+  .modal-body {
+    font-size: 3vw;
+    margin: 1em;
+  }
+  .modal-btn-continue {
+    padding: 1vw;
+    border-radius: 0.5em;
+    margin: 0 1em 0 1em;
+  }
+  .modal-btn-signup {
+    padding: 1vw;
+    margin: 0 1em 0 1em;
+  }
 }
 
 .devcardgrid {
@@ -1000,11 +1099,17 @@ nav .line {
           box-sizing: border-box;
   min-height: 106vh;
   max-width: 100vw;
-  margin: 1vw;
+  margin: 1vw 1vw 4vw 1vw;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto;
-      grid-template-columns: auto auto;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .web-dev-header-card {
@@ -1033,22 +1138,22 @@ nav .line {
 }
 
 .webdev5 {
-  border: 1px solid #da9f63;
+  background-color: #1D2837;
+  color: #a3becf;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   -ms-flex-line-pack: center;
       align-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  border: 1px solid #da9f63;
   border-radius: 2.5rem;
-  background-color: #1D2837;
-  color: #a3becf;
   -webkit-box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
           box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
   -webkit-box-sizing: border-box;
@@ -1075,6 +1180,43 @@ nav .line {
   -ms-flex-line-pack: center;
       align-content: center;
   margin: 1.15rem;
+}
+
+@media only screen and (max-width: 900px) {
+  .webdev5 {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+    max-width: 85vw;
+    min-height: 35vh;
+    margin: 2vw;
+    padding: 2.5vw;
+  }
+  .webdev5 h1 {
+    margin: .15rem;
+    text-align: left;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    padding: 0.5rem;
+  }
+  .webdev5 a {
+    font-size: 1rem;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    margin: 1.15rem;
+  }
 }
 
 .calculator {
@@ -1149,7 +1291,7 @@ body {
   color: white;
   display: block;
   border-radius: 0.5em;
-  border-style: none;
+  border: 2px solid #da9f63;
   margin: 1.5em 1em 1em 1em;
   padding: 1em;
   -webkit-box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);

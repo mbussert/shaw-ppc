@@ -3,9 +3,11 @@ import {
   Grid,
   Card,
   CardContent,
+  CardActions,
   CardHeader,
   Button,
   Typography,
+  Divider,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -20,9 +22,12 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     fontSize: 25,
   },
+  h3: {
+    lineHeight: "1.5rem",
+  },
 }));
 
-function ProjectDetails() {
+function ProjectDetails(props) {
   const classes = useStyles();
 
   return (
@@ -37,41 +42,66 @@ function ProjectDetails() {
         <Grid container item style={{ paddingBottom: 15 }} justify="center">
           <h1 className={classes.h1}>Project Details</h1>
         </Grid>
-        <Grid item>
-          <Card style={{ padding: 15 }} margin="dense" raised={true}>
-            <CardHeader title="Custom Project Name"></CardHeader>
-            <CardContent>
-              <Grid
-                container
-                direction="row"
-                justify="center"
-                alignItems="baseline"
-                spacing={2}
-              >
-                <Grid item xs>
-                  <h4>Custom Wall Name</h4>
-                </Grid>
-                <Grid item xs>
-                  <h4>Material</h4>
-                </Grid>
-                <Grid item xs>
-                  <h4>45ft</h4>
-                </Grid>
-              </Grid>
-            </CardContent>
-          </Card>
-        </Grid>
         <Grid container item justify="center">
+          {props.orders.map((order) => {
+            return (
+              <Card
+                style={{ padding: 15, margin: 20, width: 345 }}
+                margin="dense"
+                raised={true}
+              >
+                <Grid container item justify="center">
+                  <CardHeader title={order.projectTitle} />
+                </Grid>
+
+                <Divider />
+                <CardContent>
+                  <h3 className={classes.h3}>Project ID: {order.id}</h3>
+                  <h3 className={classes.h3}>
+                    Created: {new Date(order.createdAt).toLocaleDateString()}
+                  </h3>
+
+                  <h3 className={classes.h3}>{order.material}</h3>
+                  <h3 className={classes.h3}>Height: {order.height} (in)</h3>
+                  <h3 className={classes.h3}>Width: {order.width} (in)</h3>
+                  <h3 className={classes.h3}>
+                    Border: {order.border ? "Yes" : "No"}
+                  </h3>
+                  <h3 className={classes.h3}>
+                    Total Linear Feet: {order.linearFeet} (LFT)
+                  </h3>
+                </CardContent>
+                <Divider />
+                <CardActions>
+                  <Grid item container justify="center">
+                    <Button
+                      size="large"
+                      variant="contained"
+                      style={{
+                        backgroundColor: "#D89D62",
+                        color: "white",
+                        fontSize: "1rem",
+                        fontWeight: 600,
+                        marginTop: 10,
+                      }}
+                    >
+                      Delete Project
+                    </Button>
+                  </Grid>
+                </CardActions>
+              </Card>
+            );
+          })}
+        </Grid>
+        <Grid container item justify="center" style={{ marginTop: 20 }}>
           <Button
             size="large"
             variant="contained"
             color="primary"
             style={{ marginRight: 10 }}
+            href="/Calculator"
           >
-            New Wall
-          </Button>
-          <Button size="large" variant="contained" color="secondary">
-            Delete Project
+            New Project
           </Button>
         </Grid>
       </Grid>
