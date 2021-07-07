@@ -49,4 +49,21 @@ router.post('/', async (req, res) => {
 
   });
 
+  router.delete('/:id', async (req, res) => {
+    // Deletes a wall order by ID
+  
+    console.log("CONNECTED")
+  
+    try {
+      const deletedOrder = await Wall.destroy(
+        { where: { id: req.params.id, } });
+  
+      res.status(200).json({ message: 'The order was successfully deleted!' });
+      console.log('\n', "The order was successfully deleted!", '\n')
+    } catch (err) {
+      res.status(500).json(err);
+      console.log(err);
+    }
+  });
+
 module.exports = router;

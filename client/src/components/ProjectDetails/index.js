@@ -30,8 +30,6 @@ const useStyles = makeStyles((theme) => ({
 function ProjectDetails(props) {
   const classes = useStyles();
 
-  console.log(props);
-
   return (
     <div className={classes.root}>
       <Grid
@@ -76,8 +74,10 @@ function ProjectDetails(props) {
                 <Divider />
                 <CardActions>
                   <Grid item container justify="center">
-                    <Button
+                    <button
                       size="large"
+                      onClick={(event) => props.deleteOrderFromDatabase(event)}
+                      value={order.id}
                       variant="contained"
                       style={{
                         backgroundColor: "#D89D62",
@@ -85,10 +85,17 @@ function ProjectDetails(props) {
                         fontSize: "1rem",
                         fontWeight: 600,
                         marginTop: 10,
+                        paddingLeft: "1rem",
+                        paddingRight: "1rem",
+                        paddingTop: "0.75rem",
+                        paddingBottom: "0.75rem",
+                        borderRadius: "5px",
+                        border: "transparent",
+                        cursor: "pointer"
                       }}
                     >
-                      Delete Project
-                    </Button>
+                      DELETE PROJECT
+                    </button>
                   </Grid>
                 </CardActions>
               </Card>
