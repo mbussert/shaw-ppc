@@ -30,8 +30,6 @@ const useStyles = makeStyles((theme) => ({
 function ProjectDetails(props) {
   const classes = useStyles();
 
-  console.log(props);
-
   return (
     <div className={classes.root}>
       <Grid
@@ -48,7 +46,7 @@ function ProjectDetails(props) {
           {props.orders.map((order) => {
             return (
               <Card
-                style={{ padding: 15, margin: 20, width: 345 }}
+                style={{ backgroundColor: "#c4c4c420", color: "white", borderRadius: "2rem", border: "solid 2px #da9f63", boxShadow: "0 7.6vh 10.6vh -3.0vh rgba(0, 0, 0, 0.85)", padding: 15, margin: 20, width: 345 }}
                 margin="dense"
                 raised={true}
               >
@@ -64,8 +62,8 @@ function ProjectDetails(props) {
                   </h3>
 
                   <h3 className={classes.h3}>{order.material}</h3>
-                  <h3 className={classes.h3}>Height: {order.height}</h3>
-                  <h3 className={classes.h3}>Width: {order.width}</h3>
+                  <h3 className={classes.h3}>Height: {order.height} (in)</h3>
+                  <h3 className={classes.h3}>Width: {order.width} (in)</h3>
                   <h3 className={classes.h3}>
                     Border: {order.border ? "Yes" : "No"}
                   </h3>
@@ -76,8 +74,10 @@ function ProjectDetails(props) {
                 <Divider />
                 <CardActions>
                   <Grid item container justify="center">
-                    <Button
+                    <button
                       size="large"
+                      onClick={(event) => props.deleteOrderFromDatabase(event)}
+                      value={order.id}
                       variant="contained"
                       style={{
                         backgroundColor: "#D89D62",
@@ -85,10 +85,17 @@ function ProjectDetails(props) {
                         fontSize: "1rem",
                         fontWeight: 600,
                         marginTop: 10,
+                        paddingLeft: "1rem",
+                        paddingRight: "1rem",
+                        paddingTop: "0.75rem",
+                        paddingBottom: "0.75rem",
+                        borderRadius: "5px",
+                        border: "transparent",
+                        cursor: "pointer"
                       }}
                     >
-                      Delete Project
-                    </Button>
+                      DELETE PROJECT
+                    </button>
                   </Grid>
                 </CardActions>
               </Card>
@@ -100,7 +107,7 @@ function ProjectDetails(props) {
             size="large"
             variant="contained"
             color="primary"
-            style={{ marginRight: 10 }}
+            style={{ backgroundColor: "#c4c4c420", color: "white", border: "solid 2px #da9f63", boxShadow: "0 7.6vh 10.6vh -3.0vh rgba(0, 0, 0, 0.85)", marginRight: 10 }}
             href="/Calculator"
           >
             New Project

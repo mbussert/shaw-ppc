@@ -92,45 +92,57 @@ nav {
     font-size: 13vw;
     display: inline-block;
     color: $orange;
+    z-index: 2;
   }
 
   nav {
     display: none;
   }
 
+  // .spaceForce {
+  //   display: flex;
+  //   margin: 10px;
+  // }
+
   .mobile-nav {
     display: none;
     position: absolute;
     z-index: 2;
-    // display: flex;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-    background-color: $background;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    // background-color: $background;
     border-radius: 1em;
-    box-shadow: $boxshadow;
+    // box-shadow: $boxshadow;
     // border: solid 2px $orange;
-    margin: 0.5em;
-    width: 96vw;
+    margin: 37vh 0vw 0vh 13vw;
+    width: 85vw;
+    height: 3vh;
+
     .mobile-links{
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      justify-content: center;
+      justify-content: flex-end;
       flex-wrap: nowrap;
-      margin: 0;
-      padding: 0.5em;
+      margin: 2.5vh 3.5vw 3.5vh 2.5vw;
+      padding: 1rem .75vw 1rem .75vw;
+      background-color: $blueDark;
+      border-radius: 2vh;
     }
     a {
-      font-size: 5vw;
-      border-bottom: solid 2px $orange;
-      padding: 0;
+      display: flex;
+      text-decoration: none;
+      font-size: 7vw;
+      border-bottom: solid .5vh $orange;
+      padding: 2.5vh 0vw .5vh 2.5vw;
+      margin: 2.5vh;
+
+      
     }
-  }
-
-  
+  }  
 }
-
 /*# sourceMappingURL=style.css.map */
+

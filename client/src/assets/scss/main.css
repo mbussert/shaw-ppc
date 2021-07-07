@@ -382,6 +382,7 @@ nav .line {
     font-size: 13vw;
     display: inline-block;
     color: #da9f63;
+    z-index: 2;
   }
 
   nav {
@@ -392,30 +393,34 @@ nav .line {
     display: none;
     position: absolute;
     z-index: 2;
-    flex-direction: column;
-    align-content: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-items: flex-end;
-    background-color: #c4c4c420;
+    flex-direction: row;
+    align-content: flex-end;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: flex-start;
     border-radius: 1em;
-    box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
-    margin: 0.5em;
-    width: 96vw;
+    margin: 37vh 0vw 0vh 13vw;
+    width: 85vw;
+    height: 3vh;
   }
   .mobile-nav .mobile-links {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    justify-content: center;
+    justify-content: flex-end;
     flex-wrap: nowrap;
-    margin: 0;
-    padding: 0.5em;
+    margin: 2.5vh 3.5vw 3.5vh 2.5vw;
+    padding: 1rem 0.75vw 1rem 0.75vw;
+    background-color: #1D2837;
+    border-radius: 2vh;
   }
   .mobile-nav a {
-    font-size: 5vw;
-    border-bottom: solid 2px #da9f63;
-    padding: 0;
+    display: flex;
+    text-decoration: none;
+    font-size: 7vw;
+    border-bottom: solid 0.5vh #da9f63;
+    padding: 2.5vh 0vw 0.5vh 2.5vw;
+    margin: 2.5vh;
   }
 }
 /*# sourceMappingURL=style.css.map */
@@ -940,6 +945,23 @@ form input {
 
 button {
   font-size: 1rem;
+}
+
+.textfieldLabel {
+  color: white !important;
+}
+
+.textfield {
+  color: white !important;
+  background-color: rgba(255, 255, 255, 0.25);
+  border: 2px solid #da9f63;
+}
+
+.textfield:hover,
+.textfield:focus {
+  color: white;
+  border: 2px solid rgba(243, 241, 241, 0.479);
+  background-color: transparent;
 }
 
 body {

@@ -24,7 +24,7 @@ import Arithmetic from "./arithmetic.js";
 import Modal from "../../components/modal/Modal";
 import useModal from "../../components/modal/useModal";
 import { Snackbar } from "@material-ui/core";
-import MuiAlert from '@material-ui/lab/Alert';
+import MuiAlert from "@material-ui/lab/Alert";
 import { Prompt } from "react-router-dom";
 
 // const useStyles = makeStyles((theme) => ({
@@ -44,18 +44,17 @@ function Calculator() {
 
   const [formObject, setFormObject] = useState({
     material: "Material WC-J3",
-    border: true
+    border: true,
   });
 
   const [loginStatus, setLoginStatus] = useState([]);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     loadStatus();
   }, []);
 
   function loadStatus() {
-
     API.authenticateUser()
       .then((response) => {
         setLoginStatus(response.data.login);
@@ -64,67 +63,76 @@ function Calculator() {
   }
 
   const [orderAlert, setOrderAlert] = useState({
-    displaySnackbar: false
+    displaySnackbar: false,
   });
 
   const [successAlert, setSuccessAlert] = useState({
-    displaySnackbar: false
+    displaySnackbar: false,
   });
 
   function alphabeticalOnly(event) {
-    const alphabeticalValidation = /^[a-zA-Z]+$/
+    const alphabeticalValidation = /^[a-zA-Z]+$/;
     const azResult = alphabeticalValidation.test(event);
     return azResult;
   }
 
   function emailOnly(event) {
-    const emailValidation = /^[a-zA-Z0-9@.]*$/
+    const emailValidation = /^[a-zA-Z0-9@.]*$/;
     const emailResult = emailValidation.test(event);
-    return emailResult
+    return emailResult;
   }
 
   function phoneOnly(event) {
-    const phoneValidation = /^[0-9()-]*$/
+    const phoneValidation = /^[0-9()-]*$/;
     const phoneResult = phoneValidation.test(event);
-    return phoneResult
+    return phoneResult;
   }
 
   function numberOnly(event) {
-    const decimalValidation = /^\d+(\.\d{1,4})?$/
+    const decimalValidation = /^\d+(\.\d{1,4})?$/;
     const decResult = decimalValidation.test(event);
     return decResult;
   }
 
   function handleInputChange(event) {
-
-    if(event.target.name === "firstName" || event.target.name === "lastName") {
+    if (event.target.name === "firstName" || event.target.name === "lastName") {
       const checkName = alphabeticalOnly(event.target.value);
-      if(checkName === false) {
-        event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+      if (checkName === false) {
+        event.target.value = event.target.value.substring(
+          0,
+          event.target.value.length - 1
+        );
       }
     }
 
-    if(event.target.name === "email") {
+    if (event.target.name === "email") {
       const checkEmail = emailOnly(event.target.value);
-      if(checkEmail === false) {
-        event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+      if (checkEmail === false) {
+        event.target.value = event.target.value.substring(
+          0,
+          event.target.value.length - 1
+        );
       }
     }
 
-    if(event.target.name === "phone") {
+    if (event.target.name === "phone") {
       const checkPhone = phoneOnly(event.target.value);
-      if(checkPhone === false) {
-        event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+      if (checkPhone === false) {
+        event.target.value = event.target.value.substring(
+          0,
+          event.target.value.length - 1
+        );
       }
     }
 
-    if(event.target.name === "width" || event.target.name === "height") {
-
+    if (event.target.name === "width" || event.target.name === "height") {
       const checkNum = numberOnly(event.target.value);
-      if(checkNum === false) {
-        event.target.value = event.target.value.substring(0, event.target.value.length - 1);
+      if (checkNum === false) {
+        event.target.value = event.target.value.substring(
+          0,
+          event.target.value.length - 1
+        );
       }
-
     }
 
     const { name, value } = event.target;
@@ -187,19 +195,23 @@ function Calculator() {
       material: formObject.material,
       width: formObject.width,
       height: formObject.height,
-      border: formObject.border
-    }).then((response) => {
-      if (response.status === 200) {
-        setOpen(true);
-        setSuccessAlert({displaySnackbar: true})
-        clearForm();
-      }
-    }, () => {
-      setOpen(true);
-      setOrderAlert({displaySnackbar: true});
-      return;
+      border: formObject.border,
     })
-    .catch((err) => console.log(err));
+      .then(
+        (response) => {
+          if (response.status === 200) {
+            setOpen(true);
+            setSuccessAlert({ displaySnackbar: true });
+            clearForm();
+          }
+        },
+        () => {
+          setOpen(true);
+          setOrderAlert({ displaySnackbar: true });
+          return;
+        }
+      )
+      .catch((err) => console.log(err));
   }
 
   function Alert(props) {
@@ -209,16 +221,15 @@ function Calculator() {
   const [open, setOpen] = React.useState(true);
 
   const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
+    if (reason === "clickaway") {
       return;
     }
     setOpen(false);
     setOrderAlert(false);
     setSuccessAlert(false);
-  }
+  };
 
   function clearForm() {
-
     setFormObject({
       projectTitle: "",
       firstName: "",
@@ -228,11 +239,10 @@ function Calculator() {
       material: "Material WC-J3",
       width: "",
       height: "",
-      border: true
+      border: true,
     });
 
     document.getElementById("calculator-form").reset();
-
   }
 
   function borderToggle() {
@@ -256,10 +266,17 @@ function Calculator() {
   // Determines if the user has input a value into the form
   // Used only when a user navigates away from the page when the form is partially filled out
   function checkForm() {
-    if(formObject.projectTitle || formObject.firstName || formObject.lastName || formObject.email || formObject.width || formObject.height) {
-      return true
+    if (
+      formObject.projectTitle ||
+      formObject.firstName ||
+      formObject.lastName ||
+      formObject.email ||
+      formObject.width ||
+      formObject.height
+    ) {
+      return true;
     } else {
-      return false
+      return false;
     }
   }
 
@@ -285,10 +302,13 @@ function Calculator() {
         </Snackbar>
       ) : null}
 
-    <Prompt when={checkForm()} message="Are you sure you want to leave this page? Your order will not be saved." />
+      <Prompt
+        when={checkForm()}
+        message="Are you sure you want to leave this page? Your order will not be saved."
+      />
 
-      <Container maxWidth="sm" style={{ paddingBottom: 50 }}>
-        <Card style={{ padding: 20 }} margin="dense" raised={true}>
+      <Container maxWidth="sm" style={{ paddingTop: 30, paddingBottom: 50 }}>
+        <Card style={{ backgroundColor: "#c4c4c420", color: "white", borderRadius: "2rem", border: "solid 2px #da9f63", boxShadow: "0 7.6vh 10.6vh -3.0vh rgba(0, 0, 0, 0.85)", padding: 20 }} margin="dense" raised={true}>
           <div className="calculator">
             <form id="calculator-form" autoComplete="off">
               <Grid container justify="flex-end">
@@ -298,7 +318,7 @@ function Calculator() {
                       title="You may use a unique project name or feel free to simply use your store name/number."
                       placement="right"
                     >
-                      <InfoIcon color="primary" />
+                      <InfoIcon style={{color: "#da9f63"}} />
                     </Tooltip>
                   </Grid>
                 </Hidden>
@@ -312,6 +332,8 @@ function Calculator() {
                   onChange={handleInputChange}
                   helperText="Please enter a title for your project."
                   style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   fullWidth
                   required
@@ -325,6 +347,8 @@ function Calculator() {
                   onChange={handleInputChange}
                   helperText="Please enter your first name."
                   style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   required
                 />
@@ -336,6 +360,8 @@ function Calculator() {
                   onChange={handleInputChange}
                   helperText="Please enter your last name."
                   style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   required
                 />
@@ -347,6 +373,8 @@ function Calculator() {
                   onChange={handleInputChange}
                   helperText="Please enter your email address."
                   style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   required
                 />
@@ -359,6 +387,8 @@ function Calculator() {
                   onChange={handleInputChange}
                   helperText="e.g. (555)555-5555"
                   style={{ margin: 8 }}
+                  InputLabelProps={{className: "textfieldLabel"}}
+                  InputProps={{className: "textfield"}}
                   margin="dense"
                   required
                 />
@@ -387,6 +417,8 @@ function Calculator() {
                     type="number"
                     onChange={handleInputChange}
                     style={{ margin: 8 }}
+                    InputLabelProps={{className: "textfieldLabel"}}
+                    InputProps={{className: "textfield"}}
                     margin="normal"
                     helperText="Inches"
                   />
@@ -398,6 +430,8 @@ function Calculator() {
                     onChange={handleInputChange}
                     type="number"
                     style={{ margin: 8 }}
+                    InputLabelProps={{className: "textfieldLabel"}}
+                    InputProps={{className: "textfield"}}
                     margin="normal"
                     helperText="Inches"
                   />
@@ -409,7 +443,7 @@ function Calculator() {
                         onChange={borderToggle}
                         name="border"
                         id="border"
-                        color="primary"
+                        style={{color: "#da9f63"}} 
                         defaultChecked
                         margin="dense"
                       />
@@ -419,10 +453,10 @@ function Calculator() {
 
                   <Hidden xsDown>
                     <Tooltip
-                      title="You may use a unique project name or feel free to simply use your store name/number."
+                      title="Adds a 6 inch margin (3 inches on top and bottom)."
                       placement="right"
                     >
-                      <InfoIcon color="primary" />
+                      <InfoIcon style={{color: "#da9f63"}}  />
                     </Tooltip>
                   </Hidden>
                 </Grid>
@@ -434,7 +468,7 @@ function Calculator() {
                       size="medium"
                       disableElevation
                       onClick={validateFormSubmission}
-                      style={{ margin: 8 }}
+                      style={{ backgroundColor: "#da9f63", color: "white", margin: 8 }}
                       margin="normal"
                     >
                       Calculate
@@ -444,7 +478,7 @@ function Calculator() {
                       size="medium"
                       disableElevation
                       onClick={() => clearForm()}
-                      style={{ margin: 8 }}
+                      style={{ backgroundColor: "#c4c4c420", color: "white", border: "solid 2px #da9f63", margin: 8 }}
                       margin="normal"
                     >
                       Clear

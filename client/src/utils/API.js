@@ -42,4 +42,16 @@ export default {
     });
   },
 
+  deleteOrder: function(id) {
+    return axios.delete("/api/orders/" + id);
+  },
+
+  sendMessage: function(messageData) {
+    return axios.post("/api/message", messageData, {
+        headers: {
+            'Content-Type': 'application/json' 
+        }
+    });
+  },
+  
 };

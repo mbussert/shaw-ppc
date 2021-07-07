@@ -1,5 +1,6 @@
 const User = require('./User');
 const Wall = require('./Wall');
+const Message = require('./Message')
 
 Wall.belongsTo(User, {
     foreignKey: 'user_id',
@@ -8,4 +9,4 @@ Wall.belongsTo(User, {
 
 User.hasMany(Wall)
 
-module.exports = { User, Wall };
+module.exports = { User, Wall, Message };
