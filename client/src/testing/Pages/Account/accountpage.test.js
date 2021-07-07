@@ -33,8 +33,6 @@ describe("the Account Page", () => {
     const wrapper = shallow(<AccountPage />);
     expect(wrapper.find(Navbar)).toHaveLength(1);
     expect(wrapper.find(Header)).toHaveLength(1);
-    expect(wrapper.find(ProjectList)).toHaveLength(1);
-    expect(wrapper.find(ProjectDetails)).toHaveLength(1);
   });
 
 
