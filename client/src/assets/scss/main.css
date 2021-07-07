@@ -380,6 +380,7 @@ Header {
 }
 
 nav {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -393,14 +394,11 @@ nav {
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin: 0.5em;
-  position: relative;
   width: 100vw;
 }
 
 nav ul {
   text-align: center;
-  list-style-type: none;
-  list-style-type: none;
   margin: 0;
   padding: 0.5em;
 }
@@ -415,7 +413,8 @@ nav li {
 nav a {
   color: #fcfcfc;
   text-decoration: none;
-  padding: 1.5vw;
+  text-transform: uppercase;
+  padding: 1.5vw .5vw 1.5vw .5vw;
 }
 
 nav a:hover {
@@ -435,37 +434,114 @@ nav .line {
       -ms-flex-pack: end;
           justify-content: end;
   border-bottom: solid 4px #da9f63;
-  width: 100%;
+  width: 95%;
 }
 
-.hamburgerMQ {
+.hamburger {
   display: none;
 }
 
-.mobileNav {
+.mobile-nav {
   display: none;
 }
 
-.mobileLinks {
+.mobile-links {
   display: none;
 }
 
 @media only screen and (max-width: 900px) {
-  .hamburgerMQ {
-    height: 2em;
+  .navLogo {
+    margin: 1.1em 0 0.5em 0.5em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .navImg {
+    max-width: 22vw;
+    margin: 0.5em;
+  }
+  .hamburger {
     margin: 5vw 5vw;
-    font-size: 8vw;
+    font-size: 13vw;
     display: inline-block;
     color: #da9f63;
   }
   nav {
     display: none;
   }
-  .mobileNav {
-    display: inline-block;
+  .mobile-nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    background-color: #c4c4c420;
+    border-radius: 1em;
+    -webkit-box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
+            box-shadow: 0 7.6vh 10.6vh -3vh rgba(0, 0, 0, 0.85);
+    margin: 0.5em;
+    width: 96vw;
   }
-  .mobileLinks {
-    display: inline-block;
+  .mobile-nav .mobile-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    margin: 0;
+    padding: 0.5em;
+  }
+  .mobile-nav a {
+    font-size: 5vw;
+    border-bottom: solid 2px #da9f63;
+    padding: 0;
+  }
+  .mobile-nav .mobile-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1;
   }
 }
 * {
