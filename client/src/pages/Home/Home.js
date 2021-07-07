@@ -36,7 +36,8 @@ function Home() {
 
         <div className="home-text-bg">
         <p className="home-text">
-        Welcome to WallPro: a tool designed to simplify and expedite the purchasing process of vinyl installation materials. <br/><br/>
+        Welcome to WallPro! <br></br><br></br>
+        WallPro is a tool designed to simplify and expedite the purchasing process of vinyl installation materials. <br/><br/>
         Partnered with Shaw PPC Design, which provides custom interior signs and displays in almost an unlimited variety of materials.
         </p>
         </div>

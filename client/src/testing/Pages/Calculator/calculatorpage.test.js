@@ -32,8 +32,6 @@ describe("the Calculator Page", () => {
     const wrapper = shallow(<CalculatorPage />);
     expect(wrapper.find(Navbar)).toHaveLength(1);
     expect(wrapper.find(Header)).toHaveLength(1);
-    expect(wrapper.find(Modal)).toHaveLength(1);
-    expect(wrapper.find(Project)).toHaveLength(1);
   });
 
 });
