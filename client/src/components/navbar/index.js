@@ -86,7 +86,6 @@ function Navbar(props) {
       </div>
   <div className="spaceForce">
     <div className="mobile-nav" style={navbarOpen ? {display:"flex"} : {display:"none"}}>
-        <nav className="mobile-nav">
           <ul className="mobile-links">
             <li>
               <Link to="./How">How it Works</Link>
@@ -100,7 +99,6 @@ function Navbar(props) {
             </li> */}
             <li>{verifyStatus()}</li>
           </ul>
-        </nav>
         </div>
   </div>
   </div>
