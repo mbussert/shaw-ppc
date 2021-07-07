@@ -10,7 +10,6 @@ router.post('/', async (req, res) => {
       res
       .status(400)
       .json({ message: "Incorrect email or password, please try again" })
-      .send('Incorrect email or password')
       console.log('\n', "Incorrect email or password", '\n');
     }
 
